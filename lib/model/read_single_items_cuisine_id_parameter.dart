@@ -1,4 +1,4 @@
-//
+  //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 // @dart=2.18
@@ -12,19 +12,18 @@ part of openapi.api;
 
 class ReadSingleItemsCuisineIdParameter {
   /// Returns a new [ReadSingleItemsCuisineIdParameter] instance.
-  ReadSingleItemsCuisineIdParameter({
-  });
+  ReadSingleItemsCuisineIdParameter();
+
+@override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is ReadSingleItemsCuisineIdParameter);
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is ReadSingleItemsCuisineIdParameter &&
-
-  @override
-  int get hashCode =>
-    // ignore: unnecessary_parenthesis
+  int get hashCode => runtimeType.hashCode;
 
   @override
   String toString() => 'ReadSingleItemsCuisineIdParameter[]';
-
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
     return json;

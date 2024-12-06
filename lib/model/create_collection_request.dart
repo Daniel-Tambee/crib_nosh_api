@@ -210,11 +210,11 @@ class CreateCollectionRequest {
           assert(json[key] != null, 'Required key "CreateCollectionRequest[$key]" has a null value in JSON.');
         });
         return true;
-      }());
+  }());
 
       return CreateCollectionRequest(
         collection: mapValueOfType<String>(json, r'collection')!,
-        fields: Object.listFromJson(json[r'fields']),
+        fields: CreateCollectionRequest.listFromJson(json[r'fields']),
         icon: mapValueOfType<String>(json, r'icon'),
         note: mapValueOfType<String>(json, r'note'),
         displayTemplate: mapValueOfType<String>(json, r'display_template'),

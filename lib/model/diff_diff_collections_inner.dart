@@ -45,7 +45,7 @@ class DiffDiffCollectionsInner {
     final json = <String, dynamic>{};
     if (this.collection != null) {
       json[r'collection'] = this.collection;
-    } else {
+  } else {
       json[r'collection'] = null;
     }
       json[r'diff'] = this.diff;
@@ -72,7 +72,7 @@ class DiffDiffCollectionsInner {
 
       return DiffDiffCollectionsInner(
         collection: mapValueOfType<String>(json, r'collection'),
-        diff: Object.listFromJson(json[r'diff']),
+        diff: DiffDiffCollectionsInner.listFromJson(json[r'diff']),
       );
     }
     return null;

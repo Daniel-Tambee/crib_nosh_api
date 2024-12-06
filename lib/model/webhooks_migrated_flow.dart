@@ -231,7 +231,7 @@ class WebhooksMigratedFlow {
         icon: mapValueOfType<String>(json, r'icon'),
         color: mapValueOfType<String>(json, r'color'),
         description: mapValueOfType<String>(json, r'description'),
-        status: WebhooksMigratedFlowStatusEnum.fromJson(json[r'status']) ?? 'active',
+        status: WebhooksMigratedFlowStatusEnum.fromJson(json[r'status'] as String) ?? WebhooksMigratedFlowStatusEnum.active,
         trigger: mapValueOfType<String>(json, r'trigger'),
         accountability: mapValueOfType<String>(json, r'accountability'),
         options: mapValueOfType<Object>(json, r'options'),

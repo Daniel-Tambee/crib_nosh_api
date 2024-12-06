@@ -106,7 +106,7 @@ class DiffDiffRelationsInner {
         collection: mapValueOfType<String>(json, r'collection'),
         field: mapValueOfType<String>(json, r'field'),
         relatedCollection: mapValueOfType<String>(json, r'related_collection'),
-        diff: Object.listFromJson(json[r'diff']),
+        diff: DiffDiffRelationsInner.listFromJson(json[r'diff']),
       );
     }
     return null;

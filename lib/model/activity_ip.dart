@@ -12,15 +12,14 @@ part of openapi.api;
 
 class ActivityIp {
   /// Returns a new [ActivityIp] instance.
-  ActivityIp({
-  });
+  ActivityIp();
+
+@override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ActivityIp;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is ActivityIp &&
-
-  @override
-  int get hashCode =>
-    // ignore: unnecessary_parenthesis
+  int get hashCode => runtimeType.hashCode;
 
   @override
   String toString() => 'ActivityIp[]';

@@ -20,7 +20,7 @@ class ApiClient {
   final _defaultHeaderMap = <String, String>{};
 
   /// Returns the current HTTP [Client] instance to use in this class.
-  ///
+  ///p
   /// The return value is guaranteed to never be null.
   Client get client => _client;
 

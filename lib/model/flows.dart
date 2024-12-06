@@ -106,40 +106,43 @@ class Flows {
   List<FlowsOperationsInner>? operations;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is Flows &&
-    other.id == id &&
-    other.name == name &&
-    other.icon == icon &&
-    other.color == color &&
-    other.description == description &&
-    other.status == status &&
-    other.trigger == trigger &&
-    other.accountability == accountability &&
-    other.options == options &&
-    other.operation == operation &&
-    other.dateCreated == dateCreated &&
-    other.userCreated == userCreated &&
-    _deepEquality.equals(other.operations, operations);
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Flows &&
+          other.id == id &&
+          other.name == name &&
+          other.icon == icon &&
+          other.color == color &&
+          other.description == description &&
+          other.status == status &&
+          other.trigger == trigger &&
+          other.accountability == accountability &&
+          other.options == options &&
+          other.operation == operation &&
+          other.dateCreated == dateCreated &&
+          other.userCreated == userCreated &&
+          _deepEquality.equals(other.operations, operations);
 
   @override
   int get hashCode =>
-    // ignore: unnecessary_parenthesis
-    (id == null ? 0 : id!.hashCode) +
-    (name == null ? 0 : name!.hashCode) +
-    (icon == null ? 0 : icon!.hashCode) +
-    (color == null ? 0 : color!.hashCode) +
-    (description == null ? 0 : description!.hashCode) +
-    (status.hashCode) +
-    (trigger == null ? 0 : trigger!.hashCode) +
-    (accountability == null ? 0 : accountability!.hashCode) +
-    (options == null ? 0 : options!.hashCode) +
-    (operation == null ? 0 : operation!.hashCode) +
-    (dateCreated == null ? 0 : dateCreated!.hashCode) +
-    (userCreated == null ? 0 : userCreated!.hashCode) +
-    (operations == null ? 0 : operations!.hashCode);
+      // ignore: unnecessary_parenthesis
+      (id == null ? 0 : id!.hashCode) +
+      (name == null ? 0 : name!.hashCode) +
+      (icon == null ? 0 : icon!.hashCode) +
+      (color == null ? 0 : color!.hashCode) +
+      (description == null ? 0 : description!.hashCode) +
+      (status.hashCode) +
+      (trigger == null ? 0 : trigger!.hashCode) +
+      (accountability == null ? 0 : accountability!.hashCode) +
+      (options == null ? 0 : options!.hashCode) +
+      (operation == null ? 0 : operation!.hashCode) +
+      (dateCreated == null ? 0 : dateCreated!.hashCode) +
+      (userCreated == null ? 0 : userCreated!.hashCode) +
+      (operations == null ? 0 : operations!.hashCode);
 
   @override
-  String toString() => 'Flows[id=$id, name=$name, icon=$icon, color=$color, description=$description, status=$status, trigger=$trigger, accountability=$accountability, options=$options, operation=$operation, dateCreated=$dateCreated, userCreated=$userCreated, operations=$operations]';
+  String toString() =>
+      'Flows[id=$id, name=$name, icon=$icon, color=$color, description=$description, status=$status, trigger=$trigger, accountability=$accountability, options=$options, operation=$operation, dateCreated=$dateCreated, userCreated=$userCreated, operations=$operations]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -168,7 +171,7 @@ class Flows {
     } else {
       json[r'description'] = null;
     }
-      json[r'status'] = this.status;
+    json[r'status'] = this.status;
     if (this.trigger != null) {
       json[r'trigger'] = this.trigger;
     } else {
@@ -219,8 +222,10 @@ class Flows {
       // Note 2: this code is stripped in release mode!
       assert(() {
         requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "Flows[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "Flows[$key]" has a null value in JSON.');
+          assert(json.containsKey(key),
+              'Required key "Flows[$key]" is missing from JSON.');
+          assert(json[key] != null,
+              'Required key "Flows[$key]" has a null value in JSON.');
         });
         return true;
       }());
@@ -231,7 +236,8 @@ class Flows {
         icon: mapValueOfType<String>(json, r'icon'),
         color: mapValueOfType<String>(json, r'color'),
         description: mapValueOfType<String>(json, r'description'),
-        status: FlowsStatusEnum.fromJson(json[r'status']) ?? 'active',
+        status: FlowsStatusEnum.fromJson(json[r'status'] as String?) ??
+            FlowsStatusEnum.active,
         trigger: mapValueOfType<String>(json, r'trigger'),
         accountability: mapValueOfType<String>(json, r'accountability'),
         options: mapValueOfType<Object>(json, r'options'),
@@ -244,7 +250,10 @@ class Flows {
     return null;
   }
 
-  static List<Flows> listFromJson(dynamic json, {bool growable = false,}) {
+  static List<Flows> listFromJson(
+    dynamic json, {
+    bool growable = false,
+  }) {
     final result = <Flows>[];
     if (json is List && json.isNotEmpty) {
       for (final row in json) {
@@ -272,21 +281,26 @@ class Flows {
   }
 
   // maps a json object with a list of Flows-objects as value to a dart map
-  static Map<String, List<Flows>> mapListFromJson(dynamic json, {bool growable = false,}) {
+  static Map<String, List<Flows>> mapListFromJson(
+    dynamic json, {
+    bool growable = false,
+  }) {
     final map = <String, List<Flows>>{};
     if (json is Map && json.isNotEmpty) {
       // ignore: parameter_assignments
       json = json.cast<String, dynamic>();
       for (final entry in json.entries) {
-        map[entry.key] = Flows.listFromJson(entry.value, growable: growable,);
+        map[entry.key] = Flows.listFromJson(
+          entry.value,
+          growable: growable,
+        );
       }
     }
     return map;
   }
 
   /// The list of required keys that must be present in a JSON.
-  static const requiredKeys = <String>{
-  };
+  static const requiredKeys = <String>{};
 }
 
 /// Current status of the flow.
@@ -311,9 +325,13 @@ class FlowsStatusEnum {
     inactive,
   ];
 
-  static FlowsStatusEnum? fromJson(dynamic value) => FlowsStatusEnumTypeTransformer().decode(value);
+  static FlowsStatusEnum? fromJson(dynamic value) =>
+      FlowsStatusEnumTypeTransformer().decode(value);
 
-  static List<FlowsStatusEnum> listFromJson(dynamic json, {bool growable = false,}) {
+  static List<FlowsStatusEnum> listFromJson(
+    dynamic json, {
+    bool growable = false,
+  }) {
     final result = <FlowsStatusEnum>[];
     if (json is List && json.isNotEmpty) {
       for (final row in json) {
@@ -330,7 +348,8 @@ class FlowsStatusEnum {
 /// Transformation class that can [encode] an instance of [FlowsStatusEnum] to String,
 /// and [decode] dynamic data back to [FlowsStatusEnum].
 class FlowsStatusEnumTypeTransformer {
-  factory FlowsStatusEnumTypeTransformer() => _instance ??= const FlowsStatusEnumTypeTransformer._();
+  factory FlowsStatusEnumTypeTransformer() =>
+      _instance ??= const FlowsStatusEnumTypeTransformer._();
 
   const FlowsStatusEnumTypeTransformer._();
 
@@ -347,8 +366,10 @@ class FlowsStatusEnumTypeTransformer {
   FlowsStatusEnum? decode(dynamic data, {bool allowNull = true}) {
     if (data != null) {
       switch (data) {
-        case r'active': return FlowsStatusEnum.active;
-        case r'inactive': return FlowsStatusEnum.inactive;
+        case r'active':
+          return FlowsStatusEnum.active;
+        case r'inactive':
+          return FlowsStatusEnum.inactive;
         default:
           if (!allowNull) {
             throw ArgumentError('Unknown enum value to decode: $data');
@@ -361,5 +382,3 @@ class FlowsStatusEnumTypeTransformer {
   /// Singleton [FlowsStatusEnumTypeTransformer] instance.
   static FlowsStatusEnumTypeTransformer? _instance;
 }
-
-
