@@ -89,7 +89,7 @@ class DiffDiffFieldsInner {
       return DiffDiffFieldsInner(
         collection: mapValueOfType<String>(json, r'collection'),
         field: mapValueOfType<String>(json, r'field'),
-        diff: Object.listFromJson(json[r'diff']),
+        diff: DiffDiffFieldsInner.listFromJson(json[r'diff']),
       );
     }
     return null;

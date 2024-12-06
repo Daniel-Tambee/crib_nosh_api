@@ -89,7 +89,7 @@ class LoginRequest {
       return LoginRequest(
         email: mapValueOfType<String>(json, r'email')!,
         password: mapValueOfType<String>(json, r'password')!,
-        mode: LoginRequestModeEnum.fromJson(json[r'mode']) ?? 'json',
+        mode: LoginRequestModeEnum.fromJson(json[r'mode'] as String) ?? LoginRequestModeEnum.json,
         otp: mapValueOfType<String>(json, r'otp'),
       );
     }
