@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.18
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -412,7 +412,7 @@ class FilesApi {
     const contentTypes = <String>['multipart/data', 'application/json'];
 
     bool hasFields = false;
-    final mp = MultipartRequest('PATCH', Uri.parse(path));
+    final mp = MultipartRequest('PATCH');
     if (title != null) {
       hasFields = true;
       mp.fields[r'title'] = parameterToString(title);
@@ -433,10 +433,8 @@ class FilesApi {
       hasFields = true;
       mp.fields[r'tags'] = parameterToString(tags);
     }
-    if (file != null) {
-      hasFields = true;
-      mp.fields[r'file'] = parameterToString(file);
-    }
+    hasFields = true;
+    mp.fields[r'file'] = parameterToString(file);
     if (hasFields) {
       postBody = mp;
     }

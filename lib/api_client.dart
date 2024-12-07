@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.18
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -63,7 +63,7 @@ class ApiClient {
         body is MultipartFile && (contentType == null ||
         !contentType.toLowerCase().startsWith('multipart/form-data'))
       ) {
-        final request = StreamedRequest(method, uri);
+        final request = StreamedRequest(method);
         request.headers.addAll(headerParams);
         request.contentLength = body.length;
         body.finalize().listen(
@@ -78,7 +78,7 @@ class ApiClient {
       }
 
       if (body is MultipartRequest) {
-        final request = MultipartRequest(method, uri);
+        final request = MultipartRequest(method);
         request.fields.addAll(body.fields);
         request.files.addAll(body.files);
         request.headers.addAll(body.headers);
