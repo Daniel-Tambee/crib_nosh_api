@@ -31,7 +31,7 @@ class PresetsApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreatePresetRequest] createPresetRequest:
-  Future<Response> createPresetWithHttpInfo({ List<String>? fields, String? meta, CreatePresetRequest? createPresetRequest, }) async {
+  FutureOr<Response> createPresetWithHttpInfo({ List<String>? fields, String? meta, CreatePresetRequest? createPresetRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/presets';
 
@@ -76,7 +76,7 @@ class PresetsApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreatePresetRequest] createPresetRequest:
-  Future<CreatePreset200Response?> createPreset({ List<String>? fields, String? meta, CreatePresetRequest? createPresetRequest, }) async {
+  FutureOr<CreatePreset200Response?> createPreset({ List<String>? fields, String? meta, CreatePresetRequest? createPresetRequest, }) async {
     final response = await createPresetWithHttpInfo( fields: fields, meta: meta, createPresetRequest: createPresetRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -101,7 +101,7 @@ class PresetsApi {
   ///
   /// * [int] id (required):
   ///   Index
-  Future<Response> deletePresetWithHttpInfo(int id,) async {
+  FutureOr<Response> deletePresetWithHttpInfo(int id,) async {
     // ignore: prefer_const_declarations
     final path = r'/presets/{id}'
       .replaceAll('{id}', id.toString());
@@ -135,7 +135,7 @@ class PresetsApi {
   ///
   /// * [int] id (required):
   ///   Index
-  Future<void> deletePreset(int id,) async {
+  FutureOr<void> deletePreset(int id,) async {
     final response = await deletePresetWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -147,7 +147,7 @@ class PresetsApi {
   /// Delete multiple existing presets.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> deletePresetsWithHttpInfo() async {
+  FutureOr<Response> deletePresetsWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/presets';
 
@@ -175,7 +175,7 @@ class PresetsApi {
   /// Delete Multiple Presets
   ///
   /// Delete multiple existing presets.
-  Future<void> deletePresets() async {
+  FutureOr<void> deletePresets() async {
     final response = await deletePresetsWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -198,7 +198,7 @@ class PresetsApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<Response> getPresetWithHttpInfo(int id, { List<String>? fields, String? meta, }) async {
+  FutureOr<Response> getPresetWithHttpInfo(int id, { List<String>? fields, String? meta, }) async {
     // ignore: prefer_const_declarations
     final path = r'/presets/{id}'
       .replaceAll('{id}', id.toString());
@@ -245,7 +245,7 @@ class PresetsApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<CreatePreset200Response?> getPreset(int id, { List<String>? fields, String? meta, }) async {
+  FutureOr<CreatePreset200Response?> getPreset(int id, { List<String>? fields, String? meta, }) async {
     final response = await getPresetWithHttpInfo(id,  fields: fields, meta: meta, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -291,7 +291,7 @@ class PresetsApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<Response> getPresetsWithHttpInfo({ List<String>? fields, int? limit, int? offset, int? page, List<String>? sort, Object? filter, String? search, String? meta, }) async {
+  FutureOr<Response> getPresetsWithHttpInfo({ List<String>? fields, int? limit, int? offset, int? page, List<String>? sort, Object? filter, String? search, String? meta, }) async {
     // ignore: prefer_const_declarations
     final path = r'/presets';
 
@@ -370,7 +370,7 @@ class PresetsApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<GetPresets200Response?> getPresets({ List<String>? fields, int? limit, int? offset, int? page, List<String>? sort, Object? filter, String? search, String? meta, }) async {
+  FutureOr<GetPresets200Response?> getPresets({ List<String>? fields, int? limit, int? offset, int? page, List<String>? sort, Object? filter, String? search, String? meta, }) async {
     final response = await getPresetsWithHttpInfo( fields: fields, limit: limit, offset: offset, page: page, sort: sort, filter: filter, search: search, meta: meta, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -403,7 +403,7 @@ class PresetsApi {
   ///   What metadata to return in the response.
   ///
   /// * [UpdatePresetRequest] updatePresetRequest:
-  Future<Response> updatePresetWithHttpInfo(int id, { List<String>? fields, String? meta, UpdatePresetRequest? updatePresetRequest, }) async {
+  FutureOr<Response> updatePresetWithHttpInfo(int id, { List<String>? fields, String? meta, UpdatePresetRequest? updatePresetRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/presets/{id}'
       .replaceAll('{id}', id.toString());
@@ -452,7 +452,7 @@ class PresetsApi {
   ///   What metadata to return in the response.
   ///
   /// * [UpdatePresetRequest] updatePresetRequest:
-  Future<CreatePreset200Response?> updatePreset(int id, { List<String>? fields, String? meta, UpdatePresetRequest? updatePresetRequest, }) async {
+  FutureOr<CreatePreset200Response?> updatePreset(int id, { List<String>? fields, String? meta, UpdatePresetRequest? updatePresetRequest, }) async {
     final response = await updatePresetWithHttpInfo(id,  fields: fields, meta: meta, updatePresetRequest: updatePresetRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -497,7 +497,7 @@ class PresetsApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [UpdatePresetsRequest] updatePresetsRequest:
-  Future<Response> updatePresetsWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdatePresetsRequest? updatePresetsRequest, }) async {
+  FutureOr<Response> updatePresetsWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdatePresetsRequest? updatePresetsRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/presets';
 
@@ -572,7 +572,7 @@ class PresetsApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [UpdatePresetsRequest] updatePresetsRequest:
-  Future<GetPresets200Response?> updatePresets({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdatePresetsRequest? updatePresetsRequest, }) async {
+  FutureOr<GetPresets200Response?> updatePresets({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdatePresetsRequest? updatePresetsRequest, }) async {
     final response = await updatePresetsWithHttpInfo( fields: fields, limit: limit, meta: meta, offset: offset, sort: sort, filter: filter, search: search, updatePresetsRequest: updatePresetsRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

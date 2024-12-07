@@ -21,7 +21,7 @@ void main() {
     //
     // Create a new folder.
     //
-    //Future<CreateFolder200Response> createFolder({ List<String> fields, String meta, CreateFolderRequest createFolderRequest }) async
+    //FutureOr<CreateFolder200Response> createFolder({ List<String> fields, String meta, CreateFolderRequest createFolderRequest }) async
     test('test createFolder', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Delete an existing folder
     //
-    //Future deleteFolder(String id) async
+    //FutureOr deleteFolder(String id) async
     test('test deleteFolder', () async {
       // TODO
     });
@@ -39,7 +39,7 @@ void main() {
     //
     // Delete multiple existing folders.
     //
-    //Future deleteFolders() async
+    //FutureOr deleteFolders() async
     test('test deleteFolders', () async {
       // TODO
     });
@@ -48,7 +48,7 @@ void main() {
     //
     // Retrieve a single folder by unique identifier.
     //
-    //Future<CreateFolder200Response> getFolder(String id, { List<String> fields, String meta }) async
+    //FutureOr<CreateFolder200Response> getFolder(String id, { List<String> fields, String meta }) async
     test('test getFolder', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
     //
     // List the folders.
     //
-    //Future<GetFolders200Response> getFolders({ List<String> fields, int limit, int offset, List<String> sort, Object filter, String search, String meta }) async
+    //FutureOr<GetFolders200Response> getFolders({ List<String> fields, int limit, int offset, List<String> sort, Object filter, String search, String meta }) async
     test('test getFolders', () async {
       // TODO
     });
@@ -66,7 +66,7 @@ void main() {
     //
     // Update an existing folder
     //
-    //Future<CreateFolder200Response> updateFolder(String id, { List<String> fields, String meta, UpdateFolderRequest updateFolderRequest }) async
+    //FutureOr<CreateFolder200Response> updateFolder(String id, { List<String> fields, String meta, UpdateFolderRequest updateFolderRequest }) async
     test('test updateFolder', () async {
       // TODO
     });
@@ -75,7 +75,7 @@ void main() {
     //
     // Update multiple folders at the same time.
     //
-    //Future<GetFolders200Response> updateFolders({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, UpdateFoldersRequest updateFoldersRequest }) async
+    //FutureOr<GetFolders200Response> updateFolders({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, UpdateFoldersRequest updateFoldersRequest }) async
     test('test updateFolders', () async {
       // TODO
     });

@@ -21,7 +21,7 @@ void main() {
     //
     // Ping, pong. Ping.. pong.
     //
-    //Future<String> ping() async
+    //FutureOr<String> ping() async
     test('test ping', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Perform a system status check and return the options.
     //
-    //Future<ServerInfo200Response> serverInfo(int superAdminToken) async
+    //FutureOr<ServerInfo200Response> serverInfo(int superAdminToken) async
     test('test serverInfo', () async {
       // TODO
     });

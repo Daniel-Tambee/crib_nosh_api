@@ -25,7 +25,7 @@ class UsersApi {
   /// Parameters:
   ///
   /// * [AcceptInviteRequest] acceptInviteRequest (required):
-  Future<Response> acceptInviteWithHttpInfo(AcceptInviteRequest acceptInviteRequest,) async {
+  FutureOr<Response> acceptInviteWithHttpInfo(AcceptInviteRequest acceptInviteRequest,) async {
     // ignore: prefer_const_declarations
     final path = r'/users/invite/accept';
 
@@ -57,7 +57,7 @@ class UsersApi {
   /// Parameters:
   ///
   /// * [AcceptInviteRequest] acceptInviteRequest (required):
-  Future<CreateUser200Response?> acceptInvite(AcceptInviteRequest acceptInviteRequest,) async {
+  FutureOr<CreateUser200Response?> acceptInvite(AcceptInviteRequest acceptInviteRequest,) async {
     final response = await acceptInviteWithHttpInfo(acceptInviteRequest,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -84,7 +84,7 @@ class UsersApi {
   ///   What metadata to return in the response.
   ///
   /// * [Users] users:
-  Future<Response> createUserWithHttpInfo({ String? meta, Users? users, }) async {
+  FutureOr<Response> createUserWithHttpInfo({ String? meta, Users? users, }) async {
     // ignore: prefer_const_declarations
     final path = r'/users';
 
@@ -123,7 +123,7 @@ class UsersApi {
   ///   What metadata to return in the response.
   ///
   /// * [Users] users:
-  Future<CreateUser200Response?> createUser({ String? meta, Users? users, }) async {
+  FutureOr<CreateUser200Response?> createUser({ String? meta, Users? users, }) async {
     final response = await createUserWithHttpInfo( meta: meta, users: users, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -148,7 +148,7 @@ class UsersApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier for the object.
-  Future<Response> deleteUserWithHttpInfo(String id,) async {
+  FutureOr<Response> deleteUserWithHttpInfo(String id,) async {
     // ignore: prefer_const_declarations
     final path = r'/users/{id}'
       .replaceAll('{id}', id);
@@ -182,7 +182,7 @@ class UsersApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier for the object.
-  Future<void> deleteUser(String id,) async {
+  FutureOr<void> deleteUser(String id,) async {
     final response = await deleteUserWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -194,7 +194,7 @@ class UsersApi {
   /// Delete multiple existing users.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> deleteUsersWithHttpInfo() async {
+  FutureOr<Response> deleteUsersWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/users';
 
@@ -222,7 +222,7 @@ class UsersApi {
   /// Delete Multiple Users
   ///
   /// Delete multiple existing users.
-  Future<void> deleteUsers() async {
+  FutureOr<void> deleteUsers() async {
     final response = await deleteUsersWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -242,7 +242,7 @@ class UsersApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<Response> getMeWithHttpInfo({ List<String>? fields, String? meta, }) async {
+  FutureOr<Response> getMeWithHttpInfo({ List<String>? fields, String? meta, }) async {
     // ignore: prefer_const_declarations
     final path = r'/users/me';
 
@@ -285,7 +285,7 @@ class UsersApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<CreateUser200Response?> getMe({ List<String>? fields, String? meta, }) async {
+  FutureOr<CreateUser200Response?> getMe({ List<String>? fields, String? meta, }) async {
     final response = await getMeWithHttpInfo( fields: fields, meta: meta, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -316,7 +316,7 @@ class UsersApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<Response> getUserWithHttpInfo(String id, { List<String>? fields, String? meta, }) async {
+  FutureOr<Response> getUserWithHttpInfo(String id, { List<String>? fields, String? meta, }) async {
     // ignore: prefer_const_declarations
     final path = r'/users/{id}'
       .replaceAll('{id}', id);
@@ -363,7 +363,7 @@ class UsersApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<CreateUser200Response?> getUser(String id, { List<String>? fields, String? meta, }) async {
+  FutureOr<CreateUser200Response?> getUser(String id, { List<String>? fields, String? meta, }) async {
     final response = await getUserWithHttpInfo(id,  fields: fields, meta: meta, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -406,7 +406,7 @@ class UsersApi {
   ///
   /// * [String] search:
   ///   Filter by items that contain the given search query in one of their fields.
-  Future<Response> getUsersWithHttpInfo({ List<String>? fields, int? limit, int? offset, String? meta, List<String>? sort, Object? filter, String? search, }) async {
+  FutureOr<Response> getUsersWithHttpInfo({ List<String>? fields, int? limit, int? offset, String? meta, List<String>? sort, Object? filter, String? search, }) async {
     // ignore: prefer_const_declarations
     final path = r'/users';
 
@@ -479,7 +479,7 @@ class UsersApi {
   ///
   /// * [String] search:
   ///   Filter by items that contain the given search query in one of their fields.
-  Future<GetUsers200Response?> getUsers({ List<String>? fields, int? limit, int? offset, String? meta, List<String>? sort, Object? filter, String? search, }) async {
+  FutureOr<GetUsers200Response?> getUsers({ List<String>? fields, int? limit, int? offset, String? meta, List<String>? sort, Object? filter, String? search, }) async {
     final response = await getUsersWithHttpInfo( fields: fields, limit: limit, offset: offset, meta: meta, sort: sort, filter: filter, search: search, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -503,7 +503,7 @@ class UsersApi {
   /// Parameters:
   ///
   /// * [InviteRequest] inviteRequest:
-  Future<Response> inviteWithHttpInfo({ InviteRequest? inviteRequest, }) async {
+  FutureOr<Response> inviteWithHttpInfo({ InviteRequest? inviteRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/users/invite';
 
@@ -535,7 +535,7 @@ class UsersApi {
   /// Parameters:
   ///
   /// * [InviteRequest] inviteRequest:
-  Future<CreateUser200Response?> invite({ InviteRequest? inviteRequest, }) async {
+  FutureOr<CreateUser200Response?> invite({ InviteRequest? inviteRequest, }) async {
     final response = await inviteWithHttpInfo( inviteRequest: inviteRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -555,7 +555,7 @@ class UsersApi {
   /// Disables two-factor authentication for the currently authenticated user.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> meTfaDisableWithHttpInfo() async {
+  FutureOr<Response> meTfaDisableWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/users/me/tfa/disable';
 
@@ -583,7 +583,7 @@ class UsersApi {
   /// Disable 2FA
   ///
   /// Disables two-factor authentication for the currently authenticated user.
-  Future<void> meTfaDisable() async {
+  FutureOr<void> meTfaDisable() async {
     final response = await meTfaDisableWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -595,7 +595,7 @@ class UsersApi {
   /// Enables two-factor authentication for the currently authenticated user.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> meTfaEnableWithHttpInfo() async {
+  FutureOr<Response> meTfaEnableWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/users/me/tfa/enable';
 
@@ -623,7 +623,7 @@ class UsersApi {
   /// Enable 2FA
   ///
   /// Enables two-factor authentication for the currently authenticated user.
-  Future<void> meTfaEnable() async {
+  FutureOr<void> meTfaEnable() async {
     final response = await meTfaEnableWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -639,7 +639,7 @@ class UsersApi {
   /// Parameters:
   ///
   /// * [UpdateLastUsedPageMeRequest] updateLastUsedPageMeRequest:
-  Future<Response> updateLastUsedPageMeWithHttpInfo({ UpdateLastUsedPageMeRequest? updateLastUsedPageMeRequest, }) async {
+  FutureOr<Response> updateLastUsedPageMeWithHttpInfo({ UpdateLastUsedPageMeRequest? updateLastUsedPageMeRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/users/me/track/page';
 
@@ -671,7 +671,7 @@ class UsersApi {
   /// Parameters:
   ///
   /// * [UpdateLastUsedPageMeRequest] updateLastUsedPageMeRequest:
-  Future<void> updateLastUsedPageMe({ UpdateLastUsedPageMeRequest? updateLastUsedPageMeRequest, }) async {
+  FutureOr<void> updateLastUsedPageMe({ UpdateLastUsedPageMeRequest? updateLastUsedPageMeRequest, }) async {
     final response = await updateLastUsedPageMeWithHttpInfo( updateLastUsedPageMeRequest: updateLastUsedPageMeRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -683,7 +683,7 @@ class UsersApi {
   /// Update the currently authenticated user.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> updateMeWithHttpInfo() async {
+  FutureOr<Response> updateMeWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/users/me';
 
@@ -711,7 +711,7 @@ class UsersApi {
   /// Update Current User
   ///
   /// Update the currently authenticated user.
-  Future<CreateUser200Response?> updateMe() async {
+  FutureOr<CreateUser200Response?> updateMe() async {
     final response = await updateMeWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -744,7 +744,7 @@ class UsersApi {
   ///   What metadata to return in the response.
   ///
   /// * [Users] users:
-  Future<Response> updateUserWithHttpInfo(String id, { List<String>? fields, String? meta, Users? users, }) async {
+  FutureOr<Response> updateUserWithHttpInfo(String id, { List<String>? fields, String? meta, Users? users, }) async {
     // ignore: prefer_const_declarations
     final path = r'/users/{id}'
       .replaceAll('{id}', id);
@@ -793,7 +793,7 @@ class UsersApi {
   ///   What metadata to return in the response.
   ///
   /// * [Users] users:
-  Future<ServerInfo200Response?> updateUser(String id, { List<String>? fields, String? meta, Users? users, }) async {
+  FutureOr<ServerInfo200Response?> updateUser(String id, { List<String>? fields, String? meta, Users? users, }) async {
     final response = await updateUserWithHttpInfo(id,  fields: fields, meta: meta, users: users, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -838,7 +838,7 @@ class UsersApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [UpdateUsersRequest] updateUsersRequest:
-  Future<Response> updateUsersWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateUsersRequest? updateUsersRequest, }) async {
+  FutureOr<Response> updateUsersWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateUsersRequest? updateUsersRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/users';
 
@@ -913,7 +913,7 @@ class UsersApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [UpdateUsersRequest] updateUsersRequest:
-  Future<GetUsers200Response?> updateUsers({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateUsersRequest? updateUsersRequest, }) async {
+  FutureOr<GetUsers200Response?> updateUsers({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateUsersRequest? updateUsersRequest, }) async {
     final response = await updateUsersWithHttpInfo( fields: fields, limit: limit, meta: meta, offset: offset, sort: sort, filter: filter, search: search, updateUsersRequest: updateUsersRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

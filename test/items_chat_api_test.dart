@@ -21,7 +21,7 @@ void main() {
     //
     // Create a new Chat item.
     //
-    //Future<CreateItemsChat200Response> createItemsChat({ String meta, CreateItemsChatRequest createItemsChatRequest }) async
+    //FutureOr<CreateItemsChat200Response> createItemsChat({ String meta, CreateItemsChatRequest createItemsChatRequest }) async
     test('test createItemsChat', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Delete multiple existing Chat items.
     //
-    //Future deleteItemsChat() async
+    //FutureOr deleteItemsChat() async
     test('test deleteItemsChat', () async {
       // TODO
     });
@@ -39,7 +39,7 @@ void main() {
     //
     // Delete an existing Chat item.
     //
-    //Future deleteSingleItemsChat(ReadSingleItemsCuisineIdParameter id) async
+    //FutureOr deleteSingleItemsChat(ReadSingleItemsCuisineIdParameter id) async
     test('test deleteSingleItemsChat', () async {
       // TODO
     });
@@ -48,7 +48,7 @@ void main() {
     //
     // List the Chat items.
     //
-    //Future<ReadItemsChat200Response> readItemsChat({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
+    //FutureOr<ReadItemsChat200Response> readItemsChat({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
     test('test readItemsChat', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
     //
     // Retrieve a single Chat item by unique identifier.
     //
-    //Future<ReadSingleItemsChat200Response> readSingleItemsChat(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
+    //FutureOr<ReadSingleItemsChat200Response> readSingleItemsChat(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
     test('test readSingleItemsChat', () async {
       // TODO
     });
@@ -66,7 +66,7 @@ void main() {
     //
     // Update multiple Chat items at the same time.
     //
-    //Future<UpdateItemsChat200Response> updateItemsChat({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsChatRequest createItemsChatRequest }) async
+    //FutureOr<UpdateItemsChat200Response> updateItemsChat({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsChatRequest createItemsChatRequest }) async
     test('test updateItemsChat', () async {
       // TODO
     });
@@ -75,7 +75,7 @@ void main() {
     //
     // Update an existing Chat item.
     //
-    //Future<ReadSingleItemsChat200Response> updateSingleItemsChat(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsChat itemsChat }) async
+    //FutureOr<ReadSingleItemsChat200Response> updateSingleItemsChat(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsChat itemsChat }) async
     test('test updateSingleItemsChat', () async {
       // TODO
     });

@@ -21,7 +21,7 @@ void main() {
     //
     // Create a new field in a given collection.
     //
-    //Future<CreateField200Response> createField(String collection, { CreateFieldRequest createFieldRequest }) async
+    //FutureOr<CreateField200Response> createField(String collection, { CreateFieldRequest createFieldRequest }) async
     test('test createField', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Delete an existing field.
     //
-    //Future deleteField(String collection, String id) async
+    //FutureOr deleteField(String collection, String id) async
     test('test deleteField', () async {
       // TODO
     });
@@ -39,7 +39,7 @@ void main() {
     //
     // Retrieves the details of a single field in a given collection.
     //
-    //Future<CreateField200Response> getCollectionField(String collection, String id) async
+    //FutureOr<CreateField200Response> getCollectionField(String collection, String id) async
     test('test getCollectionField', () async {
       // TODO
     });
@@ -48,7 +48,7 @@ void main() {
     //
     // Returns a list of the fields available in the given collection.
     //
-    //Future<GetFields200Response> getCollectionFields(String collection, { List<String> sort }) async
+    //FutureOr<GetFields200Response> getCollectionFields(String collection, { List<String> sort }) async
     test('test getCollectionFields', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
     //
     // Returns a list of the fields available in the project.
     //
-    //Future<GetFields200Response> getFields({ int limit, List<String> sort }) async
+    //FutureOr<GetFields200Response> getFields({ int limit, List<String> sort }) async
     test('test getFields', () async {
       // TODO
     });
@@ -66,7 +66,7 @@ void main() {
     //
     // Update an existing field.
     //
-    //Future<CreateField200Response> updateField(String collection, String id, { UpdateFieldRequest updateFieldRequest }) async
+    //FutureOr<CreateField200Response> updateField(String collection, String id, { UpdateFieldRequest updateFieldRequest }) async
     test('test updateField', () async {
       // TODO
     });

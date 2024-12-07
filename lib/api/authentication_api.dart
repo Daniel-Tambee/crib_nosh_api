@@ -25,7 +25,7 @@ class AuthenticationApi {
   /// Parameters:
   ///
   /// * [LoginRequest] loginRequest:
-  Future<Response> loginWithHttpInfo({ LoginRequest? loginRequest, }) async {
+  FutureOr<Response> loginWithHttpInfo({ LoginRequest? loginRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/login';
 
@@ -57,7 +57,7 @@ class AuthenticationApi {
   /// Parameters:
   ///
   /// * [LoginRequest] loginRequest:
-  Future<Login200Response?> login({ LoginRequest? loginRequest, }) async {
+  FutureOr<Login200Response?> login({ LoginRequest? loginRequest, }) async {
     final response = await loginWithHttpInfo( loginRequest: loginRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -81,7 +81,7 @@ class AuthenticationApi {
   /// Parameters:
   ///
   /// * [LogoutRequest] logoutRequest:
-  Future<Response> logoutWithHttpInfo({ LogoutRequest? logoutRequest, }) async {
+  FutureOr<Response> logoutWithHttpInfo({ LogoutRequest? logoutRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/logout';
 
@@ -113,7 +113,7 @@ class AuthenticationApi {
   /// Parameters:
   ///
   /// * [LogoutRequest] logoutRequest:
-  Future<void> logout({ LogoutRequest? logoutRequest, }) async {
+  FutureOr<void> logout({ LogoutRequest? logoutRequest, }) async {
     final response = await logoutWithHttpInfo( logoutRequest: logoutRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -125,7 +125,7 @@ class AuthenticationApi {
   /// List configured OAuth providers.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> oauthWithHttpInfo() async {
+  FutureOr<Response> oauthWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/auth/oauth';
 
@@ -153,7 +153,7 @@ class AuthenticationApi {
   /// List OAuth Providers
   ///
   /// List configured OAuth providers.
-  Future<Oauth200Response?> oauth() async {
+  FutureOr<Oauth200Response?> oauth() async {
     final response = await oauthWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -181,7 +181,7 @@ class AuthenticationApi {
   ///
   /// * [String] redirect:
   ///   Where to redirect on successful login.<br/>If set the authentication details are set inside cookies otherwise a JSON is returned.
-  Future<Response> oauthProviderWithHttpInfo(String provider, { String? redirect, }) async {
+  FutureOr<Response> oauthProviderWithHttpInfo(String provider, { String? redirect, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/oauth/{provider}'
       .replaceAll('{provider}', provider);
@@ -222,7 +222,7 @@ class AuthenticationApi {
   ///
   /// * [String] redirect:
   ///   Where to redirect on successful login.<br/>If set the authentication details are set inside cookies otherwise a JSON is returned.
-  Future<OauthProvider200Response?> oauthProvider(String provider, { String? redirect, }) async {
+  FutureOr<OauthProvider200Response?> oauthProvider(String provider, { String? redirect, }) async {
     final response = await oauthProviderWithHttpInfo(provider,  redirect: redirect, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -246,7 +246,7 @@ class AuthenticationApi {
   /// Parameters:
   ///
   /// * [PasswordRequestRequest] passwordRequestRequest:
-  Future<Response> passwordRequestWithHttpInfo({ PasswordRequestRequest? passwordRequestRequest, }) async {
+  FutureOr<Response> passwordRequestWithHttpInfo({ PasswordRequestRequest? passwordRequestRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/password/request';
 
@@ -278,7 +278,7 @@ class AuthenticationApi {
   /// Parameters:
   ///
   /// * [PasswordRequestRequest] passwordRequestRequest:
-  Future<void> passwordRequest({ PasswordRequestRequest? passwordRequestRequest, }) async {
+  FutureOr<void> passwordRequest({ PasswordRequestRequest? passwordRequestRequest, }) async {
     final response = await passwordRequestWithHttpInfo( passwordRequestRequest: passwordRequestRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -294,7 +294,7 @@ class AuthenticationApi {
   /// Parameters:
   ///
   /// * [PasswordResetRequest] passwordResetRequest:
-  Future<Response> passwordResetWithHttpInfo({ PasswordResetRequest? passwordResetRequest, }) async {
+  FutureOr<Response> passwordResetWithHttpInfo({ PasswordResetRequest? passwordResetRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/password/reset';
 
@@ -326,7 +326,7 @@ class AuthenticationApi {
   /// Parameters:
   ///
   /// * [PasswordResetRequest] passwordResetRequest:
-  Future<void> passwordReset({ PasswordResetRequest? passwordResetRequest, }) async {
+  FutureOr<void> passwordReset({ PasswordResetRequest? passwordResetRequest, }) async {
     final response = await passwordResetWithHttpInfo( passwordResetRequest: passwordResetRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -342,7 +342,7 @@ class AuthenticationApi {
   /// Parameters:
   ///
   /// * [RefreshRequest] refreshRequest:
-  Future<Response> refreshWithHttpInfo({ RefreshRequest? refreshRequest, }) async {
+  FutureOr<Response> refreshWithHttpInfo({ RefreshRequest? refreshRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/refresh';
 
@@ -374,7 +374,7 @@ class AuthenticationApi {
   /// Parameters:
   ///
   /// * [RefreshRequest] refreshRequest:
-  Future<Refresh200Response?> refresh({ RefreshRequest? refreshRequest, }) async {
+  FutureOr<Refresh200Response?> refresh({ RefreshRequest? refreshRequest, }) async {
     final response = await refreshWithHttpInfo( refreshRequest: refreshRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

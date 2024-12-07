@@ -31,7 +31,7 @@ class RelationsApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreateRelationRequest] createRelationRequest:
-  Future<Response> createRelationWithHttpInfo({ List<String>? fields, String? meta, CreateRelationRequest? createRelationRequest, }) async {
+  FutureOr<Response> createRelationWithHttpInfo({ List<String>? fields, String? meta, CreateRelationRequest? createRelationRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/relations';
 
@@ -76,7 +76,7 @@ class RelationsApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreateRelationRequest] createRelationRequest:
-  Future<CreateRelation200Response?> createRelation({ List<String>? fields, String? meta, CreateRelationRequest? createRelationRequest, }) async {
+  FutureOr<CreateRelation200Response?> createRelation({ List<String>? fields, String? meta, CreateRelationRequest? createRelationRequest, }) async {
     final response = await createRelationWithHttpInfo( fields: fields, meta: meta, createRelationRequest: createRelationRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -101,7 +101,7 @@ class RelationsApi {
   ///
   /// * [int] id (required):
   ///   Index
-  Future<Response> deleteRelationWithHttpInfo(int id,) async {
+  FutureOr<Response> deleteRelationWithHttpInfo(int id,) async {
     // ignore: prefer_const_declarations
     final path = r'/relations/{id}'
       .replaceAll('{id}', id.toString());
@@ -135,7 +135,7 @@ class RelationsApi {
   ///
   /// * [int] id (required):
   ///   Index
-  Future<void> deleteRelation(int id,) async {
+  FutureOr<void> deleteRelation(int id,) async {
     final response = await deleteRelationWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -158,7 +158,7 @@ class RelationsApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<Response> getRelationWithHttpInfo(int id, { List<String>? fields, String? meta, }) async {
+  FutureOr<Response> getRelationWithHttpInfo(int id, { List<String>? fields, String? meta, }) async {
     // ignore: prefer_const_declarations
     final path = r'/relations/{id}'
       .replaceAll('{id}', id.toString());
@@ -205,7 +205,7 @@ class RelationsApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<CreateRelation200Response?> getRelation(int id, { List<String>? fields, String? meta, }) async {
+  FutureOr<CreateRelation200Response?> getRelation(int id, { List<String>? fields, String? meta, }) async {
     final response = await getRelationWithHttpInfo(id,  fields: fields, meta: meta, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -251,7 +251,7 @@ class RelationsApi {
   ///
   /// * [int] page:
   ///   Cursor for use in pagination. Often used in combination with limit.
-  Future<Response> getRelationsWithHttpInfo({ List<String>? fields, int? limit, int? offset, String? meta, List<String>? sort, Object? filter, String? search, int? page, }) async {
+  FutureOr<Response> getRelationsWithHttpInfo({ List<String>? fields, int? limit, int? offset, String? meta, List<String>? sort, Object? filter, String? search, int? page, }) async {
     // ignore: prefer_const_declarations
     final path = r'/relations';
 
@@ -330,7 +330,7 @@ class RelationsApi {
   ///
   /// * [int] page:
   ///   Cursor for use in pagination. Often used in combination with limit.
-  Future<GetRelations200Response?> getRelations({ List<String>? fields, int? limit, int? offset, String? meta, List<String>? sort, Object? filter, String? search, int? page, }) async {
+  FutureOr<GetRelations200Response?> getRelations({ List<String>? fields, int? limit, int? offset, String? meta, List<String>? sort, Object? filter, String? search, int? page, }) async {
     final response = await getRelationsWithHttpInfo( fields: fields, limit: limit, offset: offset, meta: meta, sort: sort, filter: filter, search: search, page: page, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -363,7 +363,7 @@ class RelationsApi {
   ///   What metadata to return in the response.
   ///
   /// * [UpdateRelationRequest] updateRelationRequest:
-  Future<Response> updateRelationWithHttpInfo(int id, { List<String>? fields, String? meta, UpdateRelationRequest? updateRelationRequest, }) async {
+  FutureOr<Response> updateRelationWithHttpInfo(int id, { List<String>? fields, String? meta, UpdateRelationRequest? updateRelationRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/relations/{id}'
       .replaceAll('{id}', id.toString());
@@ -412,7 +412,7 @@ class RelationsApi {
   ///   What metadata to return in the response.
   ///
   /// * [UpdateRelationRequest] updateRelationRequest:
-  Future<CreateRelation200Response?> updateRelation(int id, { List<String>? fields, String? meta, UpdateRelationRequest? updateRelationRequest, }) async {
+  FutureOr<CreateRelation200Response?> updateRelation(int id, { List<String>? fields, String? meta, UpdateRelationRequest? updateRelationRequest, }) async {
     final response = await updateRelationWithHttpInfo(id,  fields: fields, meta: meta, updateRelationRequest: updateRelationRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

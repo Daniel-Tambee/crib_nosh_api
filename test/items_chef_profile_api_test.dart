@@ -21,7 +21,7 @@ void main() {
     //
     // Create a new ChefProfile item.
     //
-    //Future<CreateItemsChefProfile200Response> createItemsChefProfile({ String meta, CreateItemsChefProfileRequest createItemsChefProfileRequest }) async
+    //FutureOr<CreateItemsChefProfile200Response> createItemsChefProfile({ String meta, CreateItemsChefProfileRequest createItemsChefProfileRequest }) async
     test('test createItemsChefProfile', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Delete multiple existing ChefProfile items.
     //
-    //Future deleteItemsChefProfile() async
+    //FutureOr deleteItemsChefProfile() async
     test('test deleteItemsChefProfile', () async {
       // TODO
     });
@@ -39,7 +39,7 @@ void main() {
     //
     // Delete an existing ChefProfile item.
     //
-    //Future deleteSingleItemsChefProfile(ReadSingleItemsCuisineIdParameter id) async
+    //FutureOr deleteSingleItemsChefProfile(ReadSingleItemsCuisineIdParameter id) async
     test('test deleteSingleItemsChefProfile', () async {
       // TODO
     });
@@ -48,7 +48,7 @@ void main() {
     //
     // List the ChefProfile items.
     //
-    //Future<ReadItemsChefProfile200Response> readItemsChefProfile({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
+    //FutureOr<ReadItemsChefProfile200Response> readItemsChefProfile({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
     test('test readItemsChefProfile', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
     //
     // Retrieve a single ChefProfile item by unique identifier.
     //
-    //Future<ReadSingleItemsChefProfile200Response> readSingleItemsChefProfile(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
+    //FutureOr<ReadSingleItemsChefProfile200Response> readSingleItemsChefProfile(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
     test('test readSingleItemsChefProfile', () async {
       // TODO
     });
@@ -66,7 +66,7 @@ void main() {
     //
     // Update multiple ChefProfile items at the same time.
     //
-    //Future<UpdateItemsChefProfile200Response> updateItemsChefProfile({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsChefProfileRequest createItemsChefProfileRequest }) async
+    //FutureOr<UpdateItemsChefProfile200Response> updateItemsChefProfile({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsChefProfileRequest createItemsChefProfileRequest }) async
     test('test updateItemsChefProfile', () async {
       // TODO
     });
@@ -75,7 +75,7 @@ void main() {
     //
     // Update an existing ChefProfile item.
     //
-    //Future<ReadSingleItemsChefProfile200Response> updateSingleItemsChefProfile(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsChefProfile itemsChefProfile }) async
+    //FutureOr<ReadSingleItemsChefProfile200Response> updateSingleItemsChefProfile(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsChefProfile itemsChefProfile }) async
     test('test updateSingleItemsChefProfile', () async {
       // TODO
     });

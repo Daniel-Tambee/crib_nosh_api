@@ -25,7 +25,7 @@ class FilesApi {
   /// Parameters:
   ///
   /// * [CreateFileRequest] createFileRequest:
-  Future<Response> createFileWithHttpInfo({ CreateFileRequest? createFileRequest, }) async {
+  FutureOr<Response> createFileWithHttpInfo({ CreateFileRequest? createFileRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/files';
 
@@ -57,7 +57,7 @@ class FilesApi {
   /// Parameters:
   ///
   /// * [CreateFileRequest] createFileRequest:
-  Future<CreateFile200Response?> createFile({ CreateFileRequest? createFileRequest, }) async {
+  FutureOr<CreateFile200Response?> createFile({ CreateFileRequest? createFileRequest, }) async {
     final response = await createFileWithHttpInfo( createFileRequest: createFileRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -82,7 +82,7 @@ class FilesApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier for the object.
-  Future<Response> deleteFileWithHttpInfo(String id,) async {
+  FutureOr<Response> deleteFileWithHttpInfo(String id,) async {
     // ignore: prefer_const_declarations
     final path = r'/files/{id}'
       .replaceAll('{id}', id);
@@ -116,7 +116,7 @@ class FilesApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier for the object.
-  Future<void> deleteFile(String id,) async {
+  FutureOr<void> deleteFile(String id,) async {
     final response = await deleteFileWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -128,7 +128,7 @@ class FilesApi {
   /// Delete multiple existing files.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> deleteFilesWithHttpInfo() async {
+  FutureOr<Response> deleteFilesWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/files';
 
@@ -156,7 +156,7 @@ class FilesApi {
   /// Delete Multiple Files
   ///
   /// Delete multiple existing files.
-  Future<void> deleteFiles() async {
+  FutureOr<void> deleteFiles() async {
     final response = await deleteFilesWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -179,7 +179,7 @@ class FilesApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<Response> getFileWithHttpInfo(String id, { List<String>? fields, String? meta, }) async {
+  FutureOr<Response> getFileWithHttpInfo(String id, { List<String>? fields, String? meta, }) async {
     // ignore: prefer_const_declarations
     final path = r'/files/{id}'
       .replaceAll('{id}', id);
@@ -226,7 +226,7 @@ class FilesApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<CreateFile200Response?> getFile(String id, { List<String>? fields, String? meta, }) async {
+  FutureOr<CreateFile200Response?> getFile(String id, { List<String>? fields, String? meta, }) async {
     final response = await getFileWithHttpInfo(id,  fields: fields, meta: meta, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -269,7 +269,7 @@ class FilesApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<Response> getFilesWithHttpInfo({ List<String>? fields, int? limit, int? offset, List<String>? sort, Object? filter, String? search, String? meta, }) async {
+  FutureOr<Response> getFilesWithHttpInfo({ List<String>? fields, int? limit, int? offset, List<String>? sort, Object? filter, String? search, String? meta, }) async {
     // ignore: prefer_const_declarations
     final path = r'/files';
 
@@ -342,7 +342,7 @@ class FilesApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<GetFiles200Response?> getFiles({ List<String>? fields, int? limit, int? offset, List<String>? sort, Object? filter, String? search, String? meta, }) async {
+  FutureOr<GetFiles200Response?> getFiles({ List<String>? fields, int? limit, int? offset, List<String>? sort, Object? filter, String? search, String? meta, }) async {
     final response = await getFilesWithHttpInfo( fields: fields, limit: limit, offset: offset, sort: sort, filter: filter, search: search, meta: meta, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -390,7 +390,7 @@ class FilesApi {
   ///
   /// * [List<String>] tags:
   ///   Tags for the file. Is automatically populated based on Exif data for images.
-  Future<Response> updateFileWithHttpInfo(String id, Object file, { List<String>? fields, String? meta, String? title, String? filenameDownload, String? description, UpdateFileRequestFolder? folder, List<String>? tags, }) async {
+  FutureOr<Response> updateFileWithHttpInfo(String id, Object file, { List<String>? fields, String? meta, String? title, String? filenameDownload, String? description, UpdateFileRequestFolder? folder, List<String>? tags, }) async {
     // ignore: prefer_const_declarations
     final path = r'/files/{id}'
       .replaceAll('{id}', id);
@@ -412,7 +412,7 @@ class FilesApi {
     const contentTypes = <String>['multipart/data', 'application/json'];
 
     bool hasFields = false;
-    final mp = MultipartRequest('PATCH');
+    final mp = MultipartRequest('PATCH', Uri.parse(path));
     if (title != null) {
       hasFields = true;
       mp.fields[r'title'] = parameterToString(title);
@@ -481,7 +481,7 @@ class FilesApi {
   ///
   /// * [List<String>] tags:
   ///   Tags for the file. Is automatically populated based on Exif data for images.
-  Future<CreateFile200Response?> updateFile(String id, Object file, { List<String>? fields, String? meta, String? title, String? filenameDownload, String? description, UpdateFileRequestFolder? folder, List<String>? tags, }) async {
+  FutureOr<CreateFile200Response?> updateFile(String id, Object file, { List<String>? fields, String? meta, String? title, String? filenameDownload, String? description, UpdateFileRequestFolder? folder, List<String>? tags, }) async {
     final response = await updateFileWithHttpInfo(id, file,  fields: fields, meta: meta, title: title, filenameDownload: filenameDownload, description: description, folder: folder, tags: tags, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -526,7 +526,7 @@ class FilesApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [UpdateFilesRequest] updateFilesRequest:
-  Future<Response> updateFilesWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateFilesRequest? updateFilesRequest, }) async {
+  FutureOr<Response> updateFilesWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateFilesRequest? updateFilesRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/files';
 
@@ -601,7 +601,7 @@ class FilesApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [UpdateFilesRequest] updateFilesRequest:
-  Future<GetFiles200Response?> updateFiles({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateFilesRequest? updateFilesRequest, }) async {
+  FutureOr<GetFiles200Response?> updateFiles({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateFilesRequest? updateFilesRequest, }) async {
     final response = await updateFilesWithHttpInfo( fields: fields, limit: limit, meta: meta, offset: offset, sort: sort, filter: filter, search: search, updateFilesRequest: updateFilesRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

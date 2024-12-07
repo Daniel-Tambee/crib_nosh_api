@@ -35,7 +35,7 @@ class AssetsApi {
   ///
   /// * [bool] download:
   ///   Download the asset to your computer
-  Future<Response> getAssetWithHttpInfo(String id, { String? key, String? transforms, bool? download, }) async {
+  FutureOr<Response> getAssetWithHttpInfo(String id, { String? key, String? transforms, bool? download, }) async {
     // ignore: prefer_const_declarations
     final path = r'/assets/{id}'
       .replaceAll('{id}', id);
@@ -88,7 +88,7 @@ class AssetsApi {
   ///
   /// * [bool] download:
   ///   Download the asset to your computer
-  Future<String?> getAsset(String id, { String? key, String? transforms, bool? download, }) async {
+  FutureOr<String?> getAsset(String id, { String? key, String? transforms, bool? download, }) async {
     final response = await getAssetWithHttpInfo(id,  key: key, transforms: transforms, download: download, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

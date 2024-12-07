@@ -21,7 +21,7 @@ void main() {
     //
     // Returns a list of activity actions.
     //
-    //Future<GetActivities200Response> getActivities({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
+    //FutureOr<GetActivities200Response> getActivities({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
     test('test getActivities', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Retrieves the details of an existing activity action. Provide the primary key of the activity action and Directus will return the corresponding information.
     //
-    //Future<GetActivity200Response> getActivity(int id, { List<String> fields, String meta }) async
+    //FutureOr<GetActivity200Response> getActivity(int id, { List<String> fields, String meta }) async
     test('test getActivity', () async {
       // TODO
     });

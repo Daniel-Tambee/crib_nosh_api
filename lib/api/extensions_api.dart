@@ -21,7 +21,7 @@ class ExtensionsApi {
   /// List the installed extensions and their configuration in the project.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> listExtensionsWithHttpInfo() async {
+  FutureOr<Response> listExtensionsWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/extensions';
 
@@ -49,7 +49,7 @@ class ExtensionsApi {
   /// List Extensions
   ///
   /// List the installed extensions and their configuration in the project.
-  Future<ListExtensions200Response?> listExtensions() async {
+  FutureOr<ListExtensions200Response?> listExtensions() async {
     final response = await listExtensionsWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -77,7 +77,7 @@ class ExtensionsApi {
   /// * [String] name (required):
   ///
   /// * [UpdateExtensionsRequest] updateExtensionsRequest:
-  Future<Response> updateExtensionBundleWithHttpInfo(String bundle, String name, { UpdateExtensionsRequest? updateExtensionsRequest, }) async {
+  FutureOr<Response> updateExtensionBundleWithHttpInfo(String bundle, String name, { UpdateExtensionsRequest? updateExtensionsRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/extensions/{bundle}/{name}'
       .replaceAll('{bundle}', bundle)
@@ -115,7 +115,7 @@ class ExtensionsApi {
   /// * [String] name (required):
   ///
   /// * [UpdateExtensionsRequest] updateExtensionsRequest:
-  Future<UpdateExtensions200Response?> updateExtensionBundle(String bundle, String name, { UpdateExtensionsRequest? updateExtensionsRequest, }) async {
+  FutureOr<UpdateExtensions200Response?> updateExtensionBundle(String bundle, String name, { UpdateExtensionsRequest? updateExtensionsRequest, }) async {
     final response = await updateExtensionBundleWithHttpInfo(bundle, name,  updateExtensionsRequest: updateExtensionsRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -141,7 +141,7 @@ class ExtensionsApi {
   /// * [String] name (required):
   ///
   /// * [UpdateExtensionsRequest] updateExtensionsRequest:
-  Future<Response> updateExtensionsWithHttpInfo(String name, { UpdateExtensionsRequest? updateExtensionsRequest, }) async {
+  FutureOr<Response> updateExtensionsWithHttpInfo(String name, { UpdateExtensionsRequest? updateExtensionsRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/extensions/{name}'
       .replaceAll('{name}', name);
@@ -176,7 +176,7 @@ class ExtensionsApi {
   /// * [String] name (required):
   ///
   /// * [UpdateExtensionsRequest] updateExtensionsRequest:
-  Future<UpdateExtensions200Response?> updateExtensions(String name, { UpdateExtensionsRequest? updateExtensionsRequest, }) async {
+  FutureOr<UpdateExtensions200Response?> updateExtensions(String name, { UpdateExtensionsRequest? updateExtensionsRequest, }) async {
     final response = await updateExtensionsWithHttpInfo(name,  updateExtensionsRequest: updateExtensionsRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

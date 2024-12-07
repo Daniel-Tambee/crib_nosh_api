@@ -21,7 +21,7 @@ void main() {
     //
     // Create a new Admin item.
     //
-    //Future<CreateItemsAdmin200Response> createItemsAdmin({ String meta, CreateItemsAdminRequest createItemsAdminRequest }) async
+    //FutureOr<CreateItemsAdmin200Response> createItemsAdmin({ String meta, CreateItemsAdminRequest createItemsAdminRequest }) async
     test('test createItemsAdmin', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Delete multiple existing Admin items.
     //
-    //Future deleteItemsAdmin() async
+    //FutureOr deleteItemsAdmin() async
     test('test deleteItemsAdmin', () async {
       // TODO
     });
@@ -39,7 +39,7 @@ void main() {
     //
     // Delete an existing Admin item.
     //
-    //Future deleteSingleItemsAdmin(ReadSingleItemsCuisineIdParameter id) async
+    //FutureOr deleteSingleItemsAdmin(ReadSingleItemsCuisineIdParameter id) async
     test('test deleteSingleItemsAdmin', () async {
       // TODO
     });
@@ -48,7 +48,7 @@ void main() {
     //
     // List the Admin items.
     //
-    //Future<ReadItemsAdmin200Response> readItemsAdmin({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
+    //FutureOr<ReadItemsAdmin200Response> readItemsAdmin({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
     test('test readItemsAdmin', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
     //
     // Retrieve a single Admin item by unique identifier.
     //
-    //Future<ReadSingleItemsAdmin200Response> readSingleItemsAdmin(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
+    //FutureOr<ReadSingleItemsAdmin200Response> readSingleItemsAdmin(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
     test('test readSingleItemsAdmin', () async {
       // TODO
     });
@@ -66,7 +66,7 @@ void main() {
     //
     // Update multiple Admin items at the same time.
     //
-    //Future<UpdateItemsAdmin200Response> updateItemsAdmin({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsAdminRequest createItemsAdminRequest }) async
+    //FutureOr<UpdateItemsAdmin200Response> updateItemsAdmin({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsAdminRequest createItemsAdminRequest }) async
     test('test updateItemsAdmin', () async {
       // TODO
     });
@@ -75,7 +75,7 @@ void main() {
     //
     // Update an existing Admin item.
     //
-    //Future<ReadSingleItemsAdmin200Response> updateSingleItemsAdmin(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsAdmin itemsAdmin }) async
+    //FutureOr<ReadSingleItemsAdmin200Response> updateSingleItemsAdmin(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsAdmin itemsAdmin }) async
     test('test updateSingleItemsAdmin', () async {
       // TODO
     });

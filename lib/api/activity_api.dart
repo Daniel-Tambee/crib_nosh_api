@@ -44,7 +44,7 @@ class ActivityApi {
   ///
   /// * [String] search:
   ///   Filter by items that contain the given search query in one of their fields.
-  Future<Response> getActivitiesWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, }) async {
+  FutureOr<Response> getActivitiesWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, }) async {
     // ignore: prefer_const_declarations
     final path = r'/activity';
 
@@ -117,7 +117,7 @@ class ActivityApi {
   ///
   /// * [String] search:
   ///   Filter by items that contain the given search query in one of their fields.
-  Future<GetActivities200Response?> getActivities({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, }) async {
+  FutureOr<GetActivities200Response?> getActivities({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, }) async {
     final response = await getActivitiesWithHttpInfo( fields: fields, limit: limit, meta: meta, offset: offset, sort: sort, filter: filter, search: search, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -148,7 +148,7 @@ class ActivityApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<Response> getActivityWithHttpInfo(int id, { List<String>? fields, String? meta, }) async {
+  FutureOr<Response> getActivityWithHttpInfo(int id, { List<String>? fields, String? meta, }) async {
     // ignore: prefer_const_declarations
     final path = r'/activity/{id}'
       .replaceAll('{id}', id.toString());
@@ -195,7 +195,7 @@ class ActivityApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<GetActivity200Response?> getActivity(int id, { List<String>? fields, String? meta, }) async {
+  FutureOr<GetActivity200Response?> getActivity(int id, { List<String>? fields, String? meta, }) async {
     final response = await getActivityWithHttpInfo(id,  fields: fields, meta: meta, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

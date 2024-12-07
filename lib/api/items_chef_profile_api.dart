@@ -28,7 +28,7 @@ class ItemsChefProfileApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreateItemsChefProfileRequest] createItemsChefProfileRequest:
-  Future<Response> createItemsChefProfileWithHttpInfo({ String? meta, CreateItemsChefProfileRequest? createItemsChefProfileRequest, }) async {
+  FutureOr<Response> createItemsChefProfileWithHttpInfo({ String? meta, CreateItemsChefProfileRequest? createItemsChefProfileRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/ChefProfile';
 
@@ -67,7 +67,7 @@ class ItemsChefProfileApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreateItemsChefProfileRequest] createItemsChefProfileRequest:
-  Future<CreateItemsChefProfile200Response?> createItemsChefProfile({ String? meta, CreateItemsChefProfileRequest? createItemsChefProfileRequest, }) async {
+  FutureOr<CreateItemsChefProfile200Response?> createItemsChefProfile({ String? meta, CreateItemsChefProfileRequest? createItemsChefProfileRequest, }) async {
     final response = await createItemsChefProfileWithHttpInfo( meta: meta, createItemsChefProfileRequest: createItemsChefProfileRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -87,7 +87,7 @@ class ItemsChefProfileApi {
   /// Delete multiple existing ChefProfile items.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> deleteItemsChefProfileWithHttpInfo() async {
+  FutureOr<Response> deleteItemsChefProfileWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/items/ChefProfile';
 
@@ -115,7 +115,7 @@ class ItemsChefProfileApi {
   /// Delete Multiple Items
   ///
   /// Delete multiple existing ChefProfile items.
-  Future<void> deleteItemsChefProfile() async {
+  FutureOr<void> deleteItemsChefProfile() async {
     final response = await deleteItemsChefProfileWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -132,7 +132,7 @@ class ItemsChefProfileApi {
   ///
   /// * [ReadSingleItemsCuisineIdParameter] id (required):
   ///   Index of the item.
-  Future<Response> deleteSingleItemsChefProfileWithHttpInfo(ReadSingleItemsCuisineIdParameter id,) async {
+  FutureOr<Response> deleteSingleItemsChefProfileWithHttpInfo(ReadSingleItemsCuisineIdParameter id,) async {
     // ignore: prefer_const_declarations
     final path = r'/items/ChefProfile/{id}'
       .replaceAll('{id}', id.toString());
@@ -166,7 +166,7 @@ class ItemsChefProfileApi {
   ///
   /// * [ReadSingleItemsCuisineIdParameter] id (required):
   ///   Index of the item.
-  Future<void> deleteSingleItemsChefProfile(ReadSingleItemsCuisineIdParameter id,) async {
+  FutureOr<void> deleteSingleItemsChefProfile(ReadSingleItemsCuisineIdParameter id,) async {
     final response = await deleteSingleItemsChefProfileWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -201,7 +201,7 @@ class ItemsChefProfileApi {
   ///
   /// * [String] search:
   ///   Filter by items that contain the given search query in one of their fields.
-  Future<Response> readItemsChefProfileWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, }) async {
+  FutureOr<Response> readItemsChefProfileWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/ChefProfile';
 
@@ -274,7 +274,7 @@ class ItemsChefProfileApi {
   ///
   /// * [String] search:
   ///   Filter by items that contain the given search query in one of their fields.
-  Future<ReadItemsChefProfile200Response?> readItemsChefProfile({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, }) async {
+  FutureOr<ReadItemsChefProfile200Response?> readItemsChefProfile({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, }) async {
     final response = await readItemsChefProfileWithHttpInfo( fields: fields, limit: limit, meta: meta, offset: offset, sort: sort, filter: filter, search: search, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -308,7 +308,7 @@ class ItemsChefProfileApi {
   ///
   /// * [String] version:
   ///   Retrieve an item's state from a specific Content Version. The value corresponds to the \"key\" of the Content Version. 
-  Future<Response> readSingleItemsChefProfileWithHttpInfo(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, String? version, }) async {
+  FutureOr<Response> readSingleItemsChefProfileWithHttpInfo(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, String? version, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/ChefProfile/{id}'
       .replaceAll('{id}', id.toString());
@@ -361,7 +361,7 @@ class ItemsChefProfileApi {
   ///
   /// * [String] version:
   ///   Retrieve an item's state from a specific Content Version. The value corresponds to the \"key\" of the Content Version. 
-  Future<ReadSingleItemsChefProfile200Response?> readSingleItemsChefProfile(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, String? version, }) async {
+  FutureOr<ReadSingleItemsChefProfile200Response?> readSingleItemsChefProfile(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, String? version, }) async {
     final response = await readSingleItemsChefProfileWithHttpInfo(id,  fields: fields, meta: meta, version: version, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -406,7 +406,7 @@ class ItemsChefProfileApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [CreateItemsChefProfileRequest] createItemsChefProfileRequest:
-  Future<Response> updateItemsChefProfileWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, CreateItemsChefProfileRequest? createItemsChefProfileRequest, }) async {
+  FutureOr<Response> updateItemsChefProfileWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, CreateItemsChefProfileRequest? createItemsChefProfileRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/ChefProfile';
 
@@ -481,7 +481,7 @@ class ItemsChefProfileApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [CreateItemsChefProfileRequest] createItemsChefProfileRequest:
-  Future<UpdateItemsChefProfile200Response?> updateItemsChefProfile({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, CreateItemsChefProfileRequest? createItemsChefProfileRequest, }) async {
+  FutureOr<UpdateItemsChefProfile200Response?> updateItemsChefProfile({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, CreateItemsChefProfileRequest? createItemsChefProfileRequest, }) async {
     final response = await updateItemsChefProfileWithHttpInfo( fields: fields, limit: limit, meta: meta, offset: offset, sort: sort, filter: filter, search: search, createItemsChefProfileRequest: createItemsChefProfileRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -514,7 +514,7 @@ class ItemsChefProfileApi {
   ///   What metadata to return in the response.
   ///
   /// * [ItemsChefProfile] itemsChefProfile:
-  Future<Response> updateSingleItemsChefProfileWithHttpInfo(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, ItemsChefProfile? itemsChefProfile, }) async {
+  FutureOr<Response> updateSingleItemsChefProfileWithHttpInfo(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, ItemsChefProfile? itemsChefProfile, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/ChefProfile/{id}'
       .replaceAll('{id}', id.toString());
@@ -563,7 +563,7 @@ class ItemsChefProfileApi {
   ///   What metadata to return in the response.
   ///
   /// * [ItemsChefProfile] itemsChefProfile:
-  Future<ReadSingleItemsChefProfile200Response?> updateSingleItemsChefProfile(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, ItemsChefProfile? itemsChefProfile, }) async {
+  FutureOr<ReadSingleItemsChefProfile200Response?> updateSingleItemsChefProfile(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, ItemsChefProfile? itemsChefProfile, }) async {
     final response = await updateSingleItemsChefProfileWithHttpInfo(id,  fields: fields, meta: meta, itemsChefProfile: itemsChefProfile, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

@@ -28,7 +28,7 @@ class CollectionsApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreateCollectionRequest] createCollectionRequest:
-  Future<Response> createCollectionWithHttpInfo({ String? meta, CreateCollectionRequest? createCollectionRequest, }) async {
+  FutureOr<Response> createCollectionWithHttpInfo({ String? meta, CreateCollectionRequest? createCollectionRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/collections';
 
@@ -67,7 +67,7 @@ class CollectionsApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreateCollectionRequest] createCollectionRequest:
-  Future<CreateCollection200Response?> createCollection({ String? meta, CreateCollectionRequest? createCollectionRequest, }) async {
+  FutureOr<CreateCollection200Response?> createCollection({ String? meta, CreateCollectionRequest? createCollectionRequest, }) async {
     final response = await createCollectionWithHttpInfo( meta: meta, createCollectionRequest: createCollectionRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -92,7 +92,7 @@ class CollectionsApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier of the collection.
-  Future<Response> deleteCollectionWithHttpInfo(String id,) async {
+  FutureOr<Response> deleteCollectionWithHttpInfo(String id,) async {
     // ignore: prefer_const_declarations
     final path = r'/collections/{id}'
       .replaceAll('{id}', id);
@@ -126,7 +126,7 @@ class CollectionsApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier of the collection.
-  Future<void> deleteCollection(String id,) async {
+  FutureOr<void> deleteCollection(String id,) async {
     final response = await deleteCollectionWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -146,7 +146,7 @@ class CollectionsApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<Response> getCollectionWithHttpInfo(String id, { String? meta, }) async {
+  FutureOr<Response> getCollectionWithHttpInfo(String id, { String? meta, }) async {
     // ignore: prefer_const_declarations
     final path = r'/collections/{id}'
       .replaceAll('{id}', id);
@@ -187,7 +187,7 @@ class CollectionsApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<CreateCollection200Response?> getCollection(String id, { String? meta, }) async {
+  FutureOr<CreateCollection200Response?> getCollection(String id, { String? meta, }) async {
     final response = await getCollectionWithHttpInfo(id,  meta: meta, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -215,7 +215,7 @@ class CollectionsApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<Response> getCollectionsWithHttpInfo({ int? offset, String? meta, }) async {
+  FutureOr<Response> getCollectionsWithHttpInfo({ int? offset, String? meta, }) async {
     // ignore: prefer_const_declarations
     final path = r'/collections';
 
@@ -258,7 +258,7 @@ class CollectionsApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<GetCollections200Response?> getCollections({ int? offset, String? meta, }) async {
+  FutureOr<GetCollections200Response?> getCollections({ int? offset, String? meta, }) async {
     final response = await getCollectionsWithHttpInfo( offset: offset, meta: meta, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -288,7 +288,7 @@ class CollectionsApi {
   ///   What metadata to return in the response.
   ///
   /// * [UpdateCollectionRequest] updateCollectionRequest:
-  Future<Response> updateCollectionWithHttpInfo(String id, { String? meta, UpdateCollectionRequest? updateCollectionRequest, }) async {
+  FutureOr<Response> updateCollectionWithHttpInfo(String id, { String? meta, UpdateCollectionRequest? updateCollectionRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/collections/{id}'
       .replaceAll('{id}', id);
@@ -331,7 +331,7 @@ class CollectionsApi {
   ///   What metadata to return in the response.
   ///
   /// * [UpdateCollectionRequest] updateCollectionRequest:
-  Future<CreateCollection200Response?> updateCollection(String id, { String? meta, UpdateCollectionRequest? updateCollectionRequest, }) async {
+  FutureOr<CreateCollection200Response?> updateCollection(String id, { String? meta, UpdateCollectionRequest? updateCollectionRequest, }) async {
     final response = await updateCollectionWithHttpInfo(id,  meta: meta, updateCollectionRequest: updateCollectionRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

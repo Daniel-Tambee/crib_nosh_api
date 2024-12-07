@@ -21,7 +21,7 @@ void main() {
     //
     // List the installed extensions and their configuration in the project.
     //
-    //Future<ListExtensions200Response> listExtensions() async
+    //FutureOr<ListExtensions200Response> listExtensions() async
     test('test listExtensions', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Update an existing extension.
     //
-    //Future<UpdateExtensions200Response> updateExtensionBundle(String bundle, String name, { UpdateExtensionsRequest updateExtensionsRequest }) async
+    //FutureOr<UpdateExtensions200Response> updateExtensionBundle(String bundle, String name, { UpdateExtensionsRequest updateExtensionsRequest }) async
     test('test updateExtensionBundle', () async {
       // TODO
     });
@@ -39,7 +39,7 @@ void main() {
     //
     // Update an existing extension.
     //
-    //Future<UpdateExtensions200Response> updateExtensions(String name, { UpdateExtensionsRequest updateExtensionsRequest }) async
+    //FutureOr<UpdateExtensions200Response> updateExtensions(String name, { UpdateExtensionsRequest updateExtensionsRequest }) async
     test('test updateExtensions', () async {
       // TODO
     });

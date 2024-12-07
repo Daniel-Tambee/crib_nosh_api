@@ -35,7 +35,7 @@ class SettingsApi {
   ///
   /// * [int] page:
   ///   Cursor for use in pagination. Often used in combination with limit.
-  Future<Response> getSettingsWithHttpInfo({ int? limit, int? offset, String? meta, int? page, }) async {
+  FutureOr<Response> getSettingsWithHttpInfo({ int? limit, int? offset, String? meta, int? page, }) async {
     // ignore: prefer_const_declarations
     final path = r'/settings';
 
@@ -90,7 +90,7 @@ class SettingsApi {
   ///
   /// * [int] page:
   ///   Cursor for use in pagination. Often used in combination with limit.
-  Future<GetSettings200Response?> getSettings({ int? limit, int? offset, String? meta, int? page, }) async {
+  FutureOr<GetSettings200Response?> getSettings({ int? limit, int? offset, String? meta, int? page, }) async {
     final response = await getSettingsWithHttpInfo( limit: limit, offset: offset, meta: meta, page: page, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -114,7 +114,7 @@ class SettingsApi {
   /// Parameters:
   ///
   /// * [Object] body:
-  Future<Response> updateSettingWithHttpInfo({ Object? body, }) async {
+  FutureOr<Response> updateSettingWithHttpInfo({ Object? body, }) async {
     // ignore: prefer_const_declarations
     final path = r'/settings';
 
@@ -146,7 +146,7 @@ class SettingsApi {
   /// Parameters:
   ///
   /// * [Object] body:
-  Future<GetSettings200Response?> updateSetting({ Object? body, }) async {
+  FutureOr<GetSettings200Response?> updateSetting({ Object? body, }) async {
     final response = await updateSettingWithHttpInfo( body: body, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

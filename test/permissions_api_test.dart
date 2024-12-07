@@ -21,7 +21,7 @@ void main() {
     //
     // Create a new permission.
     //
-    //Future<CreatePermission200Response> createPermission({ String meta, CreatePermissionRequest createPermissionRequest }) async
+    //FutureOr<CreatePermission200Response> createPermission({ String meta, CreatePermissionRequest createPermissionRequest }) async
     test('test createPermission', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Delete an existing permission
     //
-    //Future deletePermission(int id) async
+    //FutureOr deletePermission(int id) async
     test('test deletePermission', () async {
       // TODO
     });
@@ -39,7 +39,7 @@ void main() {
     //
     // Delete multiple existing permissions.
     //
-    //Future deletePermissions() async
+    //FutureOr deletePermissions() async
     test('test deletePermissions', () async {
       // TODO
     });
@@ -48,7 +48,7 @@ void main() {
     //
     // List the permissions that apply to the current user.
     //
-    //Future<GetMyPermissions200Response> getMyPermissions() async
+    //FutureOr<GetMyPermissions200Response> getMyPermissions() async
     test('test getMyPermissions', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
     //
     // Retrieve a single permissions object by unique identifier.
     //
-    //Future<CreatePermission200Response> getPermission(int id, { List<String> fields, String meta }) async
+    //FutureOr<CreatePermission200Response> getPermission(int id, { List<String> fields, String meta }) async
     test('test getPermission', () async {
       // TODO
     });
@@ -66,7 +66,7 @@ void main() {
     //
     // List all permissions.
     //
-    //Future<GetPermissions200Response> getPermissions({ List<String> fields, int limit, int offset, String meta, List<String> sort, Object filter, String search, int page }) async
+    //FutureOr<GetPermissions200Response> getPermissions({ List<String> fields, int limit, int offset, String meta, List<String> sort, Object filter, String search, int page }) async
     test('test getPermissions', () async {
       // TODO
     });
@@ -75,7 +75,7 @@ void main() {
     //
     // Update an existing permission
     //
-    //Future<CreatePermission200Response> updatePermission(int id, { String meta, UpdatePermissionRequest updatePermissionRequest }) async
+    //FutureOr<CreatePermission200Response> updatePermission(int id, { String meta, UpdatePermissionRequest updatePermissionRequest }) async
     test('test updatePermission', () async {
       // TODO
     });
@@ -84,7 +84,7 @@ void main() {
     //
     // Update multiple permissions at the same time.
     //
-    //Future<GetPermissions200Response> updatePermissions({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, UpdatePermissionsRequest updatePermissionsRequest }) async
+    //FutureOr<GetPermissions200Response> updatePermissions({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, UpdatePermissionsRequest updatePermissionsRequest }) async
     test('test updatePermissions', () async {
       // TODO
     });

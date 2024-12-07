@@ -21,7 +21,7 @@ void main() {
     //
     // Create a new file
     //
-    //Future<CreateFile200Response> createFile({ CreateFileRequest createFileRequest }) async
+    //FutureOr<CreateFile200Response> createFile({ CreateFileRequest createFileRequest }) async
     test('test createFile', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Delete an existing file.
     //
-    //Future deleteFile(String id) async
+    //FutureOr deleteFile(String id) async
     test('test deleteFile', () async {
       // TODO
     });
@@ -39,7 +39,7 @@ void main() {
     //
     // Delete multiple existing files.
     //
-    //Future deleteFiles() async
+    //FutureOr deleteFiles() async
     test('test deleteFiles', () async {
       // TODO
     });
@@ -48,7 +48,7 @@ void main() {
     //
     // Retrieve a single file by unique identifier.
     //
-    //Future<CreateFile200Response> getFile(String id, { List<String> fields, String meta }) async
+    //FutureOr<CreateFile200Response> getFile(String id, { List<String> fields, String meta }) async
     test('test getFile', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
     //
     // List the files.
     //
-    //Future<GetFiles200Response> getFiles({ List<String> fields, int limit, int offset, List<String> sort, Object filter, String search, String meta }) async
+    //FutureOr<GetFiles200Response> getFiles({ List<String> fields, int limit, int offset, List<String> sort, Object filter, String search, String meta }) async
     test('test getFiles', () async {
       // TODO
     });
@@ -66,7 +66,7 @@ void main() {
     //
     // Update an existing file, and/or replace it's file contents.
     //
-    //Future<CreateFile200Response> updateFile(String id, Object file, { List<String> fields, String meta, String title, String filenameDownload, String description, UpdateFileRequestFolder folder, List<String> tags }) async
+    //FutureOr<CreateFile200Response> updateFile(String id, Object file, { List<String> fields, String meta, String title, String filenameDownload, String description, UpdateFileRequestFolder folder, List<String> tags }) async
     test('test updateFile', () async {
       // TODO
     });
@@ -75,7 +75,7 @@ void main() {
     //
     // Update multiple files at the same time.
     //
-    //Future<GetFiles200Response> updateFiles({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, UpdateFilesRequest updateFilesRequest }) async
+    //FutureOr<GetFiles200Response> updateFiles({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, UpdateFilesRequest updateFilesRequest }) async
     test('test updateFiles', () async {
       // TODO
     });

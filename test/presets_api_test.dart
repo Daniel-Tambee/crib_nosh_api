@@ -21,7 +21,7 @@ void main() {
     //
     // Create a new preset.
     //
-    //Future<CreatePreset200Response> createPreset({ List<String> fields, String meta, CreatePresetRequest createPresetRequest }) async
+    //FutureOr<CreatePreset200Response> createPreset({ List<String> fields, String meta, CreatePresetRequest createPresetRequest }) async
     test('test createPreset', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Delete an existing preset.
     //
-    //Future deletePreset(int id) async
+    //FutureOr deletePreset(int id) async
     test('test deletePreset', () async {
       // TODO
     });
@@ -39,7 +39,7 @@ void main() {
     //
     // Delete multiple existing presets.
     //
-    //Future deletePresets() async
+    //FutureOr deletePresets() async
     test('test deletePresets', () async {
       // TODO
     });
@@ -48,7 +48,7 @@ void main() {
     //
     // Retrieve a single preset by unique identifier.
     //
-    //Future<CreatePreset200Response> getPreset(int id, { List<String> fields, String meta }) async
+    //FutureOr<CreatePreset200Response> getPreset(int id, { List<String> fields, String meta }) async
     test('test getPreset', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
     //
     // List the presets.
     //
-    //Future<GetPresets200Response> getPresets({ List<String> fields, int limit, int offset, int page, List<String> sort, Object filter, String search, String meta }) async
+    //FutureOr<GetPresets200Response> getPresets({ List<String> fields, int limit, int offset, int page, List<String> sort, Object filter, String search, String meta }) async
     test('test getPresets', () async {
       // TODO
     });
@@ -66,7 +66,7 @@ void main() {
     //
     // Update an existing preset.
     //
-    //Future<CreatePreset200Response> updatePreset(int id, { List<String> fields, String meta, UpdatePresetRequest updatePresetRequest }) async
+    //FutureOr<CreatePreset200Response> updatePreset(int id, { List<String> fields, String meta, UpdatePresetRequest updatePresetRequest }) async
     test('test updatePreset', () async {
       // TODO
     });
@@ -75,7 +75,7 @@ void main() {
     //
     // Update multiple presets at the same time.
     //
-    //Future<GetPresets200Response> updatePresets({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, UpdatePresetsRequest updatePresetsRequest }) async
+    //FutureOr<GetPresets200Response> updatePresets({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, UpdatePresetsRequest updatePresetsRequest }) async
     test('test updatePresets', () async {
       // TODO
     });

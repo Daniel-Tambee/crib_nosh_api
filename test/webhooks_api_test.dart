@@ -21,7 +21,7 @@ void main() {
     //
     // Create a new webhook.
     //
-    //Future<CreateRole200Response> createWebhook({ List<String> fields, String meta, CreateWebhookRequest createWebhookRequest }) async
+    //FutureOr<CreateRole200Response> createWebhook({ List<String> fields, String meta, CreateWebhookRequest createWebhookRequest }) async
     test('test createWebhook', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Delete an existing webhook
     //
-    //Future deleteWebhook(String id) async
+    //FutureOr deleteWebhook(String id) async
     test('test deleteWebhook', () async {
       // TODO
     });
@@ -39,7 +39,7 @@ void main() {
     //
     // Delete multiple existing webhooks.
     //
-    //Future deleteWebhooks() async
+    //FutureOr deleteWebhooks() async
     test('test deleteWebhooks', () async {
       // TODO
     });
@@ -48,7 +48,7 @@ void main() {
     //
     // Retrieve a single webhook by unique identifier.
     //
-    //Future<GetWebhooks200Response> getWebhook(String id) async
+    //FutureOr<GetWebhooks200Response> getWebhook(String id) async
     test('test getWebhook', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
     //
     // Get all webhooks.
     //
-    //Future<GetWebhooks200Response> getWebhooks() async
+    //FutureOr<GetWebhooks200Response> getWebhooks() async
     test('test getWebhooks', () async {
       // TODO
     });
@@ -66,7 +66,7 @@ void main() {
     //
     // Update an existing webhook
     //
-    //Future<CreateRole200Response> updateWebhook(String id, { List<String> fields, String meta, CreateWebhookRequest createWebhookRequest }) async
+    //FutureOr<CreateRole200Response> updateWebhook(String id, { List<String> fields, String meta, CreateWebhookRequest createWebhookRequest }) async
     test('test updateWebhook', () async {
       // TODO
     });
@@ -75,7 +75,7 @@ void main() {
     //
     // Update multiple webhooks at the same time.
     //
-    //Future<UpdateWebhooks200Response> updateWebhooks({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, UpdateWebhooksRequest updateWebhooksRequest }) async
+    //FutureOr<UpdateWebhooks200Response> updateWebhooks({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, UpdateWebhooksRequest updateWebhooksRequest }) async
     test('test updateWebhooks', () async {
       // TODO
     });

@@ -26,7 +26,7 @@ class VersionsApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier for the object.
-  Future<Response> compareContentVersionWithHttpInfo(String id,) async {
+  FutureOr<Response> compareContentVersionWithHttpInfo(String id,) async {
     // ignore: prefer_const_declarations
     final path = r'/versions/{id}/compare'
       .replaceAll('{id}', id);
@@ -60,7 +60,7 @@ class VersionsApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier for the object.
-  Future<ServerInfo200Response?> compareContentVersion(String id,) async {
+  FutureOr<ServerInfo200Response?> compareContentVersion(String id,) async {
     final response = await compareContentVersionWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -90,7 +90,7 @@ class VersionsApi {
   ///   What metadata to return in the response.
   ///
   /// * [Versions] versions:
-  Future<Response> createContentVersionWithHttpInfo({ List<String>? fields, String? meta, Versions? versions, }) async {
+  FutureOr<Response> createContentVersionWithHttpInfo({ List<String>? fields, String? meta, Versions? versions, }) async {
     // ignore: prefer_const_declarations
     final path = r'/versions';
 
@@ -135,7 +135,7 @@ class VersionsApi {
   ///   What metadata to return in the response.
   ///
   /// * [Versions] versions:
-  Future<CreateContentVersion200Response?> createContentVersion({ List<String>? fields, String? meta, Versions? versions, }) async {
+  FutureOr<CreateContentVersion200Response?> createContentVersion({ List<String>? fields, String? meta, Versions? versions, }) async {
     final response = await createContentVersionWithHttpInfo( fields: fields, meta: meta, versions: versions, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -160,7 +160,7 @@ class VersionsApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier for the object.
-  Future<Response> deleteContentVersionWithHttpInfo(String id,) async {
+  FutureOr<Response> deleteContentVersionWithHttpInfo(String id,) async {
     // ignore: prefer_const_declarations
     final path = r'/versions/{id}'
       .replaceAll('{id}', id);
@@ -194,7 +194,7 @@ class VersionsApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier for the object.
-  Future<void> deleteContentVersion(String id,) async {
+  FutureOr<void> deleteContentVersion(String id,) async {
     final response = await deleteContentVersionWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -206,7 +206,7 @@ class VersionsApi {
   /// Delete multiple existing Content Versions.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> deleteContentVersionsWithHttpInfo() async {
+  FutureOr<Response> deleteContentVersionsWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/versions';
 
@@ -234,7 +234,7 @@ class VersionsApi {
   /// Delete Multiple Content Versions
   ///
   /// Delete multiple existing Content Versions.
-  Future<void> deleteContentVersions() async {
+  FutureOr<void> deleteContentVersions() async {
     final response = await deleteContentVersionsWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -257,7 +257,7 @@ class VersionsApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<Response> getContentVersionWithHttpInfo(String id, { List<String>? fields, String? meta, }) async {
+  FutureOr<Response> getContentVersionWithHttpInfo(String id, { List<String>? fields, String? meta, }) async {
     // ignore: prefer_const_declarations
     final path = r'/versions/{id}'
       .replaceAll('{id}', id);
@@ -304,7 +304,7 @@ class VersionsApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<CreateContentVersion200Response?> getContentVersion(String id, { List<String>? fields, String? meta, }) async {
+  FutureOr<CreateContentVersion200Response?> getContentVersion(String id, { List<String>? fields, String? meta, }) async {
     final response = await getContentVersionWithHttpInfo(id,  fields: fields, meta: meta, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -347,7 +347,7 @@ class VersionsApi {
   ///
   /// * [String] search:
   ///   Filter by items that contain the given search query in one of their fields.
-  Future<Response> getContentVersionsWithHttpInfo({ List<String>? fields, int? limit, int? offset, String? meta, List<String>? sort, Object? filter, String? search, }) async {
+  FutureOr<Response> getContentVersionsWithHttpInfo({ List<String>? fields, int? limit, int? offset, String? meta, List<String>? sort, Object? filter, String? search, }) async {
     // ignore: prefer_const_declarations
     final path = r'/versions';
 
@@ -420,7 +420,7 @@ class VersionsApi {
   ///
   /// * [String] search:
   ///   Filter by items that contain the given search query in one of their fields.
-  Future<GetContentVersions200Response?> getContentVersions({ List<String>? fields, int? limit, int? offset, String? meta, List<String>? sort, Object? filter, String? search, }) async {
+  FutureOr<GetContentVersions200Response?> getContentVersions({ List<String>? fields, int? limit, int? offset, String? meta, List<String>? sort, Object? filter, String? search, }) async {
     final response = await getContentVersionsWithHttpInfo( fields: fields, limit: limit, offset: offset, meta: meta, sort: sort, filter: filter, search: search, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -447,7 +447,7 @@ class VersionsApi {
   ///   Unique identifier for the object.
   ///
   /// * [PromoteContentVersionRequest] promoteContentVersionRequest:
-  Future<Response> promoteContentVersionWithHttpInfo(String id, { PromoteContentVersionRequest? promoteContentVersionRequest, }) async {
+  FutureOr<Response> promoteContentVersionWithHttpInfo(String id, { PromoteContentVersionRequest? promoteContentVersionRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/versions/{id}/promote'
       .replaceAll('{id}', id);
@@ -483,7 +483,7 @@ class VersionsApi {
   ///   Unique identifier for the object.
   ///
   /// * [PromoteContentVersionRequest] promoteContentVersionRequest:
-  Future<Object?> promoteContentVersion(String id, { PromoteContentVersionRequest? promoteContentVersionRequest, }) async {
+  FutureOr<Object?> promoteContentVersion(String id, { PromoteContentVersionRequest? promoteContentVersionRequest, }) async {
     final response = await promoteContentVersionWithHttpInfo(id,  promoteContentVersionRequest: promoteContentVersionRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -510,7 +510,7 @@ class VersionsApi {
   ///   Unique identifier for the object.
   ///
   /// * [Object] body:
-  Future<Response> saveContentVersionWithHttpInfo(String id, { Object? body, }) async {
+  FutureOr<Response> saveContentVersionWithHttpInfo(String id, { Object? body, }) async {
     // ignore: prefer_const_declarations
     final path = r'/versions/{id}/save'
       .replaceAll('{id}', id);
@@ -546,7 +546,7 @@ class VersionsApi {
   ///   Unique identifier for the object.
   ///
   /// * [Object] body:
-  Future<Object?> saveContentVersion(String id, { Object? body, }) async {
+  FutureOr<Object?> saveContentVersion(String id, { Object? body, }) async {
     final response = await saveContentVersionWithHttpInfo(id,  body: body, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -579,7 +579,7 @@ class VersionsApi {
   ///   What metadata to return in the response.
   ///
   /// * [Versions] versions:
-  Future<Response> updateContentVersionWithHttpInfo(String id, { List<String>? fields, String? meta, Versions? versions, }) async {
+  FutureOr<Response> updateContentVersionWithHttpInfo(String id, { List<String>? fields, String? meta, Versions? versions, }) async {
     // ignore: prefer_const_declarations
     final path = r'/versions/{id}'
       .replaceAll('{id}', id);
@@ -628,7 +628,7 @@ class VersionsApi {
   ///   What metadata to return in the response.
   ///
   /// * [Versions] versions:
-  Future<CreateContentVersion200Response?> updateContentVersion(String id, { List<String>? fields, String? meta, Versions? versions, }) async {
+  FutureOr<CreateContentVersion200Response?> updateContentVersion(String id, { List<String>? fields, String? meta, Versions? versions, }) async {
     final response = await updateContentVersionWithHttpInfo(id,  fields: fields, meta: meta, versions: versions, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -673,7 +673,7 @@ class VersionsApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [UpdateContentVersionsRequest] updateContentVersionsRequest:
-  Future<Response> updateContentVersionsWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateContentVersionsRequest? updateContentVersionsRequest, }) async {
+  FutureOr<Response> updateContentVersionsWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateContentVersionsRequest? updateContentVersionsRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/versions';
 
@@ -748,7 +748,7 @@ class VersionsApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [UpdateContentVersionsRequest] updateContentVersionsRequest:
-  Future<GetContentVersions200Response?> updateContentVersions({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateContentVersionsRequest? updateContentVersionsRequest, }) async {
+  FutureOr<GetContentVersions200Response?> updateContentVersions({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateContentVersionsRequest? updateContentVersionsRequest, }) async {
     final response = await updateContentVersionsWithHttpInfo( fields: fields, limit: limit, meta: meta, offset: offset, sort: sort, filter: filter, search: search, updateContentVersionsRequest: updateContentVersionsRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

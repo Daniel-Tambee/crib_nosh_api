@@ -21,7 +21,7 @@ void main() {
     //
     // Create a new User item.
     //
-    //Future<CreateItemsUser200Response> createItemsUser({ String meta, CreateItemsUserRequest createItemsUserRequest }) async
+    //FutureOr<CreateItemsUser200Response> createItemsUser({ String meta, CreateItemsUserRequest createItemsUserRequest }) async
     test('test createItemsUser', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Delete multiple existing User items.
     //
-    //Future deleteItemsUser() async
+    //FutureOr deleteItemsUser() async
     test('test deleteItemsUser', () async {
       // TODO
     });
@@ -39,7 +39,7 @@ void main() {
     //
     // Delete an existing User item.
     //
-    //Future deleteSingleItemsUser(ReadSingleItemsCuisineIdParameter id) async
+    //FutureOr deleteSingleItemsUser(ReadSingleItemsCuisineIdParameter id) async
     test('test deleteSingleItemsUser', () async {
       // TODO
     });
@@ -48,7 +48,7 @@ void main() {
     //
     // List the User items.
     //
-    //Future<ReadItemsUser200Response> readItemsUser({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
+    //FutureOr<ReadItemsUser200Response> readItemsUser({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
     test('test readItemsUser', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
     //
     // Retrieve a single User item by unique identifier.
     //
-    //Future<ReadSingleItemsUser200Response> readSingleItemsUser(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
+    //FutureOr<ReadSingleItemsUser200Response> readSingleItemsUser(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
     test('test readSingleItemsUser', () async {
       // TODO
     });
@@ -66,7 +66,7 @@ void main() {
     //
     // Update multiple User items at the same time.
     //
-    //Future<UpdateItemsUser200Response> updateItemsUser({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsUserRequest createItemsUserRequest }) async
+    //FutureOr<UpdateItemsUser200Response> updateItemsUser({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsUserRequest createItemsUserRequest }) async
     test('test updateItemsUser', () async {
       // TODO
     });
@@ -75,7 +75,7 @@ void main() {
     //
     // Update an existing User item.
     //
-    //Future<ReadSingleItemsUser200Response> updateSingleItemsUser(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsUser itemsUser }) async
+    //FutureOr<ReadSingleItemsUser200Response> updateSingleItemsUser(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsUser itemsUser }) async
     test('test updateSingleItemsUser', () async {
       // TODO
     });

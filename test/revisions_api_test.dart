@@ -21,7 +21,7 @@ void main() {
     //
     // Retrieve a single revision by unique identifier.
     //
-    //Future<GetRevision200Response> getRevision(int id, { List<String> fields, String meta }) async
+    //FutureOr<GetRevision200Response> getRevision(int id, { List<String> fields, String meta }) async
     test('test getRevision', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // List the revisions.
     //
-    //Future<GetRevisions200Response> getRevisions({ List<String> fields, int limit, int offset, String meta, List<String> sort, Object filter, String search, int page }) async
+    //FutureOr<GetRevisions200Response> getRevisions({ List<String> fields, int limit, int offset, String meta, List<String> sort, Object filter, String search, int page }) async
     test('test getRevisions', () async {
       // TODO
     });

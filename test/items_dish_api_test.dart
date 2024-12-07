@@ -21,7 +21,7 @@ void main() {
     //
     // Create a new Dish item.
     //
-    //Future<CreateItemsDish200Response> createItemsDish({ String meta, CreateItemsDishRequest createItemsDishRequest }) async
+    //FutureOr<CreateItemsDish200Response> createItemsDish({ String meta, CreateItemsDishRequest createItemsDishRequest }) async
     test('test createItemsDish', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Delete multiple existing Dish items.
     //
-    //Future deleteItemsDish() async
+    //FutureOr deleteItemsDish() async
     test('test deleteItemsDish', () async {
       // TODO
     });
@@ -39,7 +39,7 @@ void main() {
     //
     // Delete an existing Dish item.
     //
-    //Future deleteSingleItemsDish(ReadSingleItemsCuisineIdParameter id) async
+    //FutureOr deleteSingleItemsDish(ReadSingleItemsCuisineIdParameter id) async
     test('test deleteSingleItemsDish', () async {
       // TODO
     });
@@ -48,7 +48,7 @@ void main() {
     //
     // List the Dish items.
     //
-    //Future<ReadItemsDish200Response> readItemsDish({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
+    //FutureOr<ReadItemsDish200Response> readItemsDish({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
     test('test readItemsDish', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
     //
     // Retrieve a single Dish item by unique identifier.
     //
-    //Future<ReadSingleItemsDish200Response> readSingleItemsDish(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
+    //FutureOr<ReadSingleItemsDish200Response> readSingleItemsDish(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
     test('test readSingleItemsDish', () async {
       // TODO
     });
@@ -66,7 +66,7 @@ void main() {
     //
     // Update multiple Dish items at the same time.
     //
-    //Future<UpdateItemsDish200Response> updateItemsDish({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsDishRequest createItemsDishRequest }) async
+    //FutureOr<UpdateItemsDish200Response> updateItemsDish({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsDishRequest createItemsDishRequest }) async
     test('test updateItemsDish', () async {
       // TODO
     });
@@ -75,7 +75,7 @@ void main() {
     //
     // Update an existing Dish item.
     //
-    //Future<ReadSingleItemsDish200Response> updateSingleItemsDish(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsDish itemsDish }) async
+    //FutureOr<ReadSingleItemsDish200Response> updateSingleItemsDish(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsDish itemsDish }) async
     test('test updateSingleItemsDish', () async {
       // TODO
     });

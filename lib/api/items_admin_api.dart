@@ -28,7 +28,7 @@ class ItemsAdminApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreateItemsAdminRequest] createItemsAdminRequest:
-  Future<Response> createItemsAdminWithHttpInfo({ String? meta, CreateItemsAdminRequest? createItemsAdminRequest, }) async {
+  FutureOr<Response> createItemsAdminWithHttpInfo({ String? meta, CreateItemsAdminRequest? createItemsAdminRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/Admin';
 
@@ -67,7 +67,7 @@ class ItemsAdminApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreateItemsAdminRequest] createItemsAdminRequest:
-  Future<CreateItemsAdmin200Response?> createItemsAdmin({ String? meta, CreateItemsAdminRequest? createItemsAdminRequest, }) async {
+  FutureOr<CreateItemsAdmin200Response?> createItemsAdmin({ String? meta, CreateItemsAdminRequest? createItemsAdminRequest, }) async {
     final response = await createItemsAdminWithHttpInfo( meta: meta, createItemsAdminRequest: createItemsAdminRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -87,7 +87,7 @@ class ItemsAdminApi {
   /// Delete multiple existing Admin items.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> deleteItemsAdminWithHttpInfo() async {
+  FutureOr<Response> deleteItemsAdminWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/items/Admin';
 
@@ -115,7 +115,7 @@ class ItemsAdminApi {
   /// Delete Multiple Items
   ///
   /// Delete multiple existing Admin items.
-  Future<void> deleteItemsAdmin() async {
+  FutureOr<void> deleteItemsAdmin() async {
     final response = await deleteItemsAdminWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -132,7 +132,7 @@ class ItemsAdminApi {
   ///
   /// * [ReadSingleItemsCuisineIdParameter] id (required):
   ///   Index of the item.
-  Future<Response> deleteSingleItemsAdminWithHttpInfo(ReadSingleItemsCuisineIdParameter id,) async {
+  FutureOr<Response> deleteSingleItemsAdminWithHttpInfo(ReadSingleItemsCuisineIdParameter id,) async {
     // ignore: prefer_const_declarations
     final path = r'/items/Admin/{id}'
       .replaceAll('{id}', id.toString());
@@ -166,7 +166,7 @@ class ItemsAdminApi {
   ///
   /// * [ReadSingleItemsCuisineIdParameter] id (required):
   ///   Index of the item.
-  Future<void> deleteSingleItemsAdmin(ReadSingleItemsCuisineIdParameter id,) async {
+  FutureOr<void> deleteSingleItemsAdmin(ReadSingleItemsCuisineIdParameter id,) async {
     final response = await deleteSingleItemsAdminWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -201,7 +201,7 @@ class ItemsAdminApi {
   ///
   /// * [String] search:
   ///   Filter by items that contain the given search query in one of their fields.
-  Future<Response> readItemsAdminWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, }) async {
+  FutureOr<Response> readItemsAdminWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/Admin';
 
@@ -274,7 +274,7 @@ class ItemsAdminApi {
   ///
   /// * [String] search:
   ///   Filter by items that contain the given search query in one of their fields.
-  Future<ReadItemsAdmin200Response?> readItemsAdmin({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, }) async {
+  FutureOr<ReadItemsAdmin200Response?> readItemsAdmin({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, }) async {
     final response = await readItemsAdminWithHttpInfo( fields: fields, limit: limit, meta: meta, offset: offset, sort: sort, filter: filter, search: search, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -308,7 +308,7 @@ class ItemsAdminApi {
   ///
   /// * [String] version:
   ///   Retrieve an item's state from a specific Content Version. The value corresponds to the \"key\" of the Content Version. 
-  Future<Response> readSingleItemsAdminWithHttpInfo(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, String? version, }) async {
+  FutureOr<Response> readSingleItemsAdminWithHttpInfo(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, String? version, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/Admin/{id}'
       .replaceAll('{id}', id.toString());
@@ -361,7 +361,7 @@ class ItemsAdminApi {
   ///
   /// * [String] version:
   ///   Retrieve an item's state from a specific Content Version. The value corresponds to the \"key\" of the Content Version. 
-  Future<ReadSingleItemsAdmin200Response?> readSingleItemsAdmin(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, String? version, }) async {
+  FutureOr<ReadSingleItemsAdmin200Response?> readSingleItemsAdmin(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, String? version, }) async {
     final response = await readSingleItemsAdminWithHttpInfo(id,  fields: fields, meta: meta, version: version, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -406,7 +406,7 @@ class ItemsAdminApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [CreateItemsAdminRequest] createItemsAdminRequest:
-  Future<Response> updateItemsAdminWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, CreateItemsAdminRequest? createItemsAdminRequest, }) async {
+  FutureOr<Response> updateItemsAdminWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, CreateItemsAdminRequest? createItemsAdminRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/Admin';
 
@@ -481,7 +481,7 @@ class ItemsAdminApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [CreateItemsAdminRequest] createItemsAdminRequest:
-  Future<UpdateItemsAdmin200Response?> updateItemsAdmin({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, CreateItemsAdminRequest? createItemsAdminRequest, }) async {
+  FutureOr<UpdateItemsAdmin200Response?> updateItemsAdmin({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, CreateItemsAdminRequest? createItemsAdminRequest, }) async {
     final response = await updateItemsAdminWithHttpInfo( fields: fields, limit: limit, meta: meta, offset: offset, sort: sort, filter: filter, search: search, createItemsAdminRequest: createItemsAdminRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -514,7 +514,7 @@ class ItemsAdminApi {
   ///   What metadata to return in the response.
   ///
   /// * [ItemsAdmin] itemsAdmin:
-  Future<Response> updateSingleItemsAdminWithHttpInfo(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, ItemsAdmin? itemsAdmin, }) async {
+  FutureOr<Response> updateSingleItemsAdminWithHttpInfo(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, ItemsAdmin? itemsAdmin, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/Admin/{id}'
       .replaceAll('{id}', id.toString());
@@ -563,7 +563,7 @@ class ItemsAdminApi {
   ///   What metadata to return in the response.
   ///
   /// * [ItemsAdmin] itemsAdmin:
-  Future<ReadSingleItemsAdmin200Response?> updateSingleItemsAdmin(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, ItemsAdmin? itemsAdmin, }) async {
+  FutureOr<ReadSingleItemsAdmin200Response?> updateSingleItemsAdmin(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, ItemsAdmin? itemsAdmin, }) async {
     final response = await updateSingleItemsAdminWithHttpInfo(id,  fields: fields, meta: meta, itemsAdmin: itemsAdmin, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

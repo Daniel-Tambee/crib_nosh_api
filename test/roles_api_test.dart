@@ -21,7 +21,7 @@ void main() {
     //
     // Create a new role.
     //
-    //Future<CreateRole200Response> createRole({ List<String> fields, String meta, CreateRoleRequest createRoleRequest }) async
+    //FutureOr<CreateRole200Response> createRole({ List<String> fields, String meta, CreateRoleRequest createRoleRequest }) async
     test('test createRole', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Delete an existing role
     //
-    //Future deleteRole(String id) async
+    //FutureOr deleteRole(String id) async
     test('test deleteRole', () async {
       // TODO
     });
@@ -39,7 +39,7 @@ void main() {
     //
     // Delete multiple existing roles.
     //
-    //Future deleteRoles() async
+    //FutureOr deleteRoles() async
     test('test deleteRoles', () async {
       // TODO
     });
@@ -48,7 +48,7 @@ void main() {
     //
     // Retrieve a single role by unique identifier.
     //
-    //Future<CreateRole200Response> getRole(String id, { List<String> fields, String meta }) async
+    //FutureOr<CreateRole200Response> getRole(String id, { List<String> fields, String meta }) async
     test('test getRole', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
     //
     // List the roles.
     //
-    //Future<GetRoles200Response> getRoles({ List<String> fields, int limit, int offset, String meta, List<String> sort, Object filter, String search, int page }) async
+    //FutureOr<GetRoles200Response> getRoles({ List<String> fields, int limit, int offset, String meta, List<String> sort, Object filter, String search, int page }) async
     test('test getRoles', () async {
       // TODO
     });
@@ -66,7 +66,7 @@ void main() {
     //
     // Update an existing role
     //
-    //Future<CreateRole200Response> updateRole(String id, { List<String> fields, String meta, UpdateRoleRequest updateRoleRequest }) async
+    //FutureOr<CreateRole200Response> updateRole(String id, { List<String> fields, String meta, UpdateRoleRequest updateRoleRequest }) async
     test('test updateRole', () async {
       // TODO
     });
@@ -75,7 +75,7 @@ void main() {
     //
     // Update multiple roles at the same time.
     //
-    //Future<GetRoles200Response> updateRoles({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, UpdateRolesRequest updateRolesRequest }) async
+    //FutureOr<GetRoles200Response> updateRoles({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, UpdateRolesRequest updateRolesRequest }) async
     test('test updateRoles', () async {
       // TODO
     });

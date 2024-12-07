@@ -31,7 +31,7 @@ class RolesApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreateRoleRequest] createRoleRequest:
-  Future<Response> createRoleWithHttpInfo({ List<String>? fields, String? meta, CreateRoleRequest? createRoleRequest, }) async {
+  FutureOr<Response> createRoleWithHttpInfo({ List<String>? fields, String? meta, CreateRoleRequest? createRoleRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/roles';
 
@@ -76,7 +76,7 @@ class RolesApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreateRoleRequest] createRoleRequest:
-  Future<CreateRole200Response?> createRole({ List<String>? fields, String? meta, CreateRoleRequest? createRoleRequest, }) async {
+  FutureOr<CreateRole200Response?> createRole({ List<String>? fields, String? meta, CreateRoleRequest? createRoleRequest, }) async {
     final response = await createRoleWithHttpInfo( fields: fields, meta: meta, createRoleRequest: createRoleRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -101,7 +101,7 @@ class RolesApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier for the object.
-  Future<Response> deleteRoleWithHttpInfo(String id,) async {
+  FutureOr<Response> deleteRoleWithHttpInfo(String id,) async {
     // ignore: prefer_const_declarations
     final path = r'/roles/{id}'
       .replaceAll('{id}', id);
@@ -135,7 +135,7 @@ class RolesApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier for the object.
-  Future<void> deleteRole(String id,) async {
+  FutureOr<void> deleteRole(String id,) async {
     final response = await deleteRoleWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -147,7 +147,7 @@ class RolesApi {
   /// Delete multiple existing roles.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> deleteRolesWithHttpInfo() async {
+  FutureOr<Response> deleteRolesWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/roles';
 
@@ -175,7 +175,7 @@ class RolesApi {
   /// Delete Multiple Roles
   ///
   /// Delete multiple existing roles.
-  Future<void> deleteRoles() async {
+  FutureOr<void> deleteRoles() async {
     final response = await deleteRolesWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -198,7 +198,7 @@ class RolesApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<Response> getRoleWithHttpInfo(String id, { List<String>? fields, String? meta, }) async {
+  FutureOr<Response> getRoleWithHttpInfo(String id, { List<String>? fields, String? meta, }) async {
     // ignore: prefer_const_declarations
     final path = r'/roles/{id}'
       .replaceAll('{id}', id);
@@ -245,7 +245,7 @@ class RolesApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<CreateRole200Response?> getRole(String id, { List<String>? fields, String? meta, }) async {
+  FutureOr<CreateRole200Response?> getRole(String id, { List<String>? fields, String? meta, }) async {
     final response = await getRoleWithHttpInfo(id,  fields: fields, meta: meta, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -291,7 +291,7 @@ class RolesApi {
   ///
   /// * [int] page:
   ///   Cursor for use in pagination. Often used in combination with limit.
-  Future<Response> getRolesWithHttpInfo({ List<String>? fields, int? limit, int? offset, String? meta, List<String>? sort, Object? filter, String? search, int? page, }) async {
+  FutureOr<Response> getRolesWithHttpInfo({ List<String>? fields, int? limit, int? offset, String? meta, List<String>? sort, Object? filter, String? search, int? page, }) async {
     // ignore: prefer_const_declarations
     final path = r'/roles';
 
@@ -370,7 +370,7 @@ class RolesApi {
   ///
   /// * [int] page:
   ///   Cursor for use in pagination. Often used in combination with limit.
-  Future<GetRoles200Response?> getRoles({ List<String>? fields, int? limit, int? offset, String? meta, List<String>? sort, Object? filter, String? search, int? page, }) async {
+  FutureOr<GetRoles200Response?> getRoles({ List<String>? fields, int? limit, int? offset, String? meta, List<String>? sort, Object? filter, String? search, int? page, }) async {
     final response = await getRolesWithHttpInfo( fields: fields, limit: limit, offset: offset, meta: meta, sort: sort, filter: filter, search: search, page: page, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -403,7 +403,7 @@ class RolesApi {
   ///   What metadata to return in the response.
   ///
   /// * [UpdateRoleRequest] updateRoleRequest:
-  Future<Response> updateRoleWithHttpInfo(String id, { List<String>? fields, String? meta, UpdateRoleRequest? updateRoleRequest, }) async {
+  FutureOr<Response> updateRoleWithHttpInfo(String id, { List<String>? fields, String? meta, UpdateRoleRequest? updateRoleRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/roles/{id}'
       .replaceAll('{id}', id);
@@ -452,7 +452,7 @@ class RolesApi {
   ///   What metadata to return in the response.
   ///
   /// * [UpdateRoleRequest] updateRoleRequest:
-  Future<CreateRole200Response?> updateRole(String id, { List<String>? fields, String? meta, UpdateRoleRequest? updateRoleRequest, }) async {
+  FutureOr<CreateRole200Response?> updateRole(String id, { List<String>? fields, String? meta, UpdateRoleRequest? updateRoleRequest, }) async {
     final response = await updateRoleWithHttpInfo(id,  fields: fields, meta: meta, updateRoleRequest: updateRoleRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -497,7 +497,7 @@ class RolesApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [UpdateRolesRequest] updateRolesRequest:
-  Future<Response> updateRolesWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateRolesRequest? updateRolesRequest, }) async {
+  FutureOr<Response> updateRolesWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateRolesRequest? updateRolesRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/roles';
 
@@ -572,7 +572,7 @@ class RolesApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [UpdateRolesRequest] updateRolesRequest:
-  Future<GetRoles200Response?> updateRoles({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateRolesRequest? updateRolesRequest, }) async {
+  FutureOr<GetRoles200Response?> updateRoles({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateRolesRequest? updateRolesRequest, }) async {
     final response = await updateRolesWithHttpInfo( fields: fields, limit: limit, meta: meta, offset: offset, sort: sort, filter: filter, search: search, updateRolesRequest: updateRolesRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

@@ -28,7 +28,7 @@ class FieldsApi {
   ///   Unique identifier of the collection the item resides in.
   ///
   /// * [CreateFieldRequest] createFieldRequest:
-  Future<Response> createFieldWithHttpInfo(String collection, { CreateFieldRequest? createFieldRequest, }) async {
+  FutureOr<Response> createFieldWithHttpInfo(String collection, { CreateFieldRequest? createFieldRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/fields/{collection}'
       .replaceAll('{collection}', collection);
@@ -64,7 +64,7 @@ class FieldsApi {
   ///   Unique identifier of the collection the item resides in.
   ///
   /// * [CreateFieldRequest] createFieldRequest:
-  Future<CreateField200Response?> createField(String collection, { CreateFieldRequest? createFieldRequest, }) async {
+  FutureOr<CreateField200Response?> createField(String collection, { CreateFieldRequest? createFieldRequest, }) async {
     final response = await createFieldWithHttpInfo(collection,  createFieldRequest: createFieldRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -92,7 +92,7 @@ class FieldsApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier of the field.
-  Future<Response> deleteFieldWithHttpInfo(String collection, String id,) async {
+  FutureOr<Response> deleteFieldWithHttpInfo(String collection, String id,) async {
     // ignore: prefer_const_declarations
     final path = r'/fields/{collection}/{id}'
       .replaceAll('{collection}', collection)
@@ -130,7 +130,7 @@ class FieldsApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier of the field.
-  Future<void> deleteField(String collection, String id,) async {
+  FutureOr<void> deleteField(String collection, String id,) async {
     final response = await deleteFieldWithHttpInfo(collection, id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -150,7 +150,7 @@ class FieldsApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier of the field.
-  Future<Response> getCollectionFieldWithHttpInfo(String collection, String id,) async {
+  FutureOr<Response> getCollectionFieldWithHttpInfo(String collection, String id,) async {
     // ignore: prefer_const_declarations
     final path = r'/fields/{collection}/{id}'
       .replaceAll('{collection}', collection)
@@ -188,7 +188,7 @@ class FieldsApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier of the field.
-  Future<CreateField200Response?> getCollectionField(String collection, String id,) async {
+  FutureOr<CreateField200Response?> getCollectionField(String collection, String id,) async {
     final response = await getCollectionFieldWithHttpInfo(collection, id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -216,7 +216,7 @@ class FieldsApi {
   ///
   /// * [List<String>] sort:
   ///   How to sort the returned items. `sort` is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (` - `) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a ` ? ` to sort randomly. 
-  Future<Response> getCollectionFieldsWithHttpInfo(String collection, { List<String>? sort, }) async {
+  FutureOr<Response> getCollectionFieldsWithHttpInfo(String collection, { List<String>? sort, }) async {
     // ignore: prefer_const_declarations
     final path = r'/fields/{collection}'
       .replaceAll('{collection}', collection);
@@ -257,7 +257,7 @@ class FieldsApi {
   ///
   /// * [List<String>] sort:
   ///   How to sort the returned items. `sort` is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (` - `) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a ` ? ` to sort randomly. 
-  Future<GetFields200Response?> getCollectionFields(String collection, { List<String>? sort, }) async {
+  FutureOr<GetFields200Response?> getCollectionFields(String collection, { List<String>? sort, }) async {
     final response = await getCollectionFieldsWithHttpInfo(collection,  sort: sort, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -285,7 +285,7 @@ class FieldsApi {
   ///
   /// * [List<String>] sort:
   ///   How to sort the returned items. `sort` is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (` - `) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a ` ? ` to sort randomly. 
-  Future<Response> getFieldsWithHttpInfo({ int? limit, List<String>? sort, }) async {
+  FutureOr<Response> getFieldsWithHttpInfo({ int? limit, List<String>? sort, }) async {
     // ignore: prefer_const_declarations
     final path = r'/fields';
 
@@ -328,7 +328,7 @@ class FieldsApi {
   ///
   /// * [List<String>] sort:
   ///   How to sort the returned items. `sort` is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (` - `) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a ` ? ` to sort randomly. 
-  Future<GetFields200Response?> getFields({ int? limit, List<String>? sort, }) async {
+  FutureOr<GetFields200Response?> getFields({ int? limit, List<String>? sort, }) async {
     final response = await getFieldsWithHttpInfo( limit: limit, sort: sort, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -358,7 +358,7 @@ class FieldsApi {
   ///   Unique identifier of the field.
   ///
   /// * [UpdateFieldRequest] updateFieldRequest:
-  Future<Response> updateFieldWithHttpInfo(String collection, String id, { UpdateFieldRequest? updateFieldRequest, }) async {
+  FutureOr<Response> updateFieldWithHttpInfo(String collection, String id, { UpdateFieldRequest? updateFieldRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/fields/{collection}/{id}'
       .replaceAll('{collection}', collection)
@@ -398,7 +398,7 @@ class FieldsApi {
   ///   Unique identifier of the field.
   ///
   /// * [UpdateFieldRequest] updateFieldRequest:
-  Future<CreateField200Response?> updateField(String collection, String id, { UpdateFieldRequest? updateFieldRequest, }) async {
+  FutureOr<CreateField200Response?> updateField(String collection, String id, { UpdateFieldRequest? updateFieldRequest, }) async {
     final response = await updateFieldWithHttpInfo(collection, id,  updateFieldRequest: updateFieldRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

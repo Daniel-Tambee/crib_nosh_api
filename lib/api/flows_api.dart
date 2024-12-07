@@ -31,7 +31,7 @@ class FlowsApi {
   ///   What metadata to return in the response.
   ///
   /// * [Flows] flows:
-  Future<Response> createFlowWithHttpInfo({ List<String>? fields, String? meta, Flows? flows, }) async {
+  FutureOr<Response> createFlowWithHttpInfo({ List<String>? fields, String? meta, Flows? flows, }) async {
     // ignore: prefer_const_declarations
     final path = r'/flows';
 
@@ -76,7 +76,7 @@ class FlowsApi {
   ///   What metadata to return in the response.
   ///
   /// * [Flows] flows:
-  Future<CreateFlow200Response?> createFlow({ List<String>? fields, String? meta, Flows? flows, }) async {
+  FutureOr<CreateFlow200Response?> createFlow({ List<String>? fields, String? meta, Flows? flows, }) async {
     final response = await createFlowWithHttpInfo( fields: fields, meta: meta, flows: flows, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -101,7 +101,7 @@ class FlowsApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier for the object.
-  Future<Response> deleteFlowWithHttpInfo(String id,) async {
+  FutureOr<Response> deleteFlowWithHttpInfo(String id,) async {
     // ignore: prefer_const_declarations
     final path = r'/flows/{id}'
       .replaceAll('{id}', id);
@@ -135,7 +135,7 @@ class FlowsApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier for the object.
-  Future<void> deleteFlow(String id,) async {
+  FutureOr<void> deleteFlow(String id,) async {
     final response = await deleteFlowWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -147,7 +147,7 @@ class FlowsApi {
   /// Delete multiple existing flows.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> deleteFlowsWithHttpInfo() async {
+  FutureOr<Response> deleteFlowsWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/flows';
 
@@ -175,7 +175,7 @@ class FlowsApi {
   /// Delete Multiple Flows
   ///
   /// Delete multiple existing flows.
-  Future<void> deleteFlows() async {
+  FutureOr<void> deleteFlows() async {
     final response = await deleteFlowsWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -192,7 +192,7 @@ class FlowsApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier for the object.
-  Future<Response> getFlowWithHttpInfo(String id,) async {
+  FutureOr<Response> getFlowWithHttpInfo(String id,) async {
     // ignore: prefer_const_declarations
     final path = r'/flows/{id}'
       .replaceAll('{id}', id);
@@ -226,7 +226,7 @@ class FlowsApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier for the object.
-  Future<CreateFlow200Response?> getFlow(String id,) async {
+  FutureOr<CreateFlow200Response?> getFlow(String id,) async {
     final response = await getFlowWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -246,7 +246,7 @@ class FlowsApi {
   /// Get all flows.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> getFlowsWithHttpInfo() async {
+  FutureOr<Response> getFlowsWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/flows';
 
@@ -274,7 +274,7 @@ class FlowsApi {
   /// List Flows
   ///
   /// Get all flows.
-  Future<GetFlows200Response?> getFlows() async {
+  FutureOr<GetFlows200Response?> getFlows() async {
     final response = await getFlowsWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -307,7 +307,7 @@ class FlowsApi {
   ///   What metadata to return in the response.
   ///
   /// * [Flows] flows:
-  Future<Response> updateFlowWithHttpInfo(String id, { List<String>? fields, String? meta, Flows? flows, }) async {
+  FutureOr<Response> updateFlowWithHttpInfo(String id, { List<String>? fields, String? meta, Flows? flows, }) async {
     // ignore: prefer_const_declarations
     final path = r'/flows/{id}'
       .replaceAll('{id}', id);
@@ -356,7 +356,7 @@ class FlowsApi {
   ///   What metadata to return in the response.
   ///
   /// * [Flows] flows:
-  Future<CreateFlow200Response?> updateFlow(String id, { List<String>? fields, String? meta, Flows? flows, }) async {
+  FutureOr<CreateFlow200Response?> updateFlow(String id, { List<String>? fields, String? meta, Flows? flows, }) async {
     final response = await updateFlowWithHttpInfo(id,  fields: fields, meta: meta, flows: flows, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -401,7 +401,7 @@ class FlowsApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [UpdateFlowsRequest] updateFlowsRequest:
-  Future<Response> updateFlowsWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateFlowsRequest? updateFlowsRequest, }) async {
+  FutureOr<Response> updateFlowsWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateFlowsRequest? updateFlowsRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/flows';
 
@@ -476,7 +476,7 @@ class FlowsApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [UpdateFlowsRequest] updateFlowsRequest:
-  Future<GetFlows200Response?> updateFlows({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateFlowsRequest? updateFlowsRequest, }) async {
+  FutureOr<GetFlows200Response?> updateFlows({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateFlowsRequest? updateFlowsRequest, }) async {
     final response = await updateFlowsWithHttpInfo( fields: fields, limit: limit, meta: meta, offset: offset, sort: sort, filter: filter, search: search, updateFlowsRequest: updateFlowsRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

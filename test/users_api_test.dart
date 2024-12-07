@@ -21,7 +21,7 @@ void main() {
     //
     // Accepts and enables an invited user using a JWT invitation token.
     //
-    //Future<CreateUser200Response> acceptInvite(AcceptInviteRequest acceptInviteRequest) async
+    //FutureOr<CreateUser200Response> acceptInvite(AcceptInviteRequest acceptInviteRequest) async
     test('test acceptInvite', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Create a new user.
     //
-    //Future<CreateUser200Response> createUser({ String meta, Users users }) async
+    //FutureOr<CreateUser200Response> createUser({ String meta, Users users }) async
     test('test createUser', () async {
       // TODO
     });
@@ -39,7 +39,7 @@ void main() {
     //
     // Delete an existing user
     //
-    //Future deleteUser(String id) async
+    //FutureOr deleteUser(String id) async
     test('test deleteUser', () async {
       // TODO
     });
@@ -48,7 +48,7 @@ void main() {
     //
     // Delete multiple existing users.
     //
-    //Future deleteUsers() async
+    //FutureOr deleteUsers() async
     test('test deleteUsers', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
     //
     // Retrieve the currently authenticated user.
     //
-    //Future<CreateUser200Response> getMe({ List<String> fields, String meta }) async
+    //FutureOr<CreateUser200Response> getMe({ List<String> fields, String meta }) async
     test('test getMe', () async {
       // TODO
     });
@@ -66,7 +66,7 @@ void main() {
     //
     // Retrieve a single user by unique identifier.
     //
-    //Future<CreateUser200Response> getUser(String id, { List<String> fields, String meta }) async
+    //FutureOr<CreateUser200Response> getUser(String id, { List<String> fields, String meta }) async
     test('test getUser', () async {
       // TODO
     });
@@ -75,7 +75,7 @@ void main() {
     //
     // List the users.
     //
-    //Future<GetUsers200Response> getUsers({ List<String> fields, int limit, int offset, String meta, List<String> sort, Object filter, String search }) async
+    //FutureOr<GetUsers200Response> getUsers({ List<String> fields, int limit, int offset, String meta, List<String> sort, Object filter, String search }) async
     test('test getUsers', () async {
       // TODO
     });
@@ -84,7 +84,7 @@ void main() {
     //
     // Invites one or more users to this project. It creates a user with an invited status, and then sends an email to the user with instructions on how to activate their account.
     //
-    //Future<CreateUser200Response> invite({ InviteRequest inviteRequest }) async
+    //FutureOr<CreateUser200Response> invite({ InviteRequest inviteRequest }) async
     test('test invite', () async {
       // TODO
     });
@@ -93,7 +93,7 @@ void main() {
     //
     // Disables two-factor authentication for the currently authenticated user.
     //
-    //Future meTfaDisable() async
+    //FutureOr meTfaDisable() async
     test('test meTfaDisable', () async {
       // TODO
     });
@@ -102,7 +102,7 @@ void main() {
     //
     // Enables two-factor authentication for the currently authenticated user.
     //
-    //Future meTfaEnable() async
+    //FutureOr meTfaEnable() async
     test('test meTfaEnable', () async {
       // TODO
     });
@@ -111,7 +111,7 @@ void main() {
     //
     // Updates the last used page field of the currently authenticated user. This is used internally to be able to open the Directus admin app from the last page you used.
     //
-    //Future updateLastUsedPageMe({ UpdateLastUsedPageMeRequest updateLastUsedPageMeRequest }) async
+    //FutureOr updateLastUsedPageMe({ UpdateLastUsedPageMeRequest updateLastUsedPageMeRequest }) async
     test('test updateLastUsedPageMe', () async {
       // TODO
     });
@@ -120,7 +120,7 @@ void main() {
     //
     // Update the currently authenticated user.
     //
-    //Future<CreateUser200Response> updateMe() async
+    //FutureOr<CreateUser200Response> updateMe() async
     test('test updateMe', () async {
       // TODO
     });
@@ -129,7 +129,7 @@ void main() {
     //
     // Update an existing user
     //
-    //Future<ServerInfo200Response> updateUser(String id, { List<String> fields, String meta, Users users }) async
+    //FutureOr<ServerInfo200Response> updateUser(String id, { List<String> fields, String meta, Users users }) async
     test('test updateUser', () async {
       // TODO
     });
@@ -138,7 +138,7 @@ void main() {
     //
     // Update multiple users at the same time.
     //
-    //Future<GetUsers200Response> updateUsers({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, UpdateUsersRequest updateUsersRequest }) async
+    //FutureOr<GetUsers200Response> updateUsers({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, UpdateUsersRequest updateUsersRequest }) async
     test('test updateUsers', () async {
       // TODO
     });

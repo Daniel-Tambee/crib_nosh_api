@@ -21,7 +21,7 @@ class ServerApi {
   /// Ping, pong. Ping.. pong.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> pingWithHttpInfo() async {
+  FutureOr<Response> pingWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/server/ping';
 
@@ -49,7 +49,7 @@ class ServerApi {
   /// Ping
   ///
   /// Ping, pong. Ping.. pong.
-  Future<String?> ping() async {
+  FutureOr<String?> ping() async {
     final response = await pingWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -74,7 +74,7 @@ class ServerApi {
   ///
   /// * [int] superAdminToken (required):
   ///   The first time you create a project, the provided token will be saved and required for subsequent project installs. It can also be found and configured in `/config/__api.json` on your server.
-  Future<Response> serverInfoWithHttpInfo(int superAdminToken,) async {
+  FutureOr<Response> serverInfoWithHttpInfo(int superAdminToken,) async {
     // ignore: prefer_const_declarations
     final path = r'/server/info';
 
@@ -109,7 +109,7 @@ class ServerApi {
   ///
   /// * [int] superAdminToken (required):
   ///   The first time you create a project, the provided token will be saved and required for subsequent project installs. It can also be found and configured in `/config/__api.json` on your server.
-  Future<ServerInfo200Response?> serverInfo(int superAdminToken,) async {
+  FutureOr<ServerInfo200Response?> serverInfo(int superAdminToken,) async {
     final response = await serverInfoWithHttpInfo(superAdminToken,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

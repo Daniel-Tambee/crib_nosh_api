@@ -21,7 +21,7 @@ void main() {
     //
     // Create a new Admin item.
     //
-    //Future<CreateItemsAdmin200Response> createItemsAdmin({ String meta, CreateItemsAdminRequest createItemsAdminRequest }) async
+    //FutureOr<CreateItemsAdmin200Response> createItemsAdmin({ String meta, CreateItemsAdminRequest createItemsAdminRequest }) async
     test('test createItemsAdmin', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Create a new Chat item.
     //
-    //Future<CreateItemsChat200Response> createItemsChat({ String meta, CreateItemsChatRequest createItemsChatRequest }) async
+    //FutureOr<CreateItemsChat200Response> createItemsChat({ String meta, CreateItemsChatRequest createItemsChatRequest }) async
     test('test createItemsChat', () async {
       // TODO
     });
@@ -39,7 +39,7 @@ void main() {
     //
     // Create a new ChefCuisine item.
     //
-    //Future<CreateItemsChefCuisine200Response> createItemsChefCuisine({ String meta, CreateItemsChefCuisineRequest createItemsChefCuisineRequest }) async
+    //FutureOr<CreateItemsChefCuisine200Response> createItemsChefCuisine({ String meta, CreateItemsChefCuisineRequest createItemsChefCuisineRequest }) async
     test('test createItemsChefCuisine', () async {
       // TODO
     });
@@ -48,7 +48,7 @@ void main() {
     //
     // Create a new ChefProfile item.
     //
-    //Future<CreateItemsChefProfile200Response> createItemsChefProfile({ String meta, CreateItemsChefProfileRequest createItemsChefProfileRequest }) async
+    //FutureOr<CreateItemsChefProfile200Response> createItemsChefProfile({ String meta, CreateItemsChefProfileRequest createItemsChefProfileRequest }) async
     test('test createItemsChefProfile', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
     //
     // Create a new Cuisine item.
     //
-    //Future<CreateItemsCuisine200Response> createItemsCuisine({ String meta, CreateItemsCuisineRequest createItemsCuisineRequest }) async
+    //FutureOr<CreateItemsCuisine200Response> createItemsCuisine({ String meta, CreateItemsCuisineRequest createItemsCuisineRequest }) async
     test('test createItemsCuisine', () async {
       // TODO
     });
@@ -66,7 +66,7 @@ void main() {
     //
     // Create a new Dish item.
     //
-    //Future<CreateItemsDish200Response> createItemsDish({ String meta, CreateItemsDishRequest createItemsDishRequest }) async
+    //FutureOr<CreateItemsDish200Response> createItemsDish({ String meta, CreateItemsDishRequest createItemsDishRequest }) async
     test('test createItemsDish', () async {
       // TODO
     });
@@ -75,7 +75,7 @@ void main() {
     //
     // Create a new Order item.
     //
-    //Future<CreateItemsOrder200Response> createItemsOrder({ String meta, CreateItemsOrderRequest createItemsOrderRequest }) async
+    //FutureOr<CreateItemsOrder200Response> createItemsOrder({ String meta, CreateItemsOrderRequest createItemsOrderRequest }) async
     test('test createItemsOrder', () async {
       // TODO
     });
@@ -84,7 +84,7 @@ void main() {
     //
     // Create a new Review item.
     //
-    //Future<CreateItemsReview200Response> createItemsReview({ String meta, CreateItemsReviewRequest createItemsReviewRequest }) async
+    //FutureOr<CreateItemsReview200Response> createItemsReview({ String meta, CreateItemsReviewRequest createItemsReviewRequest }) async
     test('test createItemsReview', () async {
       // TODO
     });
@@ -93,7 +93,7 @@ void main() {
     //
     // Create a new User item.
     //
-    //Future<CreateItemsUser200Response> createItemsUser({ String meta, CreateItemsUserRequest createItemsUserRequest }) async
+    //FutureOr<CreateItemsUser200Response> createItemsUser({ String meta, CreateItemsUserRequest createItemsUserRequest }) async
     test('test createItemsUser', () async {
       // TODO
     });
@@ -102,7 +102,7 @@ void main() {
     //
     // Delete multiple existing Admin items.
     //
-    //Future deleteItemsAdmin() async
+    //FutureOr deleteItemsAdmin() async
     test('test deleteItemsAdmin', () async {
       // TODO
     });
@@ -111,7 +111,7 @@ void main() {
     //
     // Delete multiple existing Chat items.
     //
-    //Future deleteItemsChat() async
+    //FutureOr deleteItemsChat() async
     test('test deleteItemsChat', () async {
       // TODO
     });
@@ -120,7 +120,7 @@ void main() {
     //
     // Delete multiple existing ChefCuisine items.
     //
-    //Future deleteItemsChefCuisine() async
+    //FutureOr deleteItemsChefCuisine() async
     test('test deleteItemsChefCuisine', () async {
       // TODO
     });
@@ -129,7 +129,7 @@ void main() {
     //
     // Delete multiple existing ChefProfile items.
     //
-    //Future deleteItemsChefProfile() async
+    //FutureOr deleteItemsChefProfile() async
     test('test deleteItemsChefProfile', () async {
       // TODO
     });
@@ -138,7 +138,7 @@ void main() {
     //
     // Delete multiple existing Cuisine items.
     //
-    //Future deleteItemsCuisine() async
+    //FutureOr deleteItemsCuisine() async
     test('test deleteItemsCuisine', () async {
       // TODO
     });
@@ -147,7 +147,7 @@ void main() {
     //
     // Delete multiple existing Dish items.
     //
-    //Future deleteItemsDish() async
+    //FutureOr deleteItemsDish() async
     test('test deleteItemsDish', () async {
       // TODO
     });
@@ -156,7 +156,7 @@ void main() {
     //
     // Delete multiple existing Order items.
     //
-    //Future deleteItemsOrder() async
+    //FutureOr deleteItemsOrder() async
     test('test deleteItemsOrder', () async {
       // TODO
     });
@@ -165,7 +165,7 @@ void main() {
     //
     // Delete multiple existing Review items.
     //
-    //Future deleteItemsReview() async
+    //FutureOr deleteItemsReview() async
     test('test deleteItemsReview', () async {
       // TODO
     });
@@ -174,7 +174,7 @@ void main() {
     //
     // Delete multiple existing User items.
     //
-    //Future deleteItemsUser() async
+    //FutureOr deleteItemsUser() async
     test('test deleteItemsUser', () async {
       // TODO
     });
@@ -183,7 +183,7 @@ void main() {
     //
     // Delete an existing Admin item.
     //
-    //Future deleteSingleItemsAdmin(ReadSingleItemsCuisineIdParameter id) async
+    //FutureOr deleteSingleItemsAdmin(ReadSingleItemsCuisineIdParameter id) async
     test('test deleteSingleItemsAdmin', () async {
       // TODO
     });
@@ -192,7 +192,7 @@ void main() {
     //
     // Delete an existing Chat item.
     //
-    //Future deleteSingleItemsChat(ReadSingleItemsCuisineIdParameter id) async
+    //FutureOr deleteSingleItemsChat(ReadSingleItemsCuisineIdParameter id) async
     test('test deleteSingleItemsChat', () async {
       // TODO
     });
@@ -201,7 +201,7 @@ void main() {
     //
     // Delete an existing ChefCuisine item.
     //
-    //Future deleteSingleItemsChefCuisine(ReadSingleItemsCuisineIdParameter id) async
+    //FutureOr deleteSingleItemsChefCuisine(ReadSingleItemsCuisineIdParameter id) async
     test('test deleteSingleItemsChefCuisine', () async {
       // TODO
     });
@@ -210,7 +210,7 @@ void main() {
     //
     // Delete an existing ChefProfile item.
     //
-    //Future deleteSingleItemsChefProfile(ReadSingleItemsCuisineIdParameter id) async
+    //FutureOr deleteSingleItemsChefProfile(ReadSingleItemsCuisineIdParameter id) async
     test('test deleteSingleItemsChefProfile', () async {
       // TODO
     });
@@ -219,7 +219,7 @@ void main() {
     //
     // Delete an existing Cuisine item.
     //
-    //Future deleteSingleItemsCuisine(ReadSingleItemsCuisineIdParameter id) async
+    //FutureOr deleteSingleItemsCuisine(ReadSingleItemsCuisineIdParameter id) async
     test('test deleteSingleItemsCuisine', () async {
       // TODO
     });
@@ -228,7 +228,7 @@ void main() {
     //
     // Delete an existing Dish item.
     //
-    //Future deleteSingleItemsDish(ReadSingleItemsCuisineIdParameter id) async
+    //FutureOr deleteSingleItemsDish(ReadSingleItemsCuisineIdParameter id) async
     test('test deleteSingleItemsDish', () async {
       // TODO
     });
@@ -237,7 +237,7 @@ void main() {
     //
     // Delete an existing Order item.
     //
-    //Future deleteSingleItemsOrder(ReadSingleItemsCuisineIdParameter id) async
+    //FutureOr deleteSingleItemsOrder(ReadSingleItemsCuisineIdParameter id) async
     test('test deleteSingleItemsOrder', () async {
       // TODO
     });
@@ -246,7 +246,7 @@ void main() {
     //
     // Delete an existing Review item.
     //
-    //Future deleteSingleItemsReview(ReadSingleItemsCuisineIdParameter id) async
+    //FutureOr deleteSingleItemsReview(ReadSingleItemsCuisineIdParameter id) async
     test('test deleteSingleItemsReview', () async {
       // TODO
     });
@@ -255,7 +255,7 @@ void main() {
     //
     // Delete an existing User item.
     //
-    //Future deleteSingleItemsUser(ReadSingleItemsCuisineIdParameter id) async
+    //FutureOr deleteSingleItemsUser(ReadSingleItemsCuisineIdParameter id) async
     test('test deleteSingleItemsUser', () async {
       // TODO
     });
@@ -264,7 +264,7 @@ void main() {
     //
     // List the Admin items.
     //
-    //Future<ReadItemsAdmin200Response> readItemsAdmin({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
+    //FutureOr<ReadItemsAdmin200Response> readItemsAdmin({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
     test('test readItemsAdmin', () async {
       // TODO
     });
@@ -273,7 +273,7 @@ void main() {
     //
     // List the Chat items.
     //
-    //Future<ReadItemsChat200Response> readItemsChat({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
+    //FutureOr<ReadItemsChat200Response> readItemsChat({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
     test('test readItemsChat', () async {
       // TODO
     });
@@ -282,7 +282,7 @@ void main() {
     //
     // List the ChefCuisine items.
     //
-    //Future<ReadItemsChefCuisine200Response> readItemsChefCuisine({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
+    //FutureOr<ReadItemsChefCuisine200Response> readItemsChefCuisine({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
     test('test readItemsChefCuisine', () async {
       // TODO
     });
@@ -291,7 +291,7 @@ void main() {
     //
     // List the ChefProfile items.
     //
-    //Future<ReadItemsChefProfile200Response> readItemsChefProfile({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
+    //FutureOr<ReadItemsChefProfile200Response> readItemsChefProfile({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
     test('test readItemsChefProfile', () async {
       // TODO
     });
@@ -300,7 +300,7 @@ void main() {
     //
     // List the Cuisine items.
     //
-    //Future<ReadItemsCuisine200Response> readItemsCuisine({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
+    //FutureOr<ReadItemsCuisine200Response> readItemsCuisine({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
     test('test readItemsCuisine', () async {
       // TODO
     });
@@ -309,7 +309,7 @@ void main() {
     //
     // List the Dish items.
     //
-    //Future<ReadItemsDish200Response> readItemsDish({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
+    //FutureOr<ReadItemsDish200Response> readItemsDish({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
     test('test readItemsDish', () async {
       // TODO
     });
@@ -318,7 +318,7 @@ void main() {
     //
     // List the Order items.
     //
-    //Future<ReadItemsOrder200Response> readItemsOrder({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
+    //FutureOr<ReadItemsOrder200Response> readItemsOrder({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
     test('test readItemsOrder', () async {
       // TODO
     });
@@ -327,7 +327,7 @@ void main() {
     //
     // List the Review items.
     //
-    //Future<ReadItemsReview200Response> readItemsReview({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
+    //FutureOr<ReadItemsReview200Response> readItemsReview({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
     test('test readItemsReview', () async {
       // TODO
     });
@@ -336,7 +336,7 @@ void main() {
     //
     // List the User items.
     //
-    //Future<ReadItemsUser200Response> readItemsUser({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
+    //FutureOr<ReadItemsUser200Response> readItemsUser({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
     test('test readItemsUser', () async {
       // TODO
     });
@@ -345,7 +345,7 @@ void main() {
     //
     // Retrieve a single Admin item by unique identifier.
     //
-    //Future<ReadSingleItemsAdmin200Response> readSingleItemsAdmin(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
+    //FutureOr<ReadSingleItemsAdmin200Response> readSingleItemsAdmin(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
     test('test readSingleItemsAdmin', () async {
       // TODO
     });
@@ -354,7 +354,7 @@ void main() {
     //
     // Retrieve a single Chat item by unique identifier.
     //
-    //Future<ReadSingleItemsChat200Response> readSingleItemsChat(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
+    //FutureOr<ReadSingleItemsChat200Response> readSingleItemsChat(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
     test('test readSingleItemsChat', () async {
       // TODO
     });
@@ -363,7 +363,7 @@ void main() {
     //
     // Retrieve a single ChefCuisine item by unique identifier.
     //
-    //Future<ReadSingleItemsChefCuisine200Response> readSingleItemsChefCuisine(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
+    //FutureOr<ReadSingleItemsChefCuisine200Response> readSingleItemsChefCuisine(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
     test('test readSingleItemsChefCuisine', () async {
       // TODO
     });
@@ -372,7 +372,7 @@ void main() {
     //
     // Retrieve a single ChefProfile item by unique identifier.
     //
-    //Future<ReadSingleItemsChefProfile200Response> readSingleItemsChefProfile(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
+    //FutureOr<ReadSingleItemsChefProfile200Response> readSingleItemsChefProfile(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
     test('test readSingleItemsChefProfile', () async {
       // TODO
     });
@@ -381,7 +381,7 @@ void main() {
     //
     // Retrieve a single Cuisine item by unique identifier.
     //
-    //Future<ReadSingleItemsCuisine200Response> readSingleItemsCuisine(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
+    //FutureOr<ReadSingleItemsCuisine200Response> readSingleItemsCuisine(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
     test('test readSingleItemsCuisine', () async {
       // TODO
     });
@@ -390,7 +390,7 @@ void main() {
     //
     // Retrieve a single Dish item by unique identifier.
     //
-    //Future<ReadSingleItemsDish200Response> readSingleItemsDish(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
+    //FutureOr<ReadSingleItemsDish200Response> readSingleItemsDish(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
     test('test readSingleItemsDish', () async {
       // TODO
     });
@@ -399,7 +399,7 @@ void main() {
     //
     // Retrieve a single Order item by unique identifier.
     //
-    //Future<ReadSingleItemsOrder200Response> readSingleItemsOrder(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
+    //FutureOr<ReadSingleItemsOrder200Response> readSingleItemsOrder(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
     test('test readSingleItemsOrder', () async {
       // TODO
     });
@@ -408,7 +408,7 @@ void main() {
     //
     // Retrieve a single Review item by unique identifier.
     //
-    //Future<ReadSingleItemsReview200Response> readSingleItemsReview(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
+    //FutureOr<ReadSingleItemsReview200Response> readSingleItemsReview(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
     test('test readSingleItemsReview', () async {
       // TODO
     });
@@ -417,7 +417,7 @@ void main() {
     //
     // Retrieve a single User item by unique identifier.
     //
-    //Future<ReadSingleItemsUser200Response> readSingleItemsUser(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
+    //FutureOr<ReadSingleItemsUser200Response> readSingleItemsUser(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
     test('test readSingleItemsUser', () async {
       // TODO
     });
@@ -426,7 +426,7 @@ void main() {
     //
     // Update multiple Admin items at the same time.
     //
-    //Future<UpdateItemsAdmin200Response> updateItemsAdmin({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsAdminRequest createItemsAdminRequest }) async
+    //FutureOr<UpdateItemsAdmin200Response> updateItemsAdmin({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsAdminRequest createItemsAdminRequest }) async
     test('test updateItemsAdmin', () async {
       // TODO
     });
@@ -435,7 +435,7 @@ void main() {
     //
     // Update multiple Chat items at the same time.
     //
-    //Future<UpdateItemsChat200Response> updateItemsChat({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsChatRequest createItemsChatRequest }) async
+    //FutureOr<UpdateItemsChat200Response> updateItemsChat({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsChatRequest createItemsChatRequest }) async
     test('test updateItemsChat', () async {
       // TODO
     });
@@ -444,7 +444,7 @@ void main() {
     //
     // Update multiple ChefCuisine items at the same time.
     //
-    //Future<UpdateItemsChefCuisine200Response> updateItemsChefCuisine({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsChefCuisineRequest createItemsChefCuisineRequest }) async
+    //FutureOr<UpdateItemsChefCuisine200Response> updateItemsChefCuisine({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsChefCuisineRequest createItemsChefCuisineRequest }) async
     test('test updateItemsChefCuisine', () async {
       // TODO
     });
@@ -453,7 +453,7 @@ void main() {
     //
     // Update multiple ChefProfile items at the same time.
     //
-    //Future<UpdateItemsChefProfile200Response> updateItemsChefProfile({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsChefProfileRequest createItemsChefProfileRequest }) async
+    //FutureOr<UpdateItemsChefProfile200Response> updateItemsChefProfile({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsChefProfileRequest createItemsChefProfileRequest }) async
     test('test updateItemsChefProfile', () async {
       // TODO
     });
@@ -462,7 +462,7 @@ void main() {
     //
     // Update multiple Cuisine items at the same time.
     //
-    //Future<UpdateItemsCuisine200Response> updateItemsCuisine({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsCuisineRequest createItemsCuisineRequest }) async
+    //FutureOr<UpdateItemsCuisine200Response> updateItemsCuisine({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsCuisineRequest createItemsCuisineRequest }) async
     test('test updateItemsCuisine', () async {
       // TODO
     });
@@ -471,7 +471,7 @@ void main() {
     //
     // Update multiple Dish items at the same time.
     //
-    //Future<UpdateItemsDish200Response> updateItemsDish({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsDishRequest createItemsDishRequest }) async
+    //FutureOr<UpdateItemsDish200Response> updateItemsDish({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsDishRequest createItemsDishRequest }) async
     test('test updateItemsDish', () async {
       // TODO
     });
@@ -480,7 +480,7 @@ void main() {
     //
     // Update multiple Order items at the same time.
     //
-    //Future<UpdateItemsOrder200Response> updateItemsOrder({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsOrderRequest createItemsOrderRequest }) async
+    //FutureOr<UpdateItemsOrder200Response> updateItemsOrder({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsOrderRequest createItemsOrderRequest }) async
     test('test updateItemsOrder', () async {
       // TODO
     });
@@ -489,7 +489,7 @@ void main() {
     //
     // Update multiple Review items at the same time.
     //
-    //Future<UpdateItemsReview200Response> updateItemsReview({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsReviewRequest createItemsReviewRequest }) async
+    //FutureOr<UpdateItemsReview200Response> updateItemsReview({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsReviewRequest createItemsReviewRequest }) async
     test('test updateItemsReview', () async {
       // TODO
     });
@@ -498,7 +498,7 @@ void main() {
     //
     // Update multiple User items at the same time.
     //
-    //Future<UpdateItemsUser200Response> updateItemsUser({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsUserRequest createItemsUserRequest }) async
+    //FutureOr<UpdateItemsUser200Response> updateItemsUser({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsUserRequest createItemsUserRequest }) async
     test('test updateItemsUser', () async {
       // TODO
     });
@@ -507,7 +507,7 @@ void main() {
     //
     // Update an existing Admin item.
     //
-    //Future<ReadSingleItemsAdmin200Response> updateSingleItemsAdmin(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsAdmin itemsAdmin }) async
+    //FutureOr<ReadSingleItemsAdmin200Response> updateSingleItemsAdmin(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsAdmin itemsAdmin }) async
     test('test updateSingleItemsAdmin', () async {
       // TODO
     });
@@ -516,7 +516,7 @@ void main() {
     //
     // Update an existing Chat item.
     //
-    //Future<ReadSingleItemsChat200Response> updateSingleItemsChat(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsChat itemsChat }) async
+    //FutureOr<ReadSingleItemsChat200Response> updateSingleItemsChat(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsChat itemsChat }) async
     test('test updateSingleItemsChat', () async {
       // TODO
     });
@@ -525,7 +525,7 @@ void main() {
     //
     // Update an existing ChefCuisine item.
     //
-    //Future<ReadSingleItemsChefCuisine200Response> updateSingleItemsChefCuisine(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsChefCuisine itemsChefCuisine }) async
+    //FutureOr<ReadSingleItemsChefCuisine200Response> updateSingleItemsChefCuisine(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsChefCuisine itemsChefCuisine }) async
     test('test updateSingleItemsChefCuisine', () async {
       // TODO
     });
@@ -534,7 +534,7 @@ void main() {
     //
     // Update an existing ChefProfile item.
     //
-    //Future<ReadSingleItemsChefProfile200Response> updateSingleItemsChefProfile(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsChefProfile itemsChefProfile }) async
+    //FutureOr<ReadSingleItemsChefProfile200Response> updateSingleItemsChefProfile(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsChefProfile itemsChefProfile }) async
     test('test updateSingleItemsChefProfile', () async {
       // TODO
     });
@@ -543,7 +543,7 @@ void main() {
     //
     // Update an existing Cuisine item.
     //
-    //Future<ReadSingleItemsCuisine200Response> updateSingleItemsCuisine(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsCuisine itemsCuisine }) async
+    //FutureOr<ReadSingleItemsCuisine200Response> updateSingleItemsCuisine(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsCuisine itemsCuisine }) async
     test('test updateSingleItemsCuisine', () async {
       // TODO
     });
@@ -552,7 +552,7 @@ void main() {
     //
     // Update an existing Dish item.
     //
-    //Future<ReadSingleItemsDish200Response> updateSingleItemsDish(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsDish itemsDish }) async
+    //FutureOr<ReadSingleItemsDish200Response> updateSingleItemsDish(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsDish itemsDish }) async
     test('test updateSingleItemsDish', () async {
       // TODO
     });
@@ -561,7 +561,7 @@ void main() {
     //
     // Update an existing Order item.
     //
-    //Future<ReadSingleItemsOrder200Response> updateSingleItemsOrder(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsOrder itemsOrder }) async
+    //FutureOr<ReadSingleItemsOrder200Response> updateSingleItemsOrder(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsOrder itemsOrder }) async
     test('test updateSingleItemsOrder', () async {
       // TODO
     });
@@ -570,7 +570,7 @@ void main() {
     //
     // Update an existing Review item.
     //
-    //Future<ReadSingleItemsReview200Response> updateSingleItemsReview(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsReview itemsReview }) async
+    //FutureOr<ReadSingleItemsReview200Response> updateSingleItemsReview(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsReview itemsReview }) async
     test('test updateSingleItemsReview', () async {
       // TODO
     });
@@ -579,7 +579,7 @@ void main() {
     //
     // Update an existing User item.
     //
-    //Future<ReadSingleItemsUser200Response> updateSingleItemsUser(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsUser itemsUser }) async
+    //FutureOr<ReadSingleItemsUser200Response> updateSingleItemsUser(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsUser itemsUser }) async
     test('test updateSingleItemsUser', () async {
       // TODO
     });

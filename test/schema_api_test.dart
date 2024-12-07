@@ -21,7 +21,7 @@ void main() {
     //
     // Update the instance's schema by passing the diff previously retrieved via `/schema/diff` endpoint in the JSON request body or a JSON/YAML file. This endpoint is only available to admin users.
     //
-    //Future schemaApply(SchemaApplyRequest schemaApplyRequest) async
+    //FutureOr schemaApply(SchemaApplyRequest schemaApplyRequest) async
     test('test schemaApply', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Compare the current instance's schema against the schema snapshot in JSON request body or a JSON/YAML file and retrieve the difference. This endpoint is only available to admin users.
     //
-    //Future<SchemaApplyRequest> schemaDiff(SchemaSnapshot200Response schemaSnapshot200Response, { bool force }) async
+    //FutureOr<SchemaApplyRequest> schemaDiff(SchemaSnapshot200Response schemaSnapshot200Response, { bool force }) async
     test('test schemaDiff', () async {
       // TODO
     });
@@ -39,7 +39,7 @@ void main() {
     //
     // Retrieve the current schema. This endpoint is only available to admin users.
     //
-    //Future<SchemaSnapshot200Response> schemaSnapshot({ String export_ }) async
+    //FutureOr<SchemaSnapshot200Response> schemaSnapshot({ String export_ }) async
     test('test schemaSnapshot', () async {
       // TODO
     });

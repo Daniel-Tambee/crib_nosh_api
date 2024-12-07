@@ -31,7 +31,7 @@ class WebhooksApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreateWebhookRequest] createWebhookRequest:
-  Future<Response> createWebhookWithHttpInfo({ List<String>? fields, String? meta, CreateWebhookRequest? createWebhookRequest, }) async {
+  FutureOr<Response> createWebhookWithHttpInfo({ List<String>? fields, String? meta, CreateWebhookRequest? createWebhookRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/webhooks';
 
@@ -76,7 +76,7 @@ class WebhooksApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreateWebhookRequest] createWebhookRequest:
-  Future<CreateRole200Response?> createWebhook({ List<String>? fields, String? meta, CreateWebhookRequest? createWebhookRequest, }) async {
+  FutureOr<CreateRole200Response?> createWebhook({ List<String>? fields, String? meta, CreateWebhookRequest? createWebhookRequest, }) async {
     final response = await createWebhookWithHttpInfo( fields: fields, meta: meta, createWebhookRequest: createWebhookRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -101,7 +101,7 @@ class WebhooksApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier for the object.
-  Future<Response> deleteWebhookWithHttpInfo(String id,) async {
+  FutureOr<Response> deleteWebhookWithHttpInfo(String id,) async {
     // ignore: prefer_const_declarations
     final path = r'/webhooks/{id}'
       .replaceAll('{id}', id);
@@ -135,7 +135,7 @@ class WebhooksApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier for the object.
-  Future<void> deleteWebhook(String id,) async {
+  FutureOr<void> deleteWebhook(String id,) async {
     final response = await deleteWebhookWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -147,7 +147,7 @@ class WebhooksApi {
   /// Delete multiple existing webhooks.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> deleteWebhooksWithHttpInfo() async {
+  FutureOr<Response> deleteWebhooksWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/webhooks';
 
@@ -175,7 +175,7 @@ class WebhooksApi {
   /// Delete Multiple Webhooks
   ///
   /// Delete multiple existing webhooks.
-  Future<void> deleteWebhooks() async {
+  FutureOr<void> deleteWebhooks() async {
     final response = await deleteWebhooksWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -192,7 +192,7 @@ class WebhooksApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier for the object.
-  Future<Response> getWebhookWithHttpInfo(String id,) async {
+  FutureOr<Response> getWebhookWithHttpInfo(String id,) async {
     // ignore: prefer_const_declarations
     final path = r'/webhooks/{id}'
       .replaceAll('{id}', id);
@@ -226,7 +226,7 @@ class WebhooksApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier for the object.
-  Future<GetWebhooks200Response?> getWebhook(String id,) async {
+  FutureOr<GetWebhooks200Response?> getWebhook(String id,) async {
     final response = await getWebhookWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -246,7 +246,7 @@ class WebhooksApi {
   /// Get all webhooks.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> getWebhooksWithHttpInfo() async {
+  FutureOr<Response> getWebhooksWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/webhooks';
 
@@ -274,7 +274,7 @@ class WebhooksApi {
   /// List Webhooks
   ///
   /// Get all webhooks.
-  Future<GetWebhooks200Response?> getWebhooks() async {
+  FutureOr<GetWebhooks200Response?> getWebhooks() async {
     final response = await getWebhooksWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -307,7 +307,7 @@ class WebhooksApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreateWebhookRequest] createWebhookRequest:
-  Future<Response> updateWebhookWithHttpInfo(String id, { List<String>? fields, String? meta, CreateWebhookRequest? createWebhookRequest, }) async {
+  FutureOr<Response> updateWebhookWithHttpInfo(String id, { List<String>? fields, String? meta, CreateWebhookRequest? createWebhookRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/webhooks/{id}'
       .replaceAll('{id}', id);
@@ -356,7 +356,7 @@ class WebhooksApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreateWebhookRequest] createWebhookRequest:
-  Future<CreateRole200Response?> updateWebhook(String id, { List<String>? fields, String? meta, CreateWebhookRequest? createWebhookRequest, }) async {
+  FutureOr<CreateRole200Response?> updateWebhook(String id, { List<String>? fields, String? meta, CreateWebhookRequest? createWebhookRequest, }) async {
     final response = await updateWebhookWithHttpInfo(id,  fields: fields, meta: meta, createWebhookRequest: createWebhookRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -401,7 +401,7 @@ class WebhooksApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [UpdateWebhooksRequest] updateWebhooksRequest:
-  Future<Response> updateWebhooksWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateWebhooksRequest? updateWebhooksRequest, }) async {
+  FutureOr<Response> updateWebhooksWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateWebhooksRequest? updateWebhooksRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/webhooks';
 
@@ -476,7 +476,7 @@ class WebhooksApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [UpdateWebhooksRequest] updateWebhooksRequest:
-  Future<UpdateWebhooks200Response?> updateWebhooks({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateWebhooksRequest? updateWebhooksRequest, }) async {
+  FutureOr<UpdateWebhooks200Response?> updateWebhooks({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateWebhooksRequest? updateWebhooksRequest, }) async {
     final response = await updateWebhooksWithHttpInfo( fields: fields, limit: limit, meta: meta, offset: offset, sort: sort, filter: filter, search: search, updateWebhooksRequest: updateWebhooksRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

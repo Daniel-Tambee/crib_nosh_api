@@ -21,7 +21,7 @@ void main() {
     //
     // Image typed files can be dynamically resized and transformed to fit any need.
     //
-    //Future<String> getAsset(String id, { String key, String transforms, bool download }) async
+    //FutureOr<String> getAsset(String id, { String key, String transforms, bool download }) async
     test('test getAsset', () async {
       // TODO
     });

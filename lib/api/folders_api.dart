@@ -31,7 +31,7 @@ class FoldersApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreateFolderRequest] createFolderRequest:
-  Future<Response> createFolderWithHttpInfo({ List<String>? fields, String? meta, CreateFolderRequest? createFolderRequest, }) async {
+  FutureOr<Response> createFolderWithHttpInfo({ List<String>? fields, String? meta, CreateFolderRequest? createFolderRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/folders';
 
@@ -76,7 +76,7 @@ class FoldersApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreateFolderRequest] createFolderRequest:
-  Future<CreateFolder200Response?> createFolder({ List<String>? fields, String? meta, CreateFolderRequest? createFolderRequest, }) async {
+  FutureOr<CreateFolder200Response?> createFolder({ List<String>? fields, String? meta, CreateFolderRequest? createFolderRequest, }) async {
     final response = await createFolderWithHttpInfo( fields: fields, meta: meta, createFolderRequest: createFolderRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -101,7 +101,7 @@ class FoldersApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier for the object.
-  Future<Response> deleteFolderWithHttpInfo(String id,) async {
+  FutureOr<Response> deleteFolderWithHttpInfo(String id,) async {
     // ignore: prefer_const_declarations
     final path = r'/folders/{id}'
       .replaceAll('{id}', id);
@@ -135,7 +135,7 @@ class FoldersApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier for the object.
-  Future<void> deleteFolder(String id,) async {
+  FutureOr<void> deleteFolder(String id,) async {
     final response = await deleteFolderWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -147,7 +147,7 @@ class FoldersApi {
   /// Delete multiple existing folders.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> deleteFoldersWithHttpInfo() async {
+  FutureOr<Response> deleteFoldersWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/folders';
 
@@ -175,7 +175,7 @@ class FoldersApi {
   /// Delete Multiple Folders
   ///
   /// Delete multiple existing folders.
-  Future<void> deleteFolders() async {
+  FutureOr<void> deleteFolders() async {
     final response = await deleteFoldersWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -198,7 +198,7 @@ class FoldersApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<Response> getFolderWithHttpInfo(String id, { List<String>? fields, String? meta, }) async {
+  FutureOr<Response> getFolderWithHttpInfo(String id, { List<String>? fields, String? meta, }) async {
     // ignore: prefer_const_declarations
     final path = r'/folders/{id}'
       .replaceAll('{id}', id);
@@ -245,7 +245,7 @@ class FoldersApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<CreateFolder200Response?> getFolder(String id, { List<String>? fields, String? meta, }) async {
+  FutureOr<CreateFolder200Response?> getFolder(String id, { List<String>? fields, String? meta, }) async {
     final response = await getFolderWithHttpInfo(id,  fields: fields, meta: meta, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -288,7 +288,7 @@ class FoldersApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<Response> getFoldersWithHttpInfo({ List<String>? fields, int? limit, int? offset, List<String>? sort, Object? filter, String? search, String? meta, }) async {
+  FutureOr<Response> getFoldersWithHttpInfo({ List<String>? fields, int? limit, int? offset, List<String>? sort, Object? filter, String? search, String? meta, }) async {
     // ignore: prefer_const_declarations
     final path = r'/folders';
 
@@ -361,7 +361,7 @@ class FoldersApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<GetFolders200Response?> getFolders({ List<String>? fields, int? limit, int? offset, List<String>? sort, Object? filter, String? search, String? meta, }) async {
+  FutureOr<GetFolders200Response?> getFolders({ List<String>? fields, int? limit, int? offset, List<String>? sort, Object? filter, String? search, String? meta, }) async {
     final response = await getFoldersWithHttpInfo( fields: fields, limit: limit, offset: offset, sort: sort, filter: filter, search: search, meta: meta, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -394,7 +394,7 @@ class FoldersApi {
   ///   What metadata to return in the response.
   ///
   /// * [UpdateFolderRequest] updateFolderRequest:
-  Future<Response> updateFolderWithHttpInfo(String id, { List<String>? fields, String? meta, UpdateFolderRequest? updateFolderRequest, }) async {
+  FutureOr<Response> updateFolderWithHttpInfo(String id, { List<String>? fields, String? meta, UpdateFolderRequest? updateFolderRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/folders/{id}'
       .replaceAll('{id}', id);
@@ -443,7 +443,7 @@ class FoldersApi {
   ///   What metadata to return in the response.
   ///
   /// * [UpdateFolderRequest] updateFolderRequest:
-  Future<CreateFolder200Response?> updateFolder(String id, { List<String>? fields, String? meta, UpdateFolderRequest? updateFolderRequest, }) async {
+  FutureOr<CreateFolder200Response?> updateFolder(String id, { List<String>? fields, String? meta, UpdateFolderRequest? updateFolderRequest, }) async {
     final response = await updateFolderWithHttpInfo(id,  fields: fields, meta: meta, updateFolderRequest: updateFolderRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -488,7 +488,7 @@ class FoldersApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [UpdateFoldersRequest] updateFoldersRequest:
-  Future<Response> updateFoldersWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateFoldersRequest? updateFoldersRequest, }) async {
+  FutureOr<Response> updateFoldersWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateFoldersRequest? updateFoldersRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/folders';
 
@@ -563,7 +563,7 @@ class FoldersApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [UpdateFoldersRequest] updateFoldersRequest:
-  Future<GetFolders200Response?> updateFolders({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateFoldersRequest? updateFoldersRequest, }) async {
+  FutureOr<GetFolders200Response?> updateFolders({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateFoldersRequest? updateFoldersRequest, }) async {
     final response = await updateFoldersWithHttpInfo( fields: fields, limit: limit, meta: meta, offset: offset, sort: sort, filter: filter, search: search, updateFoldersRequest: updateFoldersRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

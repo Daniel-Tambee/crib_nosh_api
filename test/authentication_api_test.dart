@@ -21,7 +21,7 @@ void main() {
     //
     // Retrieve a Temporary Access Token
     //
-    //Future<Login200Response> login({ LoginRequest loginRequest }) async
+    //FutureOr<Login200Response> login({ LoginRequest loginRequest }) async
     test('test login', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Log Out
     //
-    //Future logout({ LogoutRequest logoutRequest }) async
+    //FutureOr logout({ LogoutRequest logoutRequest }) async
     test('test logout', () async {
       // TODO
     });
@@ -39,7 +39,7 @@ void main() {
     //
     // List configured OAuth providers.
     //
-    //Future<Oauth200Response> oauth() async
+    //FutureOr<Oauth200Response> oauth() async
     test('test oauth', () async {
       // TODO
     });
@@ -48,7 +48,7 @@ void main() {
     //
     // Start OAuth flow using the specified provider
     //
-    //Future<OauthProvider200Response> oauthProvider(String provider, { String redirect }) async
+    //FutureOr<OauthProvider200Response> oauthProvider(String provider, { String redirect }) async
     test('test oauthProvider', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
     //
     // Request a reset password email to be send.
     //
-    //Future passwordRequest({ PasswordRequestRequest passwordRequestRequest }) async
+    //FutureOr passwordRequest({ PasswordRequestRequest passwordRequestRequest }) async
     test('test passwordRequest', () async {
       // TODO
     });
@@ -66,7 +66,7 @@ void main() {
     //
     // The request a password reset endpoint sends an email with a link to the admin app which in turn uses this endpoint to allow the user to reset their password.
     //
-    //Future passwordReset({ PasswordResetRequest passwordResetRequest }) async
+    //FutureOr passwordReset({ PasswordResetRequest passwordResetRequest }) async
     test('test passwordReset', () async {
       // TODO
     });
@@ -75,7 +75,7 @@ void main() {
     //
     // Refresh a Temporary Access Token.
     //
-    //Future<Refresh200Response> refresh({ RefreshRequest refreshRequest }) async
+    //FutureOr<Refresh200Response> refresh({ RefreshRequest refreshRequest }) async
     test('test refresh', () async {
       // TODO
     });

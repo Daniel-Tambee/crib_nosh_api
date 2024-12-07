@@ -21,7 +21,7 @@ void main() {
     //
     // Create a new Order item.
     //
-    //Future<CreateItemsOrder200Response> createItemsOrder({ String meta, CreateItemsOrderRequest createItemsOrderRequest }) async
+    //FutureOr<CreateItemsOrder200Response> createItemsOrder({ String meta, CreateItemsOrderRequest createItemsOrderRequest }) async
     test('test createItemsOrder', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Delete multiple existing Order items.
     //
-    //Future deleteItemsOrder() async
+    //FutureOr deleteItemsOrder() async
     test('test deleteItemsOrder', () async {
       // TODO
     });
@@ -39,7 +39,7 @@ void main() {
     //
     // Delete an existing Order item.
     //
-    //Future deleteSingleItemsOrder(ReadSingleItemsCuisineIdParameter id) async
+    //FutureOr deleteSingleItemsOrder(ReadSingleItemsCuisineIdParameter id) async
     test('test deleteSingleItemsOrder', () async {
       // TODO
     });
@@ -48,7 +48,7 @@ void main() {
     //
     // List the Order items.
     //
-    //Future<ReadItemsOrder200Response> readItemsOrder({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
+    //FutureOr<ReadItemsOrder200Response> readItemsOrder({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
     test('test readItemsOrder', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
     //
     // Retrieve a single Order item by unique identifier.
     //
-    //Future<ReadSingleItemsOrder200Response> readSingleItemsOrder(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
+    //FutureOr<ReadSingleItemsOrder200Response> readSingleItemsOrder(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
     test('test readSingleItemsOrder', () async {
       // TODO
     });
@@ -66,7 +66,7 @@ void main() {
     //
     // Update multiple Order items at the same time.
     //
-    //Future<UpdateItemsOrder200Response> updateItemsOrder({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsOrderRequest createItemsOrderRequest }) async
+    //FutureOr<UpdateItemsOrder200Response> updateItemsOrder({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsOrderRequest createItemsOrderRequest }) async
     test('test updateItemsOrder', () async {
       // TODO
     });
@@ -75,7 +75,7 @@ void main() {
     //
     // Update an existing Order item.
     //
-    //Future<ReadSingleItemsOrder200Response> updateSingleItemsOrder(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsOrder itemsOrder }) async
+    //FutureOr<ReadSingleItemsOrder200Response> updateSingleItemsOrder(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsOrder itemsOrder }) async
     test('test updateSingleItemsOrder', () async {
       // TODO
     });

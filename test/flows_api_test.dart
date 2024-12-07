@@ -21,7 +21,7 @@ void main() {
     //
     // Create a new flow.
     //
-    //Future<CreateFlow200Response> createFlow({ List<String> fields, String meta, Flows flows }) async
+    //FutureOr<CreateFlow200Response> createFlow({ List<String> fields, String meta, Flows flows }) async
     test('test createFlow', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Delete an existing flow
     //
-    //Future deleteFlow(String id) async
+    //FutureOr deleteFlow(String id) async
     test('test deleteFlow', () async {
       // TODO
     });
@@ -39,7 +39,7 @@ void main() {
     //
     // Delete multiple existing flows.
     //
-    //Future deleteFlows() async
+    //FutureOr deleteFlows() async
     test('test deleteFlows', () async {
       // TODO
     });
@@ -48,7 +48,7 @@ void main() {
     //
     // Retrieve a single flow by unique identifier.
     //
-    //Future<CreateFlow200Response> getFlow(String id) async
+    //FutureOr<CreateFlow200Response> getFlow(String id) async
     test('test getFlow', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
     //
     // Get all flows.
     //
-    //Future<GetFlows200Response> getFlows() async
+    //FutureOr<GetFlows200Response> getFlows() async
     test('test getFlows', () async {
       // TODO
     });
@@ -66,7 +66,7 @@ void main() {
     //
     // Update an existing flow
     //
-    //Future<CreateFlow200Response> updateFlow(String id, { List<String> fields, String meta, Flows flows }) async
+    //FutureOr<CreateFlow200Response> updateFlow(String id, { List<String> fields, String meta, Flows flows }) async
     test('test updateFlow', () async {
       // TODO
     });
@@ -75,7 +75,7 @@ void main() {
     //
     // Update multiple flows at the same time.
     //
-    //Future<GetFlows200Response> updateFlows({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, UpdateFlowsRequest updateFlowsRequest }) async
+    //FutureOr<GetFlows200Response> updateFlows({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, UpdateFlowsRequest updateFlowsRequest }) async
     test('test updateFlows', () async {
       // TODO
     });

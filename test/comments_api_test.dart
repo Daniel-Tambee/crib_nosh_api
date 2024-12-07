@@ -21,7 +21,7 @@ void main() {
     //
     // Create a new comment.
     //
-    //Future<CreateComment200Response> createComment({ List<String> fields, String meta, CreateCommentRequest createCommentRequest }) async
+    //FutureOr<CreateComment200Response> createComment({ List<String> fields, String meta, CreateCommentRequest createCommentRequest }) async
     test('test createComment', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Delete an existing comment.
     //
-    //Future deleteComment() async
+    //FutureOr deleteComment() async
     test('test deleteComment', () async {
       // TODO
     });
@@ -39,7 +39,7 @@ void main() {
     //
     // Delete multiple existing comments.
     //
-    //Future deleteComments() async
+    //FutureOr deleteComments() async
     test('test deleteComments', () async {
       // TODO
     });
@@ -48,7 +48,7 @@ void main() {
     //
     // Retrieve a single comment by unique identifier.
     //
-    //Future<CreateComment200Response> getComment({ List<String> fields, String meta }) async
+    //FutureOr<CreateComment200Response> getComment({ List<String> fields, String meta }) async
     test('test getComment', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
     //
     // List the comments.
     //
-    //Future<GetComments200Response> getComments({ List<String> fields, int limit, int offset, int page, List<String> sort, Object filter, String search, String meta }) async
+    //FutureOr<GetComments200Response> getComments({ List<String> fields, int limit, int offset, int page, List<String> sort, Object filter, String search, String meta }) async
     test('test getComments', () async {
       // TODO
     });
@@ -66,7 +66,7 @@ void main() {
     //
     // Update an existing comment.
     //
-    //Future<CreateComment200Response> updateComment({ List<String> fields, String meta, UpdateCommentRequest updateCommentRequest }) async
+    //FutureOr<CreateComment200Response> updateComment({ List<String> fields, String meta, UpdateCommentRequest updateCommentRequest }) async
     test('test updateComment', () async {
       // TODO
     });
@@ -75,7 +75,7 @@ void main() {
     //
     // Update multiple comments at the same time.
     //
-    //Future<GetComments200Response> updateComments({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, UpdateCommentsRequest updateCommentsRequest }) async
+    //FutureOr<GetComments200Response> updateComments({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, UpdateCommentsRequest updateCommentsRequest }) async
     test('test updateComments', () async {
       // TODO
     });

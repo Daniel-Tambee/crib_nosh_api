@@ -21,7 +21,7 @@ void main() {
     //
     // Create a new relation.
     //
-    //Future<CreateRelation200Response> createRelation({ List<String> fields, String meta, CreateRelationRequest createRelationRequest }) async
+    //FutureOr<CreateRelation200Response> createRelation({ List<String> fields, String meta, CreateRelationRequest createRelationRequest }) async
     test('test createRelation', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Delete an existing relation.
     //
-    //Future deleteRelation(int id) async
+    //FutureOr deleteRelation(int id) async
     test('test deleteRelation', () async {
       // TODO
     });
@@ -39,7 +39,7 @@ void main() {
     //
     // Retrieve a single relation by unique identifier.
     //
-    //Future<CreateRelation200Response> getRelation(int id, { List<String> fields, String meta }) async
+    //FutureOr<CreateRelation200Response> getRelation(int id, { List<String> fields, String meta }) async
     test('test getRelation', () async {
       // TODO
     });
@@ -48,7 +48,7 @@ void main() {
     //
     // List the relations.
     //
-    //Future<GetRelations200Response> getRelations({ List<String> fields, int limit, int offset, String meta, List<String> sort, Object filter, String search, int page }) async
+    //FutureOr<GetRelations200Response> getRelations({ List<String> fields, int limit, int offset, String meta, List<String> sort, Object filter, String search, int page }) async
     test('test getRelations', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
     //
     // Update an existing relation
     //
-    //Future<CreateRelation200Response> updateRelation(int id, { List<String> fields, String meta, UpdateRelationRequest updateRelationRequest }) async
+    //FutureOr<CreateRelation200Response> updateRelation(int id, { List<String> fields, String meta, UpdateRelationRequest updateRelationRequest }) async
     test('test updateRelation', () async {
       // TODO
     });

@@ -31,7 +31,7 @@ class OperationsApi {
   ///   What metadata to return in the response.
   ///
   /// * [Operations] operations:
-  Future<Response> createOperationWithHttpInfo({ List<String>? fields, String? meta, Operations? operations, }) async {
+  FutureOr<Response> createOperationWithHttpInfo({ List<String>? fields, String? meta, Operations? operations, }) async {
     // ignore: prefer_const_declarations
     final path = r'/operations';
 
@@ -76,7 +76,7 @@ class OperationsApi {
   ///   What metadata to return in the response.
   ///
   /// * [Operations] operations:
-  Future<CreateOperation200Response?> createOperation({ List<String>? fields, String? meta, Operations? operations, }) async {
+  FutureOr<CreateOperation200Response?> createOperation({ List<String>? fields, String? meta, Operations? operations, }) async {
     final response = await createOperationWithHttpInfo( fields: fields, meta: meta, operations: operations, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -101,7 +101,7 @@ class OperationsApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier for the object.
-  Future<Response> deleteOperationWithHttpInfo(String id,) async {
+  FutureOr<Response> deleteOperationWithHttpInfo(String id,) async {
     // ignore: prefer_const_declarations
     final path = r'/operations/{id}'
       .replaceAll('{id}', id);
@@ -135,7 +135,7 @@ class OperationsApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier for the object.
-  Future<void> deleteOperation(String id,) async {
+  FutureOr<void> deleteOperation(String id,) async {
     final response = await deleteOperationWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -147,7 +147,7 @@ class OperationsApi {
   /// Delete multiple existing operations.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> deleteOperationsWithHttpInfo() async {
+  FutureOr<Response> deleteOperationsWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/operations';
 
@@ -175,7 +175,7 @@ class OperationsApi {
   /// Delete Multiple Operations
   ///
   /// Delete multiple existing operations.
-  Future<void> deleteOperations() async {
+  FutureOr<void> deleteOperations() async {
     final response = await deleteOperationsWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -192,7 +192,7 @@ class OperationsApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier for the object.
-  Future<Response> getOperationWithHttpInfo(String id,) async {
+  FutureOr<Response> getOperationWithHttpInfo(String id,) async {
     // ignore: prefer_const_declarations
     final path = r'/operations/{id}'
       .replaceAll('{id}', id);
@@ -226,7 +226,7 @@ class OperationsApi {
   ///
   /// * [String] id (required):
   ///   Unique identifier for the object.
-  Future<CreateOperation200Response?> getOperation(String id,) async {
+  FutureOr<CreateOperation200Response?> getOperation(String id,) async {
     final response = await getOperationWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -246,7 +246,7 @@ class OperationsApi {
   /// Get all operations.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> getOperationsWithHttpInfo() async {
+  FutureOr<Response> getOperationsWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/operations';
 
@@ -274,7 +274,7 @@ class OperationsApi {
   /// List Operations
   ///
   /// Get all operations.
-  Future<GetOperations200Response?> getOperations() async {
+  FutureOr<GetOperations200Response?> getOperations() async {
     final response = await getOperationsWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -307,7 +307,7 @@ class OperationsApi {
   ///   What metadata to return in the response.
   ///
   /// * [Operations] operations:
-  Future<Response> updateOperationWithHttpInfo(String id, { List<String>? fields, String? meta, Operations? operations, }) async {
+  FutureOr<Response> updateOperationWithHttpInfo(String id, { List<String>? fields, String? meta, Operations? operations, }) async {
     // ignore: prefer_const_declarations
     final path = r'/operations/{id}'
       .replaceAll('{id}', id);
@@ -356,7 +356,7 @@ class OperationsApi {
   ///   What metadata to return in the response.
   ///
   /// * [Operations] operations:
-  Future<CreateOperation200Response?> updateOperation(String id, { List<String>? fields, String? meta, Operations? operations, }) async {
+  FutureOr<CreateOperation200Response?> updateOperation(String id, { List<String>? fields, String? meta, Operations? operations, }) async {
     final response = await updateOperationWithHttpInfo(id,  fields: fields, meta: meta, operations: operations, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -401,7 +401,7 @@ class OperationsApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [UpdateOperationsRequest] updateOperationsRequest:
-  Future<Response> updateOperationsWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateOperationsRequest? updateOperationsRequest, }) async {
+  FutureOr<Response> updateOperationsWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateOperationsRequest? updateOperationsRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/operations';
 
@@ -476,7 +476,7 @@ class OperationsApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [UpdateOperationsRequest] updateOperationsRequest:
-  Future<GetOperations200Response?> updateOperations({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateOperationsRequest? updateOperationsRequest, }) async {
+  FutureOr<GetOperations200Response?> updateOperations({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateOperationsRequest? updateOperationsRequest, }) async {
     final response = await updateOperationsWithHttpInfo( fields: fields, limit: limit, meta: meta, offset: offset, sort: sort, filter: filter, search: search, updateOperationsRequest: updateOperationsRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

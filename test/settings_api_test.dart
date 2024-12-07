@@ -21,7 +21,7 @@ void main() {
     //
     // List the settings.
     //
-    //Future<GetSettings200Response> getSettings({ int limit, int offset, String meta, int page }) async
+    //FutureOr<GetSettings200Response> getSettings({ int limit, int offset, String meta, int page }) async
     test('test getSettings', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Update the settings
     //
-    //Future<GetSettings200Response> updateSetting({ Object body }) async
+    //FutureOr<GetSettings200Response> updateSetting({ Object body }) async
     test('test updateSetting', () async {
       // TODO
     });

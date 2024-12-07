@@ -21,7 +21,7 @@ void main() {
     //
     // Export a larger data set to a file in the File Library
     //
-    //Future callExport(String collection, { ExportRequest exportRequest }) async
+    //FutureOr callExport(String collection, { ExportRequest exportRequest }) async
     test('test callExport', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Import multiple records from a JSON or CSV file into a collection.
     //
-    //Future callImport(String collection, { MultipartFile file }) async
+    //FutureOr callImport(String collection, { MultipartFile file }) async
     test('test callImport', () async {
       // TODO
     });
@@ -39,7 +39,7 @@ void main() {
     //
     // Resets both the data and schema cache of Directus.
     //
-    //Future clearCache() async
+    //FutureOr clearCache() async
     test('test clearCache', () async {
       // TODO
     });
@@ -48,7 +48,7 @@ void main() {
     //
     // Generate a hash for a given string.
     //
-    //Future<HashGenerate200Response> hashGenerate({ HashGenerateRequest hashGenerateRequest }) async
+    //FutureOr<HashGenerate200Response> hashGenerate({ HashGenerateRequest hashGenerateRequest }) async
     test('test hashGenerate', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
     //
     // Generate a hash for a given string.
     //
-    //Future<HashVerify200Response> hashVerify({ HashVerifyRequest hashVerifyRequest }) async
+    //FutureOr<HashVerify200Response> hashVerify({ HashVerifyRequest hashVerifyRequest }) async
     test('test hashVerify', () async {
       // TODO
     });
@@ -66,7 +66,7 @@ void main() {
     //
     // Returns a random string of given length.
     //
-    //Future<Random200Response> random({ int length }) async
+    //FutureOr<Random200Response> random({ int length }) async
     test('test random', () async {
       // TODO
     });
@@ -75,7 +75,7 @@ void main() {
     //
     // Re-sort items in collection based on start and to value of item
     //
-    //Future sort(String collection, { SortRequest sortRequest }) async
+    //FutureOr sort(String collection, { SortRequest sortRequest }) async
     test('test sort', () async {
       // TODO
     });

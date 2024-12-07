@@ -32,7 +32,7 @@ class RevisionsApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<Response> getRevisionWithHttpInfo(int id, { List<String>? fields, String? meta, }) async {
+  FutureOr<Response> getRevisionWithHttpInfo(int id, { List<String>? fields, String? meta, }) async {
     // ignore: prefer_const_declarations
     final path = r'/revisions/{id}'
       .replaceAll('{id}', id.toString());
@@ -79,7 +79,7 @@ class RevisionsApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<GetRevision200Response?> getRevision(int id, { List<String>? fields, String? meta, }) async {
+  FutureOr<GetRevision200Response?> getRevision(int id, { List<String>? fields, String? meta, }) async {
     final response = await getRevisionWithHttpInfo(id,  fields: fields, meta: meta, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -125,7 +125,7 @@ class RevisionsApi {
   ///
   /// * [int] page:
   ///   Cursor for use in pagination. Often used in combination with limit.
-  Future<Response> getRevisionsWithHttpInfo({ List<String>? fields, int? limit, int? offset, String? meta, List<String>? sort, Object? filter, String? search, int? page, }) async {
+  FutureOr<Response> getRevisionsWithHttpInfo({ List<String>? fields, int? limit, int? offset, String? meta, List<String>? sort, Object? filter, String? search, int? page, }) async {
     // ignore: prefer_const_declarations
     final path = r'/revisions';
 
@@ -204,7 +204,7 @@ class RevisionsApi {
   ///
   /// * [int] page:
   ///   Cursor for use in pagination. Often used in combination with limit.
-  Future<GetRevisions200Response?> getRevisions({ List<String>? fields, int? limit, int? offset, String? meta, List<String>? sort, Object? filter, String? search, int? page, }) async {
+  FutureOr<GetRevisions200Response?> getRevisions({ List<String>? fields, int? limit, int? offset, String? meta, List<String>? sort, Object? filter, String? search, int? page, }) async {
     final response = await getRevisionsWithHttpInfo( fields: fields, limit: limit, offset: offset, meta: meta, sort: sort, filter: filter, search: search, page: page, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

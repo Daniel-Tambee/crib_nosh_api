@@ -28,7 +28,7 @@ class PermissionsApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreatePermissionRequest] createPermissionRequest:
-  Future<Response> createPermissionWithHttpInfo({ String? meta, CreatePermissionRequest? createPermissionRequest, }) async {
+  FutureOr<Response> createPermissionWithHttpInfo({ String? meta, CreatePermissionRequest? createPermissionRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/permissions';
 
@@ -67,7 +67,7 @@ class PermissionsApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreatePermissionRequest] createPermissionRequest:
-  Future<CreatePermission200Response?> createPermission({ String? meta, CreatePermissionRequest? createPermissionRequest, }) async {
+  FutureOr<CreatePermission200Response?> createPermission({ String? meta, CreatePermissionRequest? createPermissionRequest, }) async {
     final response = await createPermissionWithHttpInfo( meta: meta, createPermissionRequest: createPermissionRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -92,7 +92,7 @@ class PermissionsApi {
   ///
   /// * [int] id (required):
   ///   Index
-  Future<Response> deletePermissionWithHttpInfo(int id,) async {
+  FutureOr<Response> deletePermissionWithHttpInfo(int id,) async {
     // ignore: prefer_const_declarations
     final path = r'/permissions/{id}'
       .replaceAll('{id}', id.toString());
@@ -126,7 +126,7 @@ class PermissionsApi {
   ///
   /// * [int] id (required):
   ///   Index
-  Future<void> deletePermission(int id,) async {
+  FutureOr<void> deletePermission(int id,) async {
     final response = await deletePermissionWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -138,7 +138,7 @@ class PermissionsApi {
   /// Delete multiple existing permissions.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> deletePermissionsWithHttpInfo() async {
+  FutureOr<Response> deletePermissionsWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/permissions';
 
@@ -166,7 +166,7 @@ class PermissionsApi {
   /// Delete Multiple Permissions
   ///
   /// Delete multiple existing permissions.
-  Future<void> deletePermissions() async {
+  FutureOr<void> deletePermissions() async {
     final response = await deletePermissionsWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -178,7 +178,7 @@ class PermissionsApi {
   /// List the permissions that apply to the current user.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> getMyPermissionsWithHttpInfo() async {
+  FutureOr<Response> getMyPermissionsWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/permissions/me';
 
@@ -206,7 +206,7 @@ class PermissionsApi {
   /// List My Permissions
   ///
   /// List the permissions that apply to the current user.
-  Future<GetMyPermissions200Response?> getMyPermissions() async {
+  FutureOr<GetMyPermissions200Response?> getMyPermissions() async {
     final response = await getMyPermissionsWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -237,7 +237,7 @@ class PermissionsApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<Response> getPermissionWithHttpInfo(int id, { List<String>? fields, String? meta, }) async {
+  FutureOr<Response> getPermissionWithHttpInfo(int id, { List<String>? fields, String? meta, }) async {
     // ignore: prefer_const_declarations
     final path = r'/permissions/{id}'
       .replaceAll('{id}', id.toString());
@@ -284,7 +284,7 @@ class PermissionsApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<CreatePermission200Response?> getPermission(int id, { List<String>? fields, String? meta, }) async {
+  FutureOr<CreatePermission200Response?> getPermission(int id, { List<String>? fields, String? meta, }) async {
     final response = await getPermissionWithHttpInfo(id,  fields: fields, meta: meta, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -330,7 +330,7 @@ class PermissionsApi {
   ///
   /// * [int] page:
   ///   Cursor for use in pagination. Often used in combination with limit.
-  Future<Response> getPermissionsWithHttpInfo({ List<String>? fields, int? limit, int? offset, String? meta, List<String>? sort, Object? filter, String? search, int? page, }) async {
+  FutureOr<Response> getPermissionsWithHttpInfo({ List<String>? fields, int? limit, int? offset, String? meta, List<String>? sort, Object? filter, String? search, int? page, }) async {
     // ignore: prefer_const_declarations
     final path = r'/permissions';
 
@@ -409,7 +409,7 @@ class PermissionsApi {
   ///
   /// * [int] page:
   ///   Cursor for use in pagination. Often used in combination with limit.
-  Future<GetPermissions200Response?> getPermissions({ List<String>? fields, int? limit, int? offset, String? meta, List<String>? sort, Object? filter, String? search, int? page, }) async {
+  FutureOr<GetPermissions200Response?> getPermissions({ List<String>? fields, int? limit, int? offset, String? meta, List<String>? sort, Object? filter, String? search, int? page, }) async {
     final response = await getPermissionsWithHttpInfo( fields: fields, limit: limit, offset: offset, meta: meta, sort: sort, filter: filter, search: search, page: page, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -439,7 +439,7 @@ class PermissionsApi {
   ///   What metadata to return in the response.
   ///
   /// * [UpdatePermissionRequest] updatePermissionRequest:
-  Future<Response> updatePermissionWithHttpInfo(int id, { String? meta, UpdatePermissionRequest? updatePermissionRequest, }) async {
+  FutureOr<Response> updatePermissionWithHttpInfo(int id, { String? meta, UpdatePermissionRequest? updatePermissionRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/permissions/{id}'
       .replaceAll('{id}', id.toString());
@@ -482,7 +482,7 @@ class PermissionsApi {
   ///   What metadata to return in the response.
   ///
   /// * [UpdatePermissionRequest] updatePermissionRequest:
-  Future<CreatePermission200Response?> updatePermission(int id, { String? meta, UpdatePermissionRequest? updatePermissionRequest, }) async {
+  FutureOr<CreatePermission200Response?> updatePermission(int id, { String? meta, UpdatePermissionRequest? updatePermissionRequest, }) async {
     final response = await updatePermissionWithHttpInfo(id,  meta: meta, updatePermissionRequest: updatePermissionRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -527,7 +527,7 @@ class PermissionsApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [UpdatePermissionsRequest] updatePermissionsRequest:
-  Future<Response> updatePermissionsWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdatePermissionsRequest? updatePermissionsRequest, }) async {
+  FutureOr<Response> updatePermissionsWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdatePermissionsRequest? updatePermissionsRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/permissions';
 
@@ -602,7 +602,7 @@ class PermissionsApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [UpdatePermissionsRequest] updatePermissionsRequest:
-  Future<GetPermissions200Response?> updatePermissions({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdatePermissionsRequest? updatePermissionsRequest, }) async {
+  FutureOr<GetPermissions200Response?> updatePermissions({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdatePermissionsRequest? updatePermissionsRequest, }) async {
     final response = await updatePermissionsWithHttpInfo( fields: fields, limit: limit, meta: meta, offset: offset, sort: sort, filter: filter, search: search, updatePermissionsRequest: updatePermissionsRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

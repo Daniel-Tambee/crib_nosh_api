@@ -28,7 +28,7 @@ class ItemsChatApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreateItemsChatRequest] createItemsChatRequest:
-  Future<Response> createItemsChatWithHttpInfo({ String? meta, CreateItemsChatRequest? createItemsChatRequest, }) async {
+  FutureOr<Response> createItemsChatWithHttpInfo({ String? meta, CreateItemsChatRequest? createItemsChatRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/Chat';
 
@@ -67,7 +67,7 @@ class ItemsChatApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreateItemsChatRequest] createItemsChatRequest:
-  Future<CreateItemsChat200Response?> createItemsChat({ String? meta, CreateItemsChatRequest? createItemsChatRequest, }) async {
+  FutureOr<CreateItemsChat200Response?> createItemsChat({ String? meta, CreateItemsChatRequest? createItemsChatRequest, }) async {
     final response = await createItemsChatWithHttpInfo( meta: meta, createItemsChatRequest: createItemsChatRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -87,7 +87,7 @@ class ItemsChatApi {
   /// Delete multiple existing Chat items.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> deleteItemsChatWithHttpInfo() async {
+  FutureOr<Response> deleteItemsChatWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/items/Chat';
 
@@ -115,7 +115,7 @@ class ItemsChatApi {
   /// Delete Multiple Items
   ///
   /// Delete multiple existing Chat items.
-  Future<void> deleteItemsChat() async {
+  FutureOr<void> deleteItemsChat() async {
     final response = await deleteItemsChatWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -132,7 +132,7 @@ class ItemsChatApi {
   ///
   /// * [ReadSingleItemsCuisineIdParameter] id (required):
   ///   Index of the item.
-  Future<Response> deleteSingleItemsChatWithHttpInfo(ReadSingleItemsCuisineIdParameter id,) async {
+  FutureOr<Response> deleteSingleItemsChatWithHttpInfo(ReadSingleItemsCuisineIdParameter id,) async {
     // ignore: prefer_const_declarations
     final path = r'/items/Chat/{id}'
       .replaceAll('{id}', id.toString());
@@ -166,7 +166,7 @@ class ItemsChatApi {
   ///
   /// * [ReadSingleItemsCuisineIdParameter] id (required):
   ///   Index of the item.
-  Future<void> deleteSingleItemsChat(ReadSingleItemsCuisineIdParameter id,) async {
+  FutureOr<void> deleteSingleItemsChat(ReadSingleItemsCuisineIdParameter id,) async {
     final response = await deleteSingleItemsChatWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -201,7 +201,7 @@ class ItemsChatApi {
   ///
   /// * [String] search:
   ///   Filter by items that contain the given search query in one of their fields.
-  Future<Response> readItemsChatWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, }) async {
+  FutureOr<Response> readItemsChatWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/Chat';
 
@@ -274,7 +274,7 @@ class ItemsChatApi {
   ///
   /// * [String] search:
   ///   Filter by items that contain the given search query in one of their fields.
-  Future<ReadItemsChat200Response?> readItemsChat({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, }) async {
+  FutureOr<ReadItemsChat200Response?> readItemsChat({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, }) async {
     final response = await readItemsChatWithHttpInfo( fields: fields, limit: limit, meta: meta, offset: offset, sort: sort, filter: filter, search: search, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -308,7 +308,7 @@ class ItemsChatApi {
   ///
   /// * [String] version:
   ///   Retrieve an item's state from a specific Content Version. The value corresponds to the \"key\" of the Content Version. 
-  Future<Response> readSingleItemsChatWithHttpInfo(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, String? version, }) async {
+  FutureOr<Response> readSingleItemsChatWithHttpInfo(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, String? version, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/Chat/{id}'
       .replaceAll('{id}', id.toString());
@@ -361,7 +361,7 @@ class ItemsChatApi {
   ///
   /// * [String] version:
   ///   Retrieve an item's state from a specific Content Version. The value corresponds to the \"key\" of the Content Version. 
-  Future<ReadSingleItemsChat200Response?> readSingleItemsChat(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, String? version, }) async {
+  FutureOr<ReadSingleItemsChat200Response?> readSingleItemsChat(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, String? version, }) async {
     final response = await readSingleItemsChatWithHttpInfo(id,  fields: fields, meta: meta, version: version, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -406,7 +406,7 @@ class ItemsChatApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [CreateItemsChatRequest] createItemsChatRequest:
-  Future<Response> updateItemsChatWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, CreateItemsChatRequest? createItemsChatRequest, }) async {
+  FutureOr<Response> updateItemsChatWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, CreateItemsChatRequest? createItemsChatRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/Chat';
 
@@ -481,7 +481,7 @@ class ItemsChatApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [CreateItemsChatRequest] createItemsChatRequest:
-  Future<UpdateItemsChat200Response?> updateItemsChat({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, CreateItemsChatRequest? createItemsChatRequest, }) async {
+  FutureOr<UpdateItemsChat200Response?> updateItemsChat({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, CreateItemsChatRequest? createItemsChatRequest, }) async {
     final response = await updateItemsChatWithHttpInfo( fields: fields, limit: limit, meta: meta, offset: offset, sort: sort, filter: filter, search: search, createItemsChatRequest: createItemsChatRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -514,7 +514,7 @@ class ItemsChatApi {
   ///   What metadata to return in the response.
   ///
   /// * [ItemsChat] itemsChat:
-  Future<Response> updateSingleItemsChatWithHttpInfo(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, ItemsChat? itemsChat, }) async {
+  FutureOr<Response> updateSingleItemsChatWithHttpInfo(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, ItemsChat? itemsChat, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/Chat/{id}'
       .replaceAll('{id}', id.toString());
@@ -563,7 +563,7 @@ class ItemsChatApi {
   ///   What metadata to return in the response.
   ///
   /// * [ItemsChat] itemsChat:
-  Future<ReadSingleItemsChat200Response?> updateSingleItemsChat(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, ItemsChat? itemsChat, }) async {
+  FutureOr<ReadSingleItemsChat200Response?> updateSingleItemsChat(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, ItemsChat? itemsChat, }) async {
     final response = await updateSingleItemsChatWithHttpInfo(id,  fields: fields, meta: meta, itemsChat: itemsChat, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

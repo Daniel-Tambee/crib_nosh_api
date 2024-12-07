@@ -10,9 +10,9 @@
 
 part of openapi.api;
 
-
 class UtilitiesApi {
-  UtilitiesApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  UtilitiesApi([ApiClient? apiClient])
+      : apiClient = apiClient ?? defaultApiClient;
 
   final ApiClient apiClient;
 
@@ -28,10 +28,13 @@ class UtilitiesApi {
   ///   Collection identifier
   ///
   /// * [ExportRequest] exportRequest:
-  Future<Response> callExportWithHttpInfo(String collection, { ExportRequest? exportRequest, }) async {
+  FutureOr<Response> callExportWithHttpInfo(
+    String collection, {
+    ExportRequest? exportRequest,
+  }) async {
     // ignore: prefer_const_declarations
-    final path = r'/utils/export/{collection}'
-      .replaceAll('{collection}', collection);
+    final path =
+        r'/utils/export/{collection}'.replaceAll('{collection}', collection);
 
     // ignore: prefer_final_locals
     Object? postBody = exportRequest;
@@ -41,7 +44,6 @@ class UtilitiesApi {
     final formParams = <String, String>{};
 
     const contentTypes = <String>['application/json'];
-
 
     return apiClient.invokeAPI(
       path,
@@ -64,8 +66,14 @@ class UtilitiesApi {
   ///   Collection identifier
   ///
   /// * [ExportRequest] exportRequest:
-  Future<void> callExport(String collection, { ExportRequest? exportRequest, }) async {
-    final response = await callExportWithHttpInfo(collection,  exportRequest: exportRequest, );
+  FutureOr<void> callExport(
+    String collection, {
+    ExportRequest? exportRequest,
+  }) async {
+    final response = await callExportWithHttpInfo(
+      collection,
+      exportRequest: exportRequest,
+    );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -83,10 +91,13 @@ class UtilitiesApi {
   ///   Collection identifier
   ///
   /// * [MultipartFile] file:
-  Future<Response> callImportWithHttpInfo(String collection, { MultipartFile? file, }) async {
+  FutureOr<Response> callImportWithHttpInfo(
+    String collection, {
+    MultipartFile? file,
+  }) async {
     // ignore: prefer_const_declarations
-    final path = r'/utils/import/{collection}'
-      .replaceAll('{collection}', collection);
+    final path =
+        r'/utils/import/{collection}'.replaceAll('{collection}', collection);
 
     // ignore: prefer_final_locals
     Object? postBody;
@@ -98,7 +109,7 @@ class UtilitiesApi {
     const contentTypes = <String>['multipart/form-data'];
 
     bool hasFields = false;
-    final mp = MultipartRequest('POST');
+    final mp = MultipartRequest('POST', Uri.parse(path));
     if (file != null) {
       hasFields = true;
       mp.fields[r'file'] = file.field;
@@ -129,8 +140,14 @@ class UtilitiesApi {
   ///   Collection identifier
   ///
   /// * [MultipartFile] file:
-  Future<void> callImport(String collection, { MultipartFile? file, }) async {
-    final response = await callImportWithHttpInfo(collection,  file: file, );
+  FutureOr<void> callImport(
+    String collection, {
+    MultipartFile? file,
+  }) async {
+    final response = await callImportWithHttpInfo(
+      collection,
+      file: file,
+    );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -141,7 +158,7 @@ class UtilitiesApi {
   /// Resets both the data and schema cache of Directus.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> clearCacheWithHttpInfo() async {
+  FutureOr<Response> clearCacheWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/utils/cache/clear';
 
@@ -153,7 +170,6 @@ class UtilitiesApi {
     final formParams = <String, String>{};
 
     const contentTypes = <String>[];
-
 
     return apiClient.invokeAPI(
       path,
@@ -169,7 +185,7 @@ class UtilitiesApi {
   /// Clear Cache
   ///
   /// Resets both the data and schema cache of Directus.
-  Future<void> clearCache() async {
+  FutureOr<void> clearCache() async {
     final response = await clearCacheWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -185,7 +201,9 @@ class UtilitiesApi {
   /// Parameters:
   ///
   /// * [HashGenerateRequest] hashGenerateRequest:
-  Future<Response> hashGenerateWithHttpInfo({ HashGenerateRequest? hashGenerateRequest, }) async {
+  FutureOr<Response> hashGenerateWithHttpInfo({
+    HashGenerateRequest? hashGenerateRequest,
+  }) async {
     // ignore: prefer_const_declarations
     final path = r'/utils/hash/generate';
 
@@ -197,7 +215,6 @@ class UtilitiesApi {
     final formParams = <String, String>{};
 
     const contentTypes = <String>['application/json'];
-
 
     return apiClient.invokeAPI(
       path,
@@ -217,17 +234,24 @@ class UtilitiesApi {
   /// Parameters:
   ///
   /// * [HashGenerateRequest] hashGenerateRequest:
-  Future<HashGenerate200Response?> hashGenerate({ HashGenerateRequest? hashGenerateRequest, }) async {
-    final response = await hashGenerateWithHttpInfo( hashGenerateRequest: hashGenerateRequest, );
+  FutureOr<HashGenerate200Response?> hashGenerate({
+    HashGenerateRequest? hashGenerateRequest,
+  }) async {
+    final response = await hashGenerateWithHttpInfo(
+      hashGenerateRequest: hashGenerateRequest,
+    );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'HashGenerate200Response',) as HashGenerate200Response;
-    
+    if (response.body.isNotEmpty &&
+        response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(
+        await _decodeBodyBytes(response),
+        'HashGenerate200Response',
+      ) as HashGenerate200Response;
     }
     return null;
   }
@@ -241,7 +265,9 @@ class UtilitiesApi {
   /// Parameters:
   ///
   /// * [HashVerifyRequest] hashVerifyRequest:
-  Future<Response> hashVerifyWithHttpInfo({ HashVerifyRequest? hashVerifyRequest, }) async {
+  FutureOr<Response> hashVerifyWithHttpInfo({
+    HashVerifyRequest? hashVerifyRequest,
+  }) async {
     // ignore: prefer_const_declarations
     final path = r'/utils/hash/verify';
 
@@ -253,7 +279,6 @@ class UtilitiesApi {
     final formParams = <String, String>{};
 
     const contentTypes = <String>['application/json'];
-
 
     return apiClient.invokeAPI(
       path,
@@ -273,17 +298,24 @@ class UtilitiesApi {
   /// Parameters:
   ///
   /// * [HashVerifyRequest] hashVerifyRequest:
-  Future<HashVerify200Response?> hashVerify({ HashVerifyRequest? hashVerifyRequest, }) async {
-    final response = await hashVerifyWithHttpInfo( hashVerifyRequest: hashVerifyRequest, );
+  FutureOr<HashVerify200Response?> hashVerify({
+    HashVerifyRequest? hashVerifyRequest,
+  }) async {
+    final response = await hashVerifyWithHttpInfo(
+      hashVerifyRequest: hashVerifyRequest,
+    );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'HashVerify200Response',) as HashVerify200Response;
-    
+    if (response.body.isNotEmpty &&
+        response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(
+        await _decodeBodyBytes(response),
+        'HashVerify200Response',
+      ) as HashVerify200Response;
     }
     return null;
   }
@@ -298,7 +330,9 @@ class UtilitiesApi {
   ///
   /// * [int] length:
   ///   Length of the random string.
-  Future<Response> randomWithHttpInfo({ int? length, }) async {
+  FutureOr<Response> randomWithHttpInfo({
+    int? length,
+  }) async {
     // ignore: prefer_const_declarations
     final path = r'/utils/random/string';
 
@@ -314,7 +348,6 @@ class UtilitiesApi {
     }
 
     const contentTypes = <String>[];
-
 
     return apiClient.invokeAPI(
       path,
@@ -335,17 +368,24 @@ class UtilitiesApi {
   ///
   /// * [int] length:
   ///   Length of the random string.
-  Future<Random200Response?> random({ int? length, }) async {
-    final response = await randomWithHttpInfo( length: length, );
+  FutureOr<Random200Response?> random({
+    int? length,
+  }) async {
+    final response = await randomWithHttpInfo(
+      length: length,
+    );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Random200Response',) as Random200Response;
-    
+    if (response.body.isNotEmpty &&
+        response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(
+        await _decodeBodyBytes(response),
+        'Random200Response',
+      ) as Random200Response;
     }
     return null;
   }
@@ -362,10 +402,13 @@ class UtilitiesApi {
   ///   Collection identifier
   ///
   /// * [SortRequest] sortRequest:
-  Future<Response> sortWithHttpInfo(String collection, { SortRequest? sortRequest, }) async {
+  FutureOr<Response> sortWithHttpInfo(
+    String collection, {
+    SortRequest? sortRequest,
+  }) async {
     // ignore: prefer_const_declarations
-    final path = r'/utils/sort/{collection}'
-      .replaceAll('{collection}', collection);
+    final path =
+        r'/utils/sort/{collection}'.replaceAll('{collection}', collection);
 
     // ignore: prefer_final_locals
     Object? postBody = sortRequest;
@@ -375,7 +418,6 @@ class UtilitiesApi {
     final formParams = <String, String>{};
 
     const contentTypes = <String>['application/json'];
-
 
     return apiClient.invokeAPI(
       path,
@@ -398,8 +440,14 @@ class UtilitiesApi {
   ///   Collection identifier
   ///
   /// * [SortRequest] sortRequest:
-  Future<void> sort(String collection, { SortRequest? sortRequest, }) async {
-    final response = await sortWithHttpInfo(collection,  sortRequest: sortRequest, );
+  FutureOr<void> sort(
+    String collection, {
+    SortRequest? sortRequest,
+  }) async {
+    final response = await sortWithHttpInfo(
+      collection,
+      sortRequest: sortRequest,
+    );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

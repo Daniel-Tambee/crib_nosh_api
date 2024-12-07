@@ -21,7 +21,7 @@ void main() {
     //
     // Create a new operation.
     //
-    //Future<CreateOperation200Response> createOperation({ List<String> fields, String meta, Operations operations }) async
+    //FutureOr<CreateOperation200Response> createOperation({ List<String> fields, String meta, Operations operations }) async
     test('test createOperation', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Delete an existing operation
     //
-    //Future deleteOperation(String id) async
+    //FutureOr deleteOperation(String id) async
     test('test deleteOperation', () async {
       // TODO
     });
@@ -39,7 +39,7 @@ void main() {
     //
     // Delete multiple existing operations.
     //
-    //Future deleteOperations() async
+    //FutureOr deleteOperations() async
     test('test deleteOperations', () async {
       // TODO
     });
@@ -48,7 +48,7 @@ void main() {
     //
     // Retrieve a single operation by unique identifier.
     //
-    //Future<CreateOperation200Response> getOperation(String id) async
+    //FutureOr<CreateOperation200Response> getOperation(String id) async
     test('test getOperation', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
     //
     // Get all operations.
     //
-    //Future<GetOperations200Response> getOperations() async
+    //FutureOr<GetOperations200Response> getOperations() async
     test('test getOperations', () async {
       // TODO
     });
@@ -66,7 +66,7 @@ void main() {
     //
     // Update an existing operation
     //
-    //Future<CreateOperation200Response> updateOperation(String id, { List<String> fields, String meta, Operations operations }) async
+    //FutureOr<CreateOperation200Response> updateOperation(String id, { List<String> fields, String meta, Operations operations }) async
     test('test updateOperation', () async {
       // TODO
     });
@@ -75,7 +75,7 @@ void main() {
     //
     // Update multiple operations at the same time.
     //
-    //Future<GetOperations200Response> updateOperations({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, UpdateOperationsRequest updateOperationsRequest }) async
+    //FutureOr<GetOperations200Response> updateOperations({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, UpdateOperationsRequest updateOperationsRequest }) async
     test('test updateOperations', () async {
       // TODO
     });

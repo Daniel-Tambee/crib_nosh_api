@@ -37,7 +37,7 @@ class ApiClient {
 
   // We don't use a Map<String, String> for queryParams.
   // If collectionFormat is 'multi', a key might appear multiple times.
-  Future<Response> invokeAPI(
+  FutureOr<Response> invokeAPI(
     String path,
     String method,
     List<QueryParam> queryParams,
@@ -63,7 +63,7 @@ class ApiClient {
         body is MultipartFile && (contentType == null ||
         !contentType.toLowerCase().startsWith('multipart/form-data'))
       ) {
-        final request = StreamedRequest(method);
+        final request = StreamedRequest(method, uri);
         request.headers.addAll(headerParams);
         request.contentLength = body.length;
         body.finalize().listen(
@@ -78,7 +78,7 @@ class ApiClient {
       }
 
       if (body is MultipartRequest) {
-        final request = MultipartRequest(method);
+        final request = MultipartRequest(method,uri);
         request.fields.addAll(body.fields);
         request.files.addAll(body.files);
         request.headers.addAll(body.headers);
@@ -143,7 +143,7 @@ class ApiClient {
     );
   }
 
-  Future<dynamic> deserializeAsync(String value, String targetType, {bool growable = false,}) async =>
+  FutureOr<dynamic> deserializeAsync(String value, String targetType, {bool growable = false,}) async =>
     // ignore: deprecated_member_use_from_same_package
     deserialize(value, targetType, growable: growable);
 
@@ -159,7 +159,7 @@ class ApiClient {
   }
 
   // ignore: deprecated_member_use_from_same_package
-  Future<String> serializeAsync(Object? value) async => serialize(value);
+  FutureOr<String> serializeAsync(Object? value) async => serialize(value);
 
   @Deprecated('Scheduled for removal in OpenAPI Generator 6.x. Use serializeAsync() instead.')
   String serialize(Object? value) => value == null ? '' : json.encode(value);
@@ -685,7 +685,7 @@ class DeserializationMessage {
 }
 
 /// Primarily intended for use in an isolate.
-Future<dynamic> decodeAsync(DeserializationMessage message) async {
+FutureOr<dynamic> decodeAsync(DeserializationMessage message) async {
   // Remove all spaces. Necessary for regular expressions as well.
   final targetType = message.targetType.replaceAll(' ', '');
 
@@ -696,7 +696,7 @@ Future<dynamic> decodeAsync(DeserializationMessage message) async {
 }
 
 /// Primarily intended for use in an isolate.
-Future<dynamic> deserializeAsync(DeserializationMessage message) async {
+FutureOr<dynamic> deserializeAsync(DeserializationMessage message) async {
   // Remove all spaces. Necessary for regular expressions as well.
   final targetType = message.targetType.replaceAll(' ', '');
 
@@ -711,4 +711,4 @@ Future<dynamic> deserializeAsync(DeserializationMessage message) async {
 }
 
 /// Primarily intended for use in an isolate.
-Future<String> serializeAsync(Object? value) async => value == null ? '' : json.encode(value);
+FutureOr<String> serializeAsync(Object? value) async => value == null ? '' : json.encode(value);

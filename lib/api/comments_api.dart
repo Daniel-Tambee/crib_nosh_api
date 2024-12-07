@@ -31,7 +31,7 @@ class CommentsApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreateCommentRequest] createCommentRequest:
-  Future<Response> createCommentWithHttpInfo({ List<String>? fields, String? meta, CreateCommentRequest? createCommentRequest, }) async {
+  FutureOr<Response> createCommentWithHttpInfo({ List<String>? fields, String? meta, CreateCommentRequest? createCommentRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/comments';
 
@@ -76,7 +76,7 @@ class CommentsApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreateCommentRequest] createCommentRequest:
-  Future<CreateComment200Response?> createComment({ List<String>? fields, String? meta, CreateCommentRequest? createCommentRequest, }) async {
+  FutureOr<CreateComment200Response?> createComment({ List<String>? fields, String? meta, CreateCommentRequest? createCommentRequest, }) async {
     final response = await createCommentWithHttpInfo( fields: fields, meta: meta, createCommentRequest: createCommentRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -96,7 +96,7 @@ class CommentsApi {
   /// Delete an existing comment.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> deleteCommentWithHttpInfo() async {
+  FutureOr<Response> deleteCommentWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/comments/{id}';
 
@@ -124,7 +124,7 @@ class CommentsApi {
   /// Delete a Comment
   ///
   /// Delete an existing comment.
-  Future<void> deleteComment() async {
+  FutureOr<void> deleteComment() async {
     final response = await deleteCommentWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -136,7 +136,7 @@ class CommentsApi {
   /// Delete multiple existing comments.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> deleteCommentsWithHttpInfo() async {
+  FutureOr<Response> deleteCommentsWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/comments';
 
@@ -164,7 +164,7 @@ class CommentsApi {
   /// Delete Multiple Comments
   ///
   /// Delete multiple existing comments.
-  Future<void> deleteComments() async {
+  FutureOr<void> deleteComments() async {
     final response = await deleteCommentsWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -184,7 +184,7 @@ class CommentsApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<Response> getCommentWithHttpInfo({ List<String>? fields, String? meta, }) async {
+  FutureOr<Response> getCommentWithHttpInfo({ List<String>? fields, String? meta, }) async {
     // ignore: prefer_const_declarations
     final path = r'/comments/{id}';
 
@@ -227,7 +227,7 @@ class CommentsApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<CreateComment200Response?> getComment({ List<String>? fields, String? meta, }) async {
+  FutureOr<CreateComment200Response?> getComment({ List<String>? fields, String? meta, }) async {
     final response = await getCommentWithHttpInfo( fields: fields, meta: meta, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -273,7 +273,7 @@ class CommentsApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<Response> getCommentsWithHttpInfo({ List<String>? fields, int? limit, int? offset, int? page, List<String>? sort, Object? filter, String? search, String? meta, }) async {
+  FutureOr<Response> getCommentsWithHttpInfo({ List<String>? fields, int? limit, int? offset, int? page, List<String>? sort, Object? filter, String? search, String? meta, }) async {
     // ignore: prefer_const_declarations
     final path = r'/comments';
 
@@ -352,7 +352,7 @@ class CommentsApi {
   ///
   /// * [String] meta:
   ///   What metadata to return in the response.
-  Future<GetComments200Response?> getComments({ List<String>? fields, int? limit, int? offset, int? page, List<String>? sort, Object? filter, String? search, String? meta, }) async {
+  FutureOr<GetComments200Response?> getComments({ List<String>? fields, int? limit, int? offset, int? page, List<String>? sort, Object? filter, String? search, String? meta, }) async {
     final response = await getCommentsWithHttpInfo( fields: fields, limit: limit, offset: offset, page: page, sort: sort, filter: filter, search: search, meta: meta, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -382,7 +382,7 @@ class CommentsApi {
   ///   What metadata to return in the response.
   ///
   /// * [UpdateCommentRequest] updateCommentRequest:
-  Future<Response> updateCommentWithHttpInfo({ List<String>? fields, String? meta, UpdateCommentRequest? updateCommentRequest, }) async {
+  FutureOr<Response> updateCommentWithHttpInfo({ List<String>? fields, String? meta, UpdateCommentRequest? updateCommentRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/comments/{id}';
 
@@ -427,7 +427,7 @@ class CommentsApi {
   ///   What metadata to return in the response.
   ///
   /// * [UpdateCommentRequest] updateCommentRequest:
-  Future<CreateComment200Response?> updateComment({ List<String>? fields, String? meta, UpdateCommentRequest? updateCommentRequest, }) async {
+  FutureOr<CreateComment200Response?> updateComment({ List<String>? fields, String? meta, UpdateCommentRequest? updateCommentRequest, }) async {
     final response = await updateCommentWithHttpInfo( fields: fields, meta: meta, updateCommentRequest: updateCommentRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -472,7 +472,7 @@ class CommentsApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [UpdateCommentsRequest] updateCommentsRequest:
-  Future<Response> updateCommentsWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateCommentsRequest? updateCommentsRequest, }) async {
+  FutureOr<Response> updateCommentsWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateCommentsRequest? updateCommentsRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/comments';
 
@@ -547,7 +547,7 @@ class CommentsApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [UpdateCommentsRequest] updateCommentsRequest:
-  Future<GetComments200Response?> updateComments({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateCommentsRequest? updateCommentsRequest, }) async {
+  FutureOr<GetComments200Response?> updateComments({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, UpdateCommentsRequest? updateCommentsRequest, }) async {
     final response = await updateCommentsWithHttpInfo( fields: fields, limit: limit, meta: meta, offset: offset, sort: sort, filter: filter, search: search, updateCommentsRequest: updateCommentsRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

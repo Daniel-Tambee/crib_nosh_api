@@ -21,7 +21,7 @@ void main() {
     //
     // Create a new Review item.
     //
-    //Future<CreateItemsReview200Response> createItemsReview({ String meta, CreateItemsReviewRequest createItemsReviewRequest }) async
+    //FutureOr<CreateItemsReview200Response> createItemsReview({ String meta, CreateItemsReviewRequest createItemsReviewRequest }) async
     test('test createItemsReview', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Delete multiple existing Review items.
     //
-    //Future deleteItemsReview() async
+    //FutureOr deleteItemsReview() async
     test('test deleteItemsReview', () async {
       // TODO
     });
@@ -39,7 +39,7 @@ void main() {
     //
     // Delete an existing Review item.
     //
-    //Future deleteSingleItemsReview(ReadSingleItemsCuisineIdParameter id) async
+    //FutureOr deleteSingleItemsReview(ReadSingleItemsCuisineIdParameter id) async
     test('test deleteSingleItemsReview', () async {
       // TODO
     });
@@ -48,7 +48,7 @@ void main() {
     //
     // List the Review items.
     //
-    //Future<ReadItemsReview200Response> readItemsReview({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
+    //FutureOr<ReadItemsReview200Response> readItemsReview({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search }) async
     test('test readItemsReview', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
     //
     // Retrieve a single Review item by unique identifier.
     //
-    //Future<ReadSingleItemsReview200Response> readSingleItemsReview(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
+    //FutureOr<ReadSingleItemsReview200Response> readSingleItemsReview(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, String version }) async
     test('test readSingleItemsReview', () async {
       // TODO
     });
@@ -66,7 +66,7 @@ void main() {
     //
     // Update multiple Review items at the same time.
     //
-    //Future<UpdateItemsReview200Response> updateItemsReview({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsReviewRequest createItemsReviewRequest }) async
+    //FutureOr<UpdateItemsReview200Response> updateItemsReview({ List<String> fields, int limit, String meta, int offset, List<String> sort, Object filter, String search, CreateItemsReviewRequest createItemsReviewRequest }) async
     test('test updateItemsReview', () async {
       // TODO
     });
@@ -75,7 +75,7 @@ void main() {
     //
     // Update an existing Review item.
     //
-    //Future<ReadSingleItemsReview200Response> updateSingleItemsReview(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsReview itemsReview }) async
+    //FutureOr<ReadSingleItemsReview200Response> updateSingleItemsReview(ReadSingleItemsCuisineIdParameter id, { List<String> fields, String meta, ItemsReview itemsReview }) async
     test('test updateSingleItemsReview', () async {
       // TODO
     });

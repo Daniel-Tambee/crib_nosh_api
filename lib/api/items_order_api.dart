@@ -28,7 +28,7 @@ class ItemsOrderApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreateItemsOrderRequest] createItemsOrderRequest:
-  Future<Response> createItemsOrderWithHttpInfo({ String? meta, CreateItemsOrderRequest? createItemsOrderRequest, }) async {
+  FutureOr<Response> createItemsOrderWithHttpInfo({ String? meta, CreateItemsOrderRequest? createItemsOrderRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/Order';
 
@@ -67,7 +67,7 @@ class ItemsOrderApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreateItemsOrderRequest] createItemsOrderRequest:
-  Future<CreateItemsOrder200Response?> createItemsOrder({ String? meta, CreateItemsOrderRequest? createItemsOrderRequest, }) async {
+  FutureOr<CreateItemsOrder200Response?> createItemsOrder({ String? meta, CreateItemsOrderRequest? createItemsOrderRequest, }) async {
     final response = await createItemsOrderWithHttpInfo( meta: meta, createItemsOrderRequest: createItemsOrderRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -87,7 +87,7 @@ class ItemsOrderApi {
   /// Delete multiple existing Order items.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> deleteItemsOrderWithHttpInfo() async {
+  FutureOr<Response> deleteItemsOrderWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/items/Order';
 
@@ -115,7 +115,7 @@ class ItemsOrderApi {
   /// Delete Multiple Items
   ///
   /// Delete multiple existing Order items.
-  Future<void> deleteItemsOrder() async {
+  FutureOr<void> deleteItemsOrder() async {
     final response = await deleteItemsOrderWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -132,7 +132,7 @@ class ItemsOrderApi {
   ///
   /// * [ReadSingleItemsCuisineIdParameter] id (required):
   ///   Index of the item.
-  Future<Response> deleteSingleItemsOrderWithHttpInfo(ReadSingleItemsCuisineIdParameter id,) async {
+  FutureOr<Response> deleteSingleItemsOrderWithHttpInfo(ReadSingleItemsCuisineIdParameter id,) async {
     // ignore: prefer_const_declarations
     final path = r'/items/Order/{id}'
       .replaceAll('{id}', id.toString());
@@ -166,7 +166,7 @@ class ItemsOrderApi {
   ///
   /// * [ReadSingleItemsCuisineIdParameter] id (required):
   ///   Index of the item.
-  Future<void> deleteSingleItemsOrder(ReadSingleItemsCuisineIdParameter id,) async {
+  FutureOr<void> deleteSingleItemsOrder(ReadSingleItemsCuisineIdParameter id,) async {
     final response = await deleteSingleItemsOrderWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -201,7 +201,7 @@ class ItemsOrderApi {
   ///
   /// * [String] search:
   ///   Filter by items that contain the given search query in one of their fields.
-  Future<Response> readItemsOrderWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, }) async {
+  FutureOr<Response> readItemsOrderWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/Order';
 
@@ -274,7 +274,7 @@ class ItemsOrderApi {
   ///
   /// * [String] search:
   ///   Filter by items that contain the given search query in one of their fields.
-  Future<ReadItemsOrder200Response?> readItemsOrder({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, }) async {
+  FutureOr<ReadItemsOrder200Response?> readItemsOrder({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, }) async {
     final response = await readItemsOrderWithHttpInfo( fields: fields, limit: limit, meta: meta, offset: offset, sort: sort, filter: filter, search: search, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -308,7 +308,7 @@ class ItemsOrderApi {
   ///
   /// * [String] version:
   ///   Retrieve an item's state from a specific Content Version. The value corresponds to the \"key\" of the Content Version. 
-  Future<Response> readSingleItemsOrderWithHttpInfo(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, String? version, }) async {
+  FutureOr<Response> readSingleItemsOrderWithHttpInfo(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, String? version, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/Order/{id}'
       .replaceAll('{id}', id.toString());
@@ -361,7 +361,7 @@ class ItemsOrderApi {
   ///
   /// * [String] version:
   ///   Retrieve an item's state from a specific Content Version. The value corresponds to the \"key\" of the Content Version. 
-  Future<ReadSingleItemsOrder200Response?> readSingleItemsOrder(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, String? version, }) async {
+  FutureOr<ReadSingleItemsOrder200Response?> readSingleItemsOrder(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, String? version, }) async {
     final response = await readSingleItemsOrderWithHttpInfo(id,  fields: fields, meta: meta, version: version, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -406,7 +406,7 @@ class ItemsOrderApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [CreateItemsOrderRequest] createItemsOrderRequest:
-  Future<Response> updateItemsOrderWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, CreateItemsOrderRequest? createItemsOrderRequest, }) async {
+  FutureOr<Response> updateItemsOrderWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, CreateItemsOrderRequest? createItemsOrderRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/Order';
 
@@ -481,7 +481,7 @@ class ItemsOrderApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [CreateItemsOrderRequest] createItemsOrderRequest:
-  Future<UpdateItemsOrder200Response?> updateItemsOrder({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, CreateItemsOrderRequest? createItemsOrderRequest, }) async {
+  FutureOr<UpdateItemsOrder200Response?> updateItemsOrder({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, CreateItemsOrderRequest? createItemsOrderRequest, }) async {
     final response = await updateItemsOrderWithHttpInfo( fields: fields, limit: limit, meta: meta, offset: offset, sort: sort, filter: filter, search: search, createItemsOrderRequest: createItemsOrderRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -514,7 +514,7 @@ class ItemsOrderApi {
   ///   What metadata to return in the response.
   ///
   /// * [ItemsOrder] itemsOrder:
-  Future<Response> updateSingleItemsOrderWithHttpInfo(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, ItemsOrder? itemsOrder, }) async {
+  FutureOr<Response> updateSingleItemsOrderWithHttpInfo(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, ItemsOrder? itemsOrder, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/Order/{id}'
       .replaceAll('{id}', id.toString());
@@ -563,7 +563,7 @@ class ItemsOrderApi {
   ///   What metadata to return in the response.
   ///
   /// * [ItemsOrder] itemsOrder:
-  Future<ReadSingleItemsOrder200Response?> updateSingleItemsOrder(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, ItemsOrder? itemsOrder, }) async {
+  FutureOr<ReadSingleItemsOrder200Response?> updateSingleItemsOrder(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, ItemsOrder? itemsOrder, }) async {
     final response = await updateSingleItemsOrderWithHttpInfo(id,  fields: fields, meta: meta, itemsOrder: itemsOrder, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

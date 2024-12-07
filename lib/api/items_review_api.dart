@@ -28,7 +28,7 @@ class ItemsReviewApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreateItemsReviewRequest] createItemsReviewRequest:
-  Future<Response> createItemsReviewWithHttpInfo({ String? meta, CreateItemsReviewRequest? createItemsReviewRequest, }) async {
+  FutureOr<Response> createItemsReviewWithHttpInfo({ String? meta, CreateItemsReviewRequest? createItemsReviewRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/Review';
 
@@ -67,7 +67,7 @@ class ItemsReviewApi {
   ///   What metadata to return in the response.
   ///
   /// * [CreateItemsReviewRequest] createItemsReviewRequest:
-  Future<CreateItemsReview200Response?> createItemsReview({ String? meta, CreateItemsReviewRequest? createItemsReviewRequest, }) async {
+  FutureOr<CreateItemsReview200Response?> createItemsReview({ String? meta, CreateItemsReviewRequest? createItemsReviewRequest, }) async {
     final response = await createItemsReviewWithHttpInfo( meta: meta, createItemsReviewRequest: createItemsReviewRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -87,7 +87,7 @@ class ItemsReviewApi {
   /// Delete multiple existing Review items.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> deleteItemsReviewWithHttpInfo() async {
+  FutureOr<Response> deleteItemsReviewWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/items/Review';
 
@@ -115,7 +115,7 @@ class ItemsReviewApi {
   /// Delete Multiple Items
   ///
   /// Delete multiple existing Review items.
-  Future<void> deleteItemsReview() async {
+  FutureOr<void> deleteItemsReview() async {
     final response = await deleteItemsReviewWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -132,7 +132,7 @@ class ItemsReviewApi {
   ///
   /// * [ReadSingleItemsCuisineIdParameter] id (required):
   ///   Index of the item.
-  Future<Response> deleteSingleItemsReviewWithHttpInfo(ReadSingleItemsCuisineIdParameter id,) async {
+  FutureOr<Response> deleteSingleItemsReviewWithHttpInfo(ReadSingleItemsCuisineIdParameter id,) async {
     // ignore: prefer_const_declarations
     final path = r'/items/Review/{id}'
       .replaceAll('{id}', id.toString());
@@ -166,7 +166,7 @@ class ItemsReviewApi {
   ///
   /// * [ReadSingleItemsCuisineIdParameter] id (required):
   ///   Index of the item.
-  Future<void> deleteSingleItemsReview(ReadSingleItemsCuisineIdParameter id,) async {
+  FutureOr<void> deleteSingleItemsReview(ReadSingleItemsCuisineIdParameter id,) async {
     final response = await deleteSingleItemsReviewWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -201,7 +201,7 @@ class ItemsReviewApi {
   ///
   /// * [String] search:
   ///   Filter by items that contain the given search query in one of their fields.
-  Future<Response> readItemsReviewWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, }) async {
+  FutureOr<Response> readItemsReviewWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/Review';
 
@@ -274,7 +274,7 @@ class ItemsReviewApi {
   ///
   /// * [String] search:
   ///   Filter by items that contain the given search query in one of their fields.
-  Future<ReadItemsReview200Response?> readItemsReview({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, }) async {
+  FutureOr<ReadItemsReview200Response?> readItemsReview({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, }) async {
     final response = await readItemsReviewWithHttpInfo( fields: fields, limit: limit, meta: meta, offset: offset, sort: sort, filter: filter, search: search, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -308,7 +308,7 @@ class ItemsReviewApi {
   ///
   /// * [String] version:
   ///   Retrieve an item's state from a specific Content Version. The value corresponds to the \"key\" of the Content Version. 
-  Future<Response> readSingleItemsReviewWithHttpInfo(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, String? version, }) async {
+  FutureOr<Response> readSingleItemsReviewWithHttpInfo(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, String? version, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/Review/{id}'
       .replaceAll('{id}', id.toString());
@@ -361,7 +361,7 @@ class ItemsReviewApi {
   ///
   /// * [String] version:
   ///   Retrieve an item's state from a specific Content Version. The value corresponds to the \"key\" of the Content Version. 
-  Future<ReadSingleItemsReview200Response?> readSingleItemsReview(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, String? version, }) async {
+  FutureOr<ReadSingleItemsReview200Response?> readSingleItemsReview(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, String? version, }) async {
     final response = await readSingleItemsReviewWithHttpInfo(id,  fields: fields, meta: meta, version: version, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -406,7 +406,7 @@ class ItemsReviewApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [CreateItemsReviewRequest] createItemsReviewRequest:
-  Future<Response> updateItemsReviewWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, CreateItemsReviewRequest? createItemsReviewRequest, }) async {
+  FutureOr<Response> updateItemsReviewWithHttpInfo({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, CreateItemsReviewRequest? createItemsReviewRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/Review';
 
@@ -481,7 +481,7 @@ class ItemsReviewApi {
   ///   Filter by items that contain the given search query in one of their fields.
   ///
   /// * [CreateItemsReviewRequest] createItemsReviewRequest:
-  Future<UpdateItemsReview200Response?> updateItemsReview({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, CreateItemsReviewRequest? createItemsReviewRequest, }) async {
+  FutureOr<UpdateItemsReview200Response?> updateItemsReview({ List<String>? fields, int? limit, String? meta, int? offset, List<String>? sort, Object? filter, String? search, CreateItemsReviewRequest? createItemsReviewRequest, }) async {
     final response = await updateItemsReviewWithHttpInfo( fields: fields, limit: limit, meta: meta, offset: offset, sort: sort, filter: filter, search: search, createItemsReviewRequest: createItemsReviewRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -514,7 +514,7 @@ class ItemsReviewApi {
   ///   What metadata to return in the response.
   ///
   /// * [ItemsReview] itemsReview:
-  Future<Response> updateSingleItemsReviewWithHttpInfo(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, ItemsReview? itemsReview, }) async {
+  FutureOr<Response> updateSingleItemsReviewWithHttpInfo(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, ItemsReview? itemsReview, }) async {
     // ignore: prefer_const_declarations
     final path = r'/items/Review/{id}'
       .replaceAll('{id}', id.toString());
@@ -563,7 +563,7 @@ class ItemsReviewApi {
   ///   What metadata to return in the response.
   ///
   /// * [ItemsReview] itemsReview:
-  Future<ReadSingleItemsReview200Response?> updateSingleItemsReview(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, ItemsReview? itemsReview, }) async {
+  FutureOr<ReadSingleItemsReview200Response?> updateSingleItemsReview(ReadSingleItemsCuisineIdParameter id, { List<String>? fields, String? meta, ItemsReview? itemsReview, }) async {
     final response = await updateSingleItemsReviewWithHttpInfo(id,  fields: fields, meta: meta, itemsReview: itemsReview, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

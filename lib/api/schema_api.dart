@@ -25,7 +25,7 @@ class SchemaApi {
   /// Parameters:
   ///
   /// * [SchemaApplyRequest] schemaApplyRequest (required):
-  Future<Response> schemaApplyWithHttpInfo(SchemaApplyRequest schemaApplyRequest,) async {
+  FutureOr<Response> schemaApplyWithHttpInfo(SchemaApplyRequest schemaApplyRequest,) async {
     // ignore: prefer_const_declarations
     final path = r'/schema/apply';
 
@@ -57,7 +57,7 @@ class SchemaApi {
   /// Parameters:
   ///
   /// * [SchemaApplyRequest] schemaApplyRequest (required):
-  Future<void> schemaApply(SchemaApplyRequest schemaApplyRequest,) async {
+  FutureOr<void> schemaApply(SchemaApplyRequest schemaApplyRequest,) async {
     final response = await schemaApplyWithHttpInfo(schemaApplyRequest,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -76,7 +76,7 @@ class SchemaApi {
   ///
   /// * [bool] force:
   ///   Bypass version and database vendor restrictions.
-  Future<Response> schemaDiffWithHttpInfo(SchemaSnapshot200Response schemaSnapshot200Response, { bool? force, }) async {
+  FutureOr<Response> schemaDiffWithHttpInfo(SchemaSnapshot200Response schemaSnapshot200Response, { bool? force, }) async {
     // ignore: prefer_const_declarations
     final path = r'/schema/diff';
 
@@ -115,7 +115,7 @@ class SchemaApi {
   ///
   /// * [bool] force:
   ///   Bypass version and database vendor restrictions.
-  Future<SchemaApplyRequest?> schemaDiff(SchemaSnapshot200Response schemaSnapshot200Response, { bool? force, }) async {
+  FutureOr<SchemaApplyRequest?> schemaDiff(SchemaSnapshot200Response schemaSnapshot200Response, { bool? force, }) async {
     final response = await schemaDiffWithHttpInfo(schemaSnapshot200Response,  force: force, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -140,7 +140,7 @@ class SchemaApi {
   ///
   /// * [String] export_:
   ///   Saves the API response to a file. Accepts one of \"csv\", \"json\", \"xml\", \"yaml\".
-  Future<Response> schemaSnapshotWithHttpInfo({ String? export_, }) async {
+  FutureOr<Response> schemaSnapshotWithHttpInfo({ String? export_, }) async {
     // ignore: prefer_const_declarations
     final path = r'/schema/snapshot';
 
@@ -177,7 +177,7 @@ class SchemaApi {
   ///
   /// * [String] export_:
   ///   Saves the API response to a file. Accepts one of \"csv\", \"json\", \"xml\", \"yaml\".
-  Future<SchemaSnapshot200Response?> schemaSnapshot({ String? export_, }) async {
+  FutureOr<SchemaSnapshot200Response?> schemaSnapshot({ String? export_, }) async {
     final response = await schemaSnapshotWithHttpInfo( export_: export_, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
