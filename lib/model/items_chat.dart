@@ -50,7 +50,7 @@ class ItemsChat {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  ItemsChefProfileUserId? customerId;
+  String? customerId;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -58,27 +58,30 @@ class ItemsChat {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  ItemsChefCuisineChefProfileId? chefProfileId;
+  String? chefProfileId;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is ItemsChat &&
-    other.id == id &&
-    other.message == message &&
-    other.sentAt == sentAt &&
-    other.customerId == customerId &&
-    other.chefProfileId == chefProfileId;
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ItemsChat &&
+          other.id == id &&
+          other.message == message &&
+          other.sentAt == sentAt &&
+          other.customerId == customerId &&
+          other.chefProfileId == chefProfileId;
 
   @override
   int get hashCode =>
-    // ignore: unnecessary_parenthesis
-    (id == null ? 0 : id!.hashCode) +
-    (message == null ? 0 : message!.hashCode) +
-    (sentAt == null ? 0 : sentAt!.hashCode) +
-    (customerId == null ? 0 : customerId!.hashCode) +
-    (chefProfileId == null ? 0 : chefProfileId!.hashCode);
+      // ignore: unnecessary_parenthesis
+      (id == null ? 0 : id!.hashCode) +
+      (message == null ? 0 : message!.hashCode) +
+      (sentAt == null ? 0 : sentAt!.hashCode) +
+      (customerId == null ? 0 : customerId!.hashCode) +
+      (chefProfileId == null ? 0 : chefProfileId!.hashCode);
 
   @override
-  String toString() => 'ItemsChat[id=$id, message=$message, sentAt=$sentAt, customerId=$customerId, chefProfileId=$chefProfileId]';
+  String toString() =>
+      'ItemsChat[id=$id, message=$message, sentAt=$sentAt, customerId=$customerId, chefProfileId=$chefProfileId]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -122,8 +125,10 @@ class ItemsChat {
       // Note 2: this code is stripped in release mode!
       assert(() {
         requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ItemsChat[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ItemsChat[$key]" has a null value in JSON.');
+          assert(json.containsKey(key),
+              'Required key "ItemsChat[$key]" is missing from JSON.');
+          assert(json[key] != null,
+              'Required key "ItemsChat[$key]" has a null value in JSON.');
         });
         return true;
       }());
@@ -132,14 +137,17 @@ class ItemsChat {
         id: mapValueOfType<String>(json, r'_id'),
         message: mapValueOfType<String>(json, r'message'),
         sentAt: mapDateTime(json, r'sentAt', r''),
-        customerId: ItemsChefProfileUserId.fromJson(json[r'customerId']),
-        chefProfileId: ItemsChefCuisineChefProfileId.fromJson(json[r'chefProfileId']),
+        customerId: mapValueOfType<String>(json, r'customerId'),
+        chefProfileId: mapValueOfType<String>(json, r'chefProfileId'),
       );
     }
     return null;
   }
 
-  static List<ItemsChat> listFromJson(dynamic json, {bool growable = false,}) {
+  static List<ItemsChat> listFromJson(
+    dynamic json, {
+    bool growable = false,
+  }) {
     final result = <ItemsChat>[];
     if (json is List && json.isNotEmpty) {
       for (final row in json) {
@@ -167,20 +175,24 @@ class ItemsChat {
   }
 
   // maps a json object with a list of ItemsChat-objects as value to a dart map
-  static Map<String, List<ItemsChat>> mapListFromJson(dynamic json, {bool growable = false,}) {
+  static Map<String, List<ItemsChat>> mapListFromJson(
+    dynamic json, {
+    bool growable = false,
+  }) {
     final map = <String, List<ItemsChat>>{};
     if (json is Map && json.isNotEmpty) {
       // ignore: parameter_assignments
       json = json.cast<String, dynamic>();
       for (final entry in json.entries) {
-        map[entry.key] = ItemsChat.listFromJson(entry.value, growable: growable,);
+        map[entry.key] = ItemsChat.listFromJson(
+          entry.value,
+          growable: growable,
+        );
       }
     }
     return map;
   }
 
   /// The list of required keys that must be present in a JSON.
-  static const requiredKeys = <String>{
-  };
+  static const requiredKeys = <String>{};
 }
-
