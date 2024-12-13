@@ -50,7 +50,7 @@ class CreateItemsChatRequest {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  ItemsChefProfileUserId? customerId;
+  String? customerId;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -58,7 +58,7 @@ class CreateItemsChatRequest {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  ItemsChefCuisineChefProfileId? chefProfileId;
+  String? chefProfileId;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateItemsChatRequest &&
@@ -132,8 +132,8 @@ class CreateItemsChatRequest {
         id: mapValueOfType<String>(json, r'_id'),
         message: mapValueOfType<String>(json, r'message'),
         sentAt: mapDateTime(json, r'sentAt', r''),
-        customerId: ItemsChefProfileUserId.fromJson(json[r'customerId']),
-        chefProfileId: ItemsChefCuisineChefProfileId.fromJson(json[r'chefProfileId']),
+        customerId: mapValueOfType<String>(json,r'customerId'),
+        chefProfileId: mapValueOfType<String>(json,r'chefProfileId'),
       );
     }
     return null;
